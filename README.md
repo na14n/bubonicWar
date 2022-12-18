@@ -1,1 +1,1 @@
-# bubonicPlague
+# bubonicWar
