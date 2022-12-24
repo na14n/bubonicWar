@@ -5,7 +5,7 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour
 {
     
-    public float speed = 50f;
+    public float speedM = 5f;
     public Rigidbody2D p1;
     public Rigidbody2D p2;
 
@@ -27,10 +27,8 @@ public class playerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        p1.MovePosition(p1.position + movement1 * speed * Time.fixedDeltaTime);
-        p2.MovePosition(p2.position + movement2 * speed * Time.fixedDeltaTime);
-
-
+        p1.MovePosition(p1.position + movement1 * speedM * Time.fixedDeltaTime);
+        p2.MovePosition(p2.position + movement2 * speedM * Time.fixedDeltaTime);
     }
 
     void player1Movement()
@@ -55,7 +53,7 @@ public class playerMovement : MonoBehaviour
         
         movement2.x = Input.GetAxisRaw("Player 2 X");
         movement2.y = Input.GetAxisRaw("Player 2 Y");  
-        
+
         // Sprite Flip
         if (movement2.x > 0)
         {
