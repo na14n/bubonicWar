@@ -9,31 +9,57 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private int damage = 5;
     [SerializeField]
-    private float speed = 1.5f;
+    private float speed = 3f;
     [SerializeField]
+    private int hp;
     private EnemyData data;
-    private GameObject player;
+    public Transform player;
+    private Rigidbody2D rb;
+    private Vector2 movement;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        rb = this.GetComponent<Rigidbody2D>();
+        player = FindObjectOfType<playerMovement>().transform;    
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-       Swarm();
+        moveCharacter(movement);
+        Swarm();
+        Die();
     }
 
     private void Swarm()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position,speed * Time.deltaTime);
-             if(player.transform.position.x > transform.position.x){
-     //face right
-            transform.localScale = new Vector3(1,1,1);
-            }else if(player.transform.position.x < transform.position.x){
-     //face left
+        Vector3 direction = player.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        direction.Normalize();
+        movement = direction;
+
+        if(player.transform.position.x > transform.position.x)
+        {
+            transform.localScale = new Vector3(1,1,1);   
+        }
+        else if(player.transform.position.x < transform.position.x)
+        {
             transform.localScale = new Vector3(-1,1,1);
-            }
+        }
+    }
+
+    void moveCharacter(Vector2 direction){
+    rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
+    }
+
+    void Die()
+    {
+        if (hp <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
