@@ -11,19 +11,41 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float speed = 3f;
     [SerializeField]
-    private int hp;
+    public int hp;
+    [SerializeField]
+    public int maxHp;
+    [SerializeField]
     private EnemyData data;
+    [SerializeField]
+    public float atkSpeed;
+    [SerializeField]
+    public Vector3 object1Transform;
+
+    [SerializeField]
+    public Vector3 object2Transform;
+
+    public GameObject[] enemies;
     public Transform player;
     private Rigidbody2D rb;
     private Vector2 movement;
-
-
+    float lastAttackTime;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
-        player = FindObjectOfType<playerMovement>().transform;    
+        player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
+        hp = maxHp;   
+        setEnemyValues();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            this.GetComponent<health>().damage(5);
+            Debug.Log("kill");
+        }
     }
 
     // Update is called once per frame
@@ -31,7 +53,7 @@ public class Enemy : MonoBehaviour
     {
         moveCharacter(movement);
         Swarm();
-        Die();
+
     }
 
     private void Swarm()
@@ -43,11 +65,11 @@ public class Enemy : MonoBehaviour
 
         if(player.transform.position.x > transform.position.x)
         {
-            transform.localScale = new Vector3(1,1,1);   
+            transform.localScale = object1Transform;   
         }
         else if(player.transform.position.x < transform.position.x)
         {
-            transform.localScale = new Vector3(-1,1,1);
+            transform.localScale = object2Transform;
         }
     }
 
@@ -55,11 +77,48 @@ public class Enemy : MonoBehaviour
     rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
     }
 
-    void Die()
+    private void setEnemyValues()
     {
-        if (hp <= 0)
+        GetComponent<health>().setHealth(data.hp, data.hp);
+        damage = data.damage;
+        speed = data.speed;
+        atkSpeed = data.atkSpeed;
+        object1Transform = data.object1Transform;
+        object2Transform = data.object2Transform;
+    }
+
+
+void OnTriggerEnter2D(Collider2D collider)
+{
+    if (Time.time - lastAttackTime > atkSpeed)
+    {
+        if (collider.gameObject.CompareTag("Player"))
         {
-            Destroy(this.gameObject);
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
+            foreach (GameObject enemy in enemies)
+            {
+                enemy.GetComponent<health>().damage(damage);
+            }
+            lastAttackTime = Time.time;
         }
     }
+}
+
+void OnTriggerStay2D(Collider2D collider)
+{
+    if (Time.time - lastAttackTime > atkSpeed)
+    {
+        if (collider.gameObject.CompareTag("Player"))
+        {
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
+            foreach (GameObject enemy in enemies)
+            {
+                enemy.GetComponent<health>().damage(damage);
+            }
+            lastAttackTime = Time.time;
+        }
+    }
+}
+
+
 }

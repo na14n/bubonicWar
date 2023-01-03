@@ -8,6 +8,10 @@ public class EnemyData : ScriptableObject
     public int hp;
     public int damage;
     public int speed;
+    public int maxHp;
+    public float atkSpeed;
+    public Vector3 object1Transform;
+    public Vector3 object2Transform;
     void Start()
     {
         
