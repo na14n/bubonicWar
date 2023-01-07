@@ -8,7 +8,7 @@ public class KatanaScript : MonoBehaviour
     public int characterDmg;
     public float atkSpeed = 3f;
     float lastAttackTime;
-    public float attackRange = 2f;
+    public float attackRange = 3f;
     public GameObject[] enemies;
     public int totalatk;
 

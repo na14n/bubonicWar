@@ -5,12 +5,13 @@ using UnityEngine;
 public class health : MonoBehaviour
 {   
     [SerializeField]
-    private int hp = 100;
+    public int hp = 100;
     private int maxHP = 100;
-
     public float knockbackForce = 10f;
-
-
+    public int xpAmount;
+    public GameObject xpPrefab;
+    
+    public bool isDead = false;
     void Start()
     {
 
@@ -65,10 +66,17 @@ public class health : MonoBehaviour
         }
     }
 
-    private void Die()
-    {
+    public void Die()
+    {   
+        // Instantiate the XP drop at the same position as the mob
+        GameObject xp = Instantiate(xpPrefab, this.transform.position, Quaternion.identity);
         Destroy(gameObject);
         Debug.Log("destroyed cuzz get killed");
+    }
+
+    public void increaseXP(int amount)
+    {
+        xpAmount += amount;
     }
 
 

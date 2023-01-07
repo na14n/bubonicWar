@@ -9,6 +9,7 @@ public class EnemyData : ScriptableObject
     public int damage;
     public int speed;
     public int maxHp;
+    public int xpAmount;
     public float atkSpeed;
     public Vector3 object1Transform;
     public Vector3 object2Transform;

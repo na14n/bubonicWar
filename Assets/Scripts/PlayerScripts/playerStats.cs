@@ -7,6 +7,8 @@ public class playerStats : MonoBehaviour
     public int baseDamage = 5;
     public int hp = 100;
     public int xp;
+    public int maxXP = 20;
+    public int playerLvl = 1;
     public float speed;
     void Start()
     {
@@ -18,4 +20,10 @@ public class playerStats : MonoBehaviour
     {
         
     }
+
+    public void increaseXP(int amount)
+    {
+        xp += amount;
+    }
+
 }

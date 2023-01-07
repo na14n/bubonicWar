@@ -23,12 +23,15 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]
     public Vector3 object2Transform;
+    [SerializeField]
+    public int xpDrop;
 
     public GameObject[] enemies;
     public Transform player;
     private Rigidbody2D rb;
     private Vector2 movement;
     float lastAttackTime;
+
 
     // Start is called before the first frame update
     void Start()
@@ -80,11 +83,13 @@ public class Enemy : MonoBehaviour
     private void setEnemyValues()
     {
         GetComponent<health>().setHealth(data.hp, data.hp);
+        GetComponent<health>().increaseXP(xpDrop);
         damage = data.damage;
         speed = data.speed;
         atkSpeed = data.atkSpeed;
         object1Transform = data.object1Transform;
         object2Transform = data.object2Transform;
+        xpDrop = data.xpAmount;
     }
 
 
