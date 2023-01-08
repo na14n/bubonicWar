@@ -4,20 +4,17 @@ using UnityEngine;
 
 public class shield : MonoBehaviour
 {
-    public int atkDamage = 3;
-    public int characterDmg;
+    public float atkDamage = 3;
+    public float characterDmg;
     public float atkSpeed = 1f;
     float lastAttackTime;
     public float attackRange = 4f;
     public GameObject[] enemies;
-    public int totalatk;
+    public float totalatk;
     private bool attackMade;
-
     private float playerHP;
     private float lastheal;
     private int healpersec = 5;
-
-    bool useShield = false;
 
     void Start()
     {   
@@ -65,15 +62,12 @@ IEnumerator HealOverTime()
                         {
                             enemy.GetComponent<health>().damage(atkDamage + characterDmg, false);
                             enemy.GetComponent<knockback>().Knockback();
-                            
                         }
                     }
                     lastAttackTime = Time.time;
                 }
             }
     }
-
-
 
 void OnDrawGizmosSelected()
 {   

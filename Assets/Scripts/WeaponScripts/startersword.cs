@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class startersword : MonoBehaviour
 {
-    public int atkDamage = 2;
-    public int characterDmg;
+    public float atkDamage = 2;
+    public float characterDmg;
     public float atkSpeed = 0.3f;
     float lastAttackTime;
     public float attackRange = 2f;
     public GameObject[] enemies;
-    public int totalatk;
+    public float totalatk;
     private bool attackMade;
 
     void Start()

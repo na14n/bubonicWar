@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class warhammer : MonoBehaviour
 {
-    public int atkDamage = 7;
-    public int characterDmg;
+    public float atkDamage = 7;
+    public float characterDmg;
     public float atkSpeed = 1f;
     float lastAttackTime;
     public float attackRange = 2f;
     public GameObject[] enemies;
-    public int totalatk;
+    public float totalatk;
     private bool attackMade;
 
     void Start()

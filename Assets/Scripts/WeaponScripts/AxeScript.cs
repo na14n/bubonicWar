@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class AxeScript : MonoBehaviour
 {
-    public int atkDamage = 3;
-    public int characterDmg;
+    public float atkDamage = 3;
+    public float characterDmg;
     public float atkSpeed = 1f;
     float lastAttackTime;
     public float attackRange = 3f;
     public GameObject[] enemies;
-    public int totalatk;
+    public float totalatk;
     private bool attackMade;
 
     void Start()

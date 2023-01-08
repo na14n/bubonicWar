@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class KatanaScript : MonoBehaviour
 {
-    public int atkDamage = 10;
-    public int characterDmg;
+    public float atkDamage = 10;
+    public float characterDmg;
     public float atkSpeed = 0.5f;
     float lastAttackTime;
     public float attackRange = 3f;
     public GameObject[] enemies;
-    public int totalatk;
+    public float totalatk;
     private bool attackMade;
 
     void Start()

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fffd1afb3891082429a3a131a45ff5f3, type: 3}
   m_Name: ratBig
   m_EditorClassIdentifier: 
-  hp: 50
-  damage: 10
+  hp: 120
+  damage: 30
   speed: 2
-  maxHp: 50
-  atkSpeed: 3
+  maxHp: 120
+  atkSpeed: 4
   object1Transform: {x: 1, y: 1, z: 1}
   object2Transform: {x: -1, y: 1, z: 1}
