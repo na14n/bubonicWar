@@ -8,7 +8,7 @@ public class AxeScript : MonoBehaviour
     public int characterDmg;
     public float atkSpeed = 1f;
     float lastAttackTime;
-    public float attackRange = 1.3f;
+    public float attackRange = 4f;
     public GameObject[] enemies;
     public int totalatk;
     private bool attackMade;

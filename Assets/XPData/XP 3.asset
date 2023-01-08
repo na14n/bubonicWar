@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdf10a66c117946429c6a59ebc67b0ff, type: 3}
   m_Name: XP 3
   m_EditorClassIdentifier: 
-  xpToGive: 0
+  xpToGive: 50
