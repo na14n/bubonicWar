@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3464422075191321791}
   - component: {fileID: 3464422075191321776}
   - component: {fileID: 3464422075191321763}
+  - component: {fileID: 8687642723586707086}
   m_Layer: 7
   m_Name: fleaBig
   m_TagString: Enemy
@@ -52,6 +53,8 @@ MonoBehaviour:
   hp: 100
   knockbackForce: 10
   xpAmount: 0
+  healpersec: 2
+  lastheal: 0
   xpPrefab: {fileID: 5032014409151239145, guid: 7304d04a293fbeb4b881cefafa40ecd2, type: 3}
 --- !u!114 &3464422075191321786
 MonoBehaviour:
@@ -128,6 +131,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.75, y: 0.76}
   m_Direction: 0
+--- !u!114 &8687642723586707086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3464422075191321785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7548fc360aedbdd4a91a609f5c165226, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackForce: 10
+  knockedBack: 0
 --- !u!1 &5761429081393011140
 GameObject:
   m_ObjectHideFlags: 0

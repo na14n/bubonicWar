@@ -2,19 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KatanaScript : MonoBehaviour
+public class shield : MonoBehaviour
 {
-    public int atkDamage = 10;
+    public int atkDamage = 3;
     public int characterDmg;
-    public float atkSpeed = 0.5f;
+    public float atkSpeed = 1f;
     float lastAttackTime;
-    public float attackRange = 3f;
+    public float attackRange = 4f;
     public GameObject[] enemies;
     public int totalatk;
     private bool attackMade;
 
+    private float playerHP;
+    private float lastheal;
+    private int healpersec = 5;
+
+    bool useShield = false;
+
     void Start()
     {   
+
     }
 
     // Update is called once per frame
@@ -22,13 +29,27 @@ public class KatanaScript : MonoBehaviour
     {
         characterDmg = transform.parent.parent.GetComponent<playerStats>().baseDamage;
         totalatk = characterDmg + atkDamage;
+        playerHP = transform.parent.parent.GetComponent<health>().hp;
     }
 
-void OnDrawGizmosSelected()
-{   
-    Gizmos.color = Color.red;
-    Vector2 attackRange = new Vector2(4.0f, 2.0f);  // set attackRange.x to 2.0 and attackRange.y to 1.0
-    Gizmos.DrawWireCube(transform.position, attackRange);
+    void FixedUpdate()
+    {
+        if (Time.time - lastheal > healpersec)
+        {
+            StartCoroutine(HealOverTime());
+            lastheal = Time.time;
+        }
+    }
+
+IEnumerator HealOverTime()
+{
+    while (true)
+    {
+        transform.parent.parent.GetComponent<health>().healHp(playerHP * 0.01f);
+        Debug.Log("healing for everyone");
+        lastheal = Time.time;  // update lastheal here
+        yield return new WaitForSeconds(healpersec);
+    }
 }
 
     void OnTriggerStay2D(Collider2D collider)
@@ -44,11 +65,20 @@ void OnDrawGizmosSelected()
                         {
                             enemy.GetComponent<health>().damage(atkDamage + characterDmg, false);
                             enemy.GetComponent<knockback>().Knockback();
+                            
                         }
                     }
                     lastAttackTime = Time.time;
                 }
             }
     }
+
+
+
+void OnDrawGizmosSelected()
+{   
+    Gizmos.color = Color.red;
+    Gizmos.DrawWireSphere(transform.position, attackRange);
+}
 
 }

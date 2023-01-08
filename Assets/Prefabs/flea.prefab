@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 8309979289584989032}
   - component: {fileID: 8309979289584989037}
   - component: {fileID: 8309979289584989036}
+  - component: {fileID: 6144085145109608408}
   m_Layer: 7
   m_Name: flea
   m_TagString: Enemy
@@ -171,6 +172,8 @@ MonoBehaviour:
   hp: 100
   knockbackForce: 10
   xpAmount: 0
+  healpersec: 2
+  lastheal: 0
   xpPrefab: {fileID: 1169934530328987106, guid: c379ac1e9750fe74e8aff2c6936f5cea, type: 3}
 --- !u!114 &8309979289584989033
 MonoBehaviour:
@@ -246,4 +249,18 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.5
+--- !u!114 &6144085145109608408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8309979289584989029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7548fc360aedbdd4a91a609f5c165226, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackForce: 10
+  knockedBack: 0

@@ -55,7 +55,6 @@ public class Enemy : MonoBehaviour
     {
         moveCharacter(movement);
         Swarm();
-
     }
 
     private void Swarm()
@@ -89,35 +88,20 @@ public class Enemy : MonoBehaviour
         object2Transform = data.object2Transform;
     }
 
-
-void OnTriggerEnter2D(Collider2D collider)
-{
-    if (Time.time - lastAttackTime > atkSpeed)
-    {
-        if (collider.gameObject.CompareTag("Player"))
-        {
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
-            foreach (GameObject enemy in enemies)
-            {
-                enemy.GetComponent<health>().damage(damage, false);
-            }
-            lastAttackTime = Time.time;
-        }
-    }
-}
-
 void OnTriggerStay2D(Collider2D collider)
 {
     if (Time.time - lastAttackTime > atkSpeed)
     {
+        lastAttackTime = Time.time;
         if (collider.gameObject.CompareTag("Player"))
         {
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
             foreach (GameObject enemy in enemies)
             {
                 enemy.GetComponent<health>().damage(damage, false);
+                enemy.GetComponent<knockback>().Knockback();
+                Debug.Log("ATTACKED BAM");
             }
-            lastAttackTime = Time.time;
         }
     }
 }

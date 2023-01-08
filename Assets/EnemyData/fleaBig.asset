@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: fleaBig
   m_EditorClassIdentifier: 
   hp: 70
-  damage: 6
+  damage: 8
   speed: 3
   maxHp: 70
-  atkSpeed: 1
+  atkSpeed: 2
   object1Transform: {x: 1, y: 1, z: 1}
   object2Transform: {x: -1, y: 1, z: 1}

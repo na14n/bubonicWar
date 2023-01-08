@@ -7,7 +7,7 @@ public class XPDrop : MonoBehaviour
 
     public int xpAmount = 10; // The amount of XP to drop
     public GameObject xpPrefab;
-    public int mobHP;
+    public float mobHP;
     
     void Update()
     {

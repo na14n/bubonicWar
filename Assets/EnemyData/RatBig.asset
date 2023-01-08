@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: ratBig
   m_EditorClassIdentifier: 
   hp: 50
-  damage: 5
+  damage: 10
   speed: 2
   maxHp: 50
-  atkSpeed: 2
+  atkSpeed: 3
   object1Transform: {x: 1, y: 1, z: 1}
   object2Transform: {x: -1, y: 1, z: 1}

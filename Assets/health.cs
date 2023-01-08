@@ -5,10 +5,12 @@ using UnityEngine;
 public class health : MonoBehaviour
 {   
     [SerializeField]
-    public int hp = 100;
+    public float hp = 100;
     private int maxHP = 100;
     public float knockbackForce = 10f;
     public int xpAmount;
+    public float healpersec = 2f;
+    public float lastheal;
     public GameObject xpPrefab;
     void Start()
     {
@@ -28,7 +30,7 @@ public class health : MonoBehaviour
         this.hp = health;
     }
 
-    public void healHp(int amount)
+    public void healHp(float amount)
     {
         if (amount < 0)
         {
@@ -71,5 +73,6 @@ public class health : MonoBehaviour
             Destroy(gameObject);
             Debug.Log("destroyed cuzz get killed");
     }
+
 
 }

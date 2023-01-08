@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KatanaScript : MonoBehaviour
+public class scythe : MonoBehaviour
 {
     public int atkDamage = 10;
     public int characterDmg;
@@ -27,7 +27,7 @@ public class KatanaScript : MonoBehaviour
 void OnDrawGizmosSelected()
 {   
     Gizmos.color = Color.red;
-    Vector2 attackRange = new Vector2(4.0f, 2.0f);  // set attackRange.x to 2.0 and attackRange.y to 1.0
+    Vector2 attackRange = new Vector2(2.0f, 4.0f);  // set attackRange.x to 2.0 and attackRange.y to 1.0
     Gizmos.DrawWireCube(transform.position, attackRange);
 }
 
