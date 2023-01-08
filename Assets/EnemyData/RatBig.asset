@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ratBig
   m_EditorClassIdentifier: 
   hp: 120
-  damage: 30
+  damage: 15
   speed: 2
   maxHp: 120
   atkSpeed: 4
