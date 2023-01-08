@@ -10,8 +10,6 @@ public class health : MonoBehaviour
     public float knockbackForce = 10f;
     public int xpAmount;
     public GameObject xpPrefab;
-    
-    public bool isDead = false;
     void Start()
     {
 
@@ -50,34 +48,28 @@ public class health : MonoBehaviour
         }
     }
 
-    public void damage(int amount)
-    {
-        if (amount < 0)
+    public void damage(int amount, bool damageReceive)
+    {   
+        Debug.Log("damage is called");
+        if (!damageReceive)
         {
-            throw new System.ArgumentException("cannot have negative damage");
-        }
+                this.hp -= amount;
+                this.gameObject.GetComponentInChildren<takeDamage>().TakeDamage();
+                damageReceive = true;
 
-            this.hp -= amount;
-            this.gameObject.GetComponentInChildren<takeDamage>().TakeDamage();
-
-        if (this.hp <= 0)
-        {
-            Die();
+            if (this.hp <= 0)
+            {
+                Die();
+                damageReceive = true;
+            }
         }
     }
 
     public void Die()
     {   
-        // Instantiate the XP drop at the same position as the mob
-        GameObject xp = Instantiate(xpPrefab, this.transform.position, Quaternion.identity);
-        Destroy(gameObject);
-        Debug.Log("destroyed cuzz get killed");
+            GameObject xp = Instantiate(xpPrefab, this.transform.position, Quaternion.identity);
+            Destroy(gameObject);
+            Debug.Log("destroyed cuzz get killed");
     }
-
-    public void increaseXP(int amount)
-    {
-        xpAmount += amount;
-    }
-
 
 }

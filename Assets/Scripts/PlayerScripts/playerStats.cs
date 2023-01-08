@@ -7,9 +7,9 @@ public class playerStats : MonoBehaviour
     public int baseDamage = 5;
     public int hp = 100;
     public int xp;
-    public int maxXP = 20;
+    public float maxXP = 100f;
     public int playerLvl = 1;
-    public float speed;
+    public float speed = 5f;
     void Start()
     {
         
@@ -18,12 +18,26 @@ public class playerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        lvlUp();
     }
 
-    public void increaseXP(int amount)
+    public void increaseXP(int amount, bool status)
+    {   
+        if (!status)
+        {
+            xp += amount;
+            status = true;
+        }
+
+    }
+
+    public void lvlUp()
     {
-        xp += amount;
+            if (xp >= maxXP)
+        {
+            playerLvl = playerLvl + 1;
+            maxXP = maxXP + 100 * 1.5f;
+        }
     }
 
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour
 {
     
-    public float speedM = 5f;
+    public float speedM;
     public Rigidbody2D p1;
     // public Rigidbody2D p2;
 
@@ -22,7 +22,7 @@ public class playerMovement : MonoBehaviour
     void Update()
     {
         player1Movement();
-        // player2Movement();
+        speedM = GetComponent<playerStats>().speed;
     }
 
     void FixedUpdate()

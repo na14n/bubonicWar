@@ -24,7 +24,6 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     public Vector3 object2Transform;
     [SerializeField]
-    public int xpDrop;
 
     public GameObject[] enemies;
     public Transform player;
@@ -46,7 +45,7 @@ public class Enemy : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            this.GetComponent<health>().damage(5);
+            this.GetComponent<health>().damage(5, true);
             Debug.Log("kill");
         }
     }
@@ -83,13 +82,11 @@ public class Enemy : MonoBehaviour
     private void setEnemyValues()
     {
         GetComponent<health>().setHealth(data.hp, data.hp);
-        GetComponent<health>().increaseXP(xpDrop);
         damage = data.damage;
         speed = data.speed;
         atkSpeed = data.atkSpeed;
         object1Transform = data.object1Transform;
         object2Transform = data.object2Transform;
-        xpDrop = data.xpAmount;
     }
 
 
@@ -102,7 +99,7 @@ void OnTriggerEnter2D(Collider2D collider)
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
             foreach (GameObject enemy in enemies)
             {
-                enemy.GetComponent<health>().damage(damage);
+                enemy.GetComponent<health>().damage(damage, false);
             }
             lastAttackTime = Time.time;
         }
@@ -118,7 +115,7 @@ void OnTriggerStay2D(Collider2D collider)
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
             foreach (GameObject enemy in enemies)
             {
-                enemy.GetComponent<health>().damage(damage);
+                enemy.GetComponent<health>().damage(damage, false);
             }
             lastAttackTime = Time.time;
         }
