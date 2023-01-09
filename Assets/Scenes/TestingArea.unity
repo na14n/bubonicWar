@@ -501,9 +501,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 335f8f5c5cdabeb45a0a6cbfc84787f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wep1: {fileID: 1797997504283864686, guid: d695d891105ce2c458978cf7c2e81af6, type: 3}
+  wep1: {fileID: 1149542122287916587, guid: f6378c0246941574ba7a146f5b720d48, type: 3}
   wep2: {fileID: 133219014674768823, guid: 1541bd90fd70b5f48ac70cf41871a03d, type: 3}
-  wep3: {fileID: 8481914296237620115, guid: 6908cb319a54f0d459fdf6a73085ecf4, type: 3}
+  wep3: {fileID: 1924665392253416958, guid: ce179cd811d808942ae7feadc1fc353f, type: 3}
   wep4: {fileID: 4517808188715060461, guid: 0ed57cd735b3a9a4a9e1b66800b947b9, type: 3}
   wep5: {fileID: 3899272670628070658, guid: 77bb064985096974cae4102eb0610dbb, type: 3}
   wep6: {fileID: 4116892593554493878, guid: 4e0e1c6847d027140bc7f9f5d9eca3ab, type: 3}
