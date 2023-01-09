@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 8207916950387278829}
   - component: {fileID: 8207916950387278831}
   - component: {fileID: 8207916950387278828}
+  - component: {fileID: 2939843986756539102}
   m_Layer: 0
   m_Name: flea-02_0
   m_TagString: Untagged
@@ -249,3 +250,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageColor: {r: 1, g: 0, b: 0, a: 0.78431374}
+--- !u!95 &2939843986756539102
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8207916950387278818}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4ce87736fdeffaf459429a941474cd87, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 4517808188406343319}
   - component: {fileID: 4517808188406343312}
   - component: {fileID: 4517808188406343317}
+  - component: {fileID: 5393409160735583908}
   m_Layer: 0
   m_Name: dagger
   m_TagString: Untagged
@@ -224,6 +225,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageColor: {r: 1, g: 0, b: 0, a: 0.78431374}
+--- !u!114 &5393409160735583908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4517808188406343313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ae0faa9dd8ff14296bd533c3fccbaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4517808188715060461
 GameObject:
   m_ObjectHideFlags: 0
