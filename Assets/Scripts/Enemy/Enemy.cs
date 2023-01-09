@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
 
     void Awake()
-    {   
+    {
         playerStatx = FindObjectOfType<playerStats>();
         playerLvl = playerStatx.playerLvl;
         scaleEnemy();
@@ -73,23 +73,24 @@ public class Enemy : MonoBehaviour
         direction.Normalize();
         movement = direction;
 
-        if(player.transform.position.x > transform.position.x)
+        if (player.transform.position.x > transform.position.x)
         {
-            transform.localScale = object1Transform;   
+            transform.localScale = object1Transform;
         }
-        else if(player.transform.position.x < transform.position.x)
+        else if (player.transform.position.x < transform.position.x)
         {
             transform.localScale = object2Transform;
         }
     }
 
-    void moveCharacter(Vector2 direction){
-    rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
+    void moveCharacter(Vector2 direction)
+    {
+        rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
     }
 
     private void setEnemyValues()
     {
-        GetComponent<health>().setHealth(data.maxHp + (playerLvl * 3),data.maxHp + (playerLvl * 3));
+        GetComponent<health>().setHealth(data.maxHp + (playerLvl * 3), data.maxHp + (playerLvl * 3));
         damage = data.damage + (playerLvl * 2);
         speed = data.speed;
         atkSpeed = data.atkSpeed;
@@ -97,67 +98,67 @@ public class Enemy : MonoBehaviour
         object2Transform = data.object2Transform;
     }
 
-// void OnTriggerEntry2D(Collider2D collider)
-// {   
-//     if (Time.time - lastAttackTime > atkSpeed)
-//     {
-//         lastAttackTime = Time.time;
-//         if (collider.gameObject.CompareTag("Player"))
-//         {
-//                 collider.GetComponent<health>().damage(damage, false);
-//                 collider.GetComponent<knockback>().Knockback();
-//                 Debug.Log("ATTACKED BAM");
-//         }
-//     }
-// }
-// void OnTriggerStay2D(Collider2D collider)
-// {   
-//     if (Time.time - lastAttackTime > atkSpeed)
-//     {
-//         lastAttackTime = Time.time;
-//         if (collider.gameObject.CompareTag("Player"))
-//         {
-//                 collider.GetComponent<health>().damage(damage, false);
-//                 collider.GetComponent<knockback>().Knockback();
-//                 Debug.Log("ATTACKED BAM");
-//         }
-//     }
-// }
+    // void OnTriggerEntry2D(Collider2D collider)
+    // {   
+    //     if (Time.time - lastAttackTime > atkSpeed)
+    //     {
+    //         lastAttackTime = Time.time;
+    //         if (collider.gameObject.CompareTag("Player"))
+    //         {
+    //                 collider.GetComponent<health>().damage(damage, false);
+    //                 collider.GetComponent<knockback>().Knockback();
+    //                 Debug.Log("ATTACKED BAM");
+    //         }
+    //     }
+    // }
+    // void OnTriggerStay2D(Collider2D collider)
+    // {   
+    //     if (Time.time - lastAttackTime > atkSpeed)
+    //     {
+    //         lastAttackTime = Time.time;
+    //         if (collider.gameObject.CompareTag("Player"))
+    //         {
+    //                 collider.GetComponent<health>().damage(damage, false);
+    //                 collider.GetComponent<knockback>().Knockback();
+    //                 Debug.Log("ATTACKED BAM");
+    //         }
+    //     }
+    // }
 
-void OnTriggerStay2D(Collider2D collider)
-{
-    if (collider.gameObject.CompareTag("Player") && !isAttacking)
+    void OnTriggerStay2D(Collider2D collider)
     {
-        isAttacking = true;
-        StartCoroutine(Attack(collider));
+        if (collider.gameObject.CompareTag("Player") && !isAttacking)
+        {
+            isAttacking = true;
+            StartCoroutine(Attack(collider));
+        }
     }
-}
 
-void OnTriggerExit2D(Collider2D collider)
-{
-    if (collider.gameObject.CompareTag("Player"))
+    void OnTriggerExit2D(Collider2D collider)
     {
-        isAttacking = false;
-        StopAllCoroutines();
+        if (collider.gameObject.CompareTag("Player"))
+        {
+            isAttacking = false;
+            StopAllCoroutines();
+        }
     }
-}
 
-IEnumerator Attack(Collider2D collider)
-{
-    while (true)
+    IEnumerator Attack(Collider2D collider)
     {
-        collider.GetComponent<health>().damage(damage, false);
-        collider.GetComponent<knockback>().Knockback();
-        Debug.Log("ATTACKED BAM");
-        yield return new WaitForSeconds(atkSpeed);
+        while (true)
+        {
+            collider.GetComponent<health>().damage(damage, false);
+            collider.GetComponent<knockback>().Knockback();
+            Debug.Log("ATTACKED BAM");
+            yield return new WaitForSeconds(atkSpeed);
+        }
     }
-}
 
-public void scaleEnemy()
-{
-    maxHp = maxHp + (playerLvl * 2);
-    damage = damage + (playerLvl * 2);
-}
+    public void scaleEnemy()
+    {
+        maxHp = maxHp + (playerLvl * 2);
+        damage = damage + (playerLvl * 2);
+    }
 
 
 }

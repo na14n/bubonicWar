@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AxeScript : MonoBehaviour
+public class weaponTesting : MonoBehaviour
 {
     public float atkDamage = 3;
     public float characterDmg;
@@ -28,15 +28,25 @@ public class AxeScript : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collider)
     {
-        if (Time.time - lastAttackTime > atkSpeed)
+        if (collider.gameObject.CompareTag("Enemy"))
         {
-            if (collider.gameObject.CompareTag("Enemy"))
+            StartCoroutine(AttackEnemies(atkSpeed));
+        }
+    }
+
+    IEnumerator AttackEnemies(float attackSpeed)
+    {
+        while (true)
+        {
+            if (Time.time - lastAttackTime > attackSpeed)
             {
                 Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(transform.position, attackRange);
                 foreach (Collider2D enemy in enemiesInRange)
                 {
                     if (enemy.gameObject.CompareTag("Enemy"))
-                    {
+                    {   
+                        // dito mo lagay yung attack animation mo
+                        yield return new WaitForSeconds(0.5f);
                         enemy.GetComponent<health>().damage(atkDamage + characterDmg, false);
                         enemy.GetComponent<knockback>().Knockback();
                     }
@@ -45,8 +55,6 @@ public class AxeScript : MonoBehaviour
             }
         }
     }
-
-
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
@@ -55,3 +63,4 @@ public class AxeScript : MonoBehaviour
 
 
 }
+
