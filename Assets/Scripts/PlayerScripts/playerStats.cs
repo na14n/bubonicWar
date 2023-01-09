@@ -18,12 +18,20 @@ public class playerStats : MonoBehaviour
     public GameObject wepPrefab2;
     public GameObject wepPrefab3;
     public GameObject wepPrefab4;
-    // bool wepUnlocked = false;
-    // public GameObject wepHandler;
+    bool wepUnlocked = false;
+    public GameObject wepHandler;
+    public int wepTwoChoice;
+    public GameObject wep1;
+    public GameObject wep2;
+    public GameObject wep3;
+    public GameObject wep4;
+    public GameObject wep5;
+    public GameObject wep6;
     void Start()
     {
         this.GetComponent<health>().setHealth(hp,maxHP);
         enemyStats = FindObjectOfType<Enemy>();
+        wepTwoChoice = variablePasser.Instance.secondWep;
     }
 
     // Update is called once per frame
@@ -50,7 +58,7 @@ public class playerStats : MonoBehaviour
             playerLvl = playerLvl + 1;
             maxXP = maxXP + 150 * 1.5f;
             lvlUpPanel.SetActive(true);
-            // unlockWep();
+            unlockWep();
             Time.timeScale = 0;
         }
     }
@@ -75,53 +83,46 @@ public class playerStats : MonoBehaviour
 
     }
 
-// public void unlockWep()
-// {
-//     if (!wepUnlocked)
-//     {   
-//         Debug.Log("lvl up");
-//         if (playerLvl == 3)
-//         {   
-//             Debug.Log("weapon unlocked");
-//             GameObject warhammer = Instantiate(wepPrefab1, wepHandler.transform);
-//             wepUnlocked = true;
-//             WeaponScript weaponScript = wepHandler.GetComponent<WeaponScript>();
-//             weaponScript.weapons[weaponScript.totalWeapons] = warhammer;
-//             weaponScript.totalWeapons++;
-//             weaponScript.UpdateWeaponsArray();
-//             warhammer.SetActive(false);
-//         }
+    public void unlockWep()
+    {   
+        WeaponScript weaponScript = wepHandler.GetComponent<WeaponScript>();
+        if (!wepUnlocked)
+        {   
+            Debug.Log("lvl up");
+            if (playerLvl == 5)
+            {   
+                if (wepTwoChoice == 1)
+        {
+            weaponScript.AddNewWeapon(wep1);
+        }
 
-//         if (playerLvl == 6)
-//         {
-//             GameObject spear = Instantiate(wepPrefab2, wepHandler.transform);
-//             wepUnlocked = true;
-//             // Add the spear game object to the weapons array
-//             WeaponScript weaponScript = wepHandler.GetComponent<WeaponScript>();
-//             weaponScript.weapons[weaponScript.totalWeapons] = spear;
-//         }
+        else if (wepTwoChoice == 2)
+        {
+            weaponScript.AddNewWeapon(wep2);
+        }
+        
+        else if (wepTwoChoice == 3)
+        {
+            weaponScript.AddNewWeapon(wep3);
+        }
 
-//         if (playerLvl == 9)
-//         {
-//             GameObject doubledagg = Instantiate(wepPrefab3, wepHandler.transform);
-//             wepUnlocked = true;
-//             // Add the doubledagg game object to the weapons array
-//             WeaponScript weaponScript = wepHandler.GetComponent<WeaponScript>();
-//             weaponScript.weapons[weaponScript.totalWeapons] = doubledagg;
-//             weaponScript.totalWeapons++;
-//         }
+        else if (wepTwoChoice == 4)
+        {
+            weaponScript.AddNewWeapon(wep4);
+        }
 
-//         if (playerLvl == 12)
-//         {
-//             GameObject axe = Instantiate(wepPrefab4, wepHandler.transform);
-//             wepUnlocked = true;
-//             // Add the axe game object to the weapons array
-//             WeaponScript weaponScript = wepHandler.GetComponent<WeaponScript>();
-//             weaponScript.weapons[weaponScript.totalWeapons] = axe;
-//             weaponScript.totalWeapons++;
-//         }
-//     }
-// }
+        else if (wepTwoChoice == 5)
+        {
+            weaponScript.AddNewWeapon(wep5);
+        }
 
+        else if (wepTwoChoice == 6)
+        {
+            weaponScript.AddNewWeapon(wep6);
+        }
+
+            }
+        }
+    }
 }
 
