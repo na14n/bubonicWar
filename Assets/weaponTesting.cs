@@ -12,6 +12,7 @@ public class weaponTesting : MonoBehaviour
     public GameObject[] enemies;
     public float totalatk;
     private bool attackMade;
+    private bool isAttacking = false;
 
     void Start()
     {
@@ -28,32 +29,39 @@ public class weaponTesting : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collider)
     {
-        if (collider.gameObject.CompareTag("Enemy"))
+        if (Time.time - lastAttackTime > atkSpeed && !isAttacking)
         {
-            StartCoroutine(AttackEnemies(atkSpeed));
+
+            if (collider.gameObject.CompareTag("Enemy"))
+            {
+                isAttacking = true;
+                StartCoroutine(AttackEnemies());
+                Debug.Log("start");
+            }
         }
     }
 
-    IEnumerator AttackEnemies(float attackSpeed)
+    IEnumerator AttackEnemies()
     {
-        while (true)
+    while (true)  // This will cause the coroutine to loop indefinitely
+    {
+        // Wait for the desired amount of time
+        yield return new WaitForSeconds(atkSpeed);  // atkSpeed is the interval between attacks
+
+        // Deal the damage
+        Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(transform.position, attackRange);
+        foreach (Collider2D enemy in enemiesInRange)
         {
-            if (Time.time - lastAttackTime > attackSpeed)
-            {
-                Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(transform.position, attackRange);
-                foreach (Collider2D enemy in enemiesInRange)
-                {
-                    if (enemy.gameObject.CompareTag("Enemy"))
-                    {   
-                        // dito mo lagay yung attack animation mo
-                        yield return new WaitForSeconds(0.5f);
-                        enemy.GetComponent<health>().damage(atkDamage + characterDmg, false);
-                        enemy.GetComponent<knockback>().Knockback();
-                    }
-                }
-                lastAttackTime = Time.time;
+            if (enemy.gameObject.CompareTag("Enemy"))
+            {   
+                
+                yield return new WaitForSeconds(0.5f);
+                enemy.GetComponent<health>().damage(atkDamage + characterDmg, false);
+                enemy.GetComponent<knockback>().Knockback();
             }
         }
+    }
+
     }
     void OnDrawGizmosSelected()
     {
