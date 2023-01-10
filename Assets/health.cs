@@ -15,6 +15,9 @@ public class health : MonoBehaviour
     public GameObject healPrefab;
     public playerStats maxHPCurrently;
     public float currentMaxHP;
+    public GameObject dropWep1;
+    public GameObject dropWep2;
+    public float weaponNum;
     void Start()
     {
         maxHPCurrently = FindObjectOfType<playerStats>();
@@ -77,7 +80,22 @@ public class health : MonoBehaviour
     }
 
     public void Die()
-    {
+    {   
+        if (weaponNum == 1)
+        {
+            GameObject droppedWep = Instantiate(dropWep1, this.transform.position, Quaternion.identity);
+        }
+
+        else if (weaponNum == 2)
+        {
+            GameObject droppedWep = Instantiate(dropWep2, this.transform.position, Quaternion.identity);
+        }
+
+        else
+        {
+            Debug.Log("not a guardian");
+        }
+
         GameObject xp = Instantiate(xpPrefab, this.transform.position, Quaternion.identity);
 
         int randomNumber = Random.Range(1, 20);
@@ -89,7 +107,7 @@ public class health : MonoBehaviour
         Destroy(gameObject);
         Debug.Log("destroyed cuzz get killed");
 
-
+        
     }
 
 

@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class weaponPicker : MonoBehaviour
 {
-    public GameObject anotherLegWep;
-    public GameObject toAddWep;
-    public GameObject wepHandler;
+    public int wepNum;
     void Start()
     {
         
@@ -21,10 +19,20 @@ public class weaponPicker : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Player"))
-        {
-            WeaponScript weaponScript = wepHandler.GetComponent<WeaponScript>();
-            weaponScript.AddNewWeapon(toAddWep);
-            Destroy(anotherLegWep);
+        {   
+            if (wepNum == 1)
+            {   
+                Debug.Log("katana unloced");
+                PlayerPrefs.SetInt("Katana", 1);
+            }
+
+            if (wepNum == 2)
+            {   
+                Debug.Log("katana unloced");
+                
+                PlayerPrefs.SetInt("Scythe", 1);
+            }
+            
             Destroy(gameObject);
         }
     }
