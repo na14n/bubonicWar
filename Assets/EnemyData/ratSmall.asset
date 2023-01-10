@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 30
   damage: 7
-  speed: 1
+  speed: 2
   maxHp: 30
   atkSpeed: 0.5
   object1Transform: {x: 1, y: 1, z: 1}
