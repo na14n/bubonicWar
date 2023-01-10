@@ -9,10 +9,10 @@ public class healHandler : MonoBehaviour
     public playerStats playerHP;
     public Transform player;
     private Rigidbody2D rb;
-    private Vector2 move;
-    private float speed = 1f;
+    public float followSpeed = 7.0f;
+    public float followDistance = 3.0f;
     void Start()
-    {   
+    {
         rb = this.GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
         playerHP = FindObjectOfType<playerStats>();
@@ -22,47 +22,34 @@ public class healHandler : MonoBehaviour
     void Update()
     {
         healToGive = playerHP.GetComponent<playerStats>().maxHP;
-    }
 
-    
-    void FixedUpdate()
-    {
-        moveCharacter(move);
-        Swarm();
+        float distance = Vector3.Distance(transform.position, player.position);
+        if (distance < followDistance)
+        {
+            Vector3 direction = (player.position - transform.position).normalized;
+            transform.Translate(direction * followSpeed * Time.deltaTime, Space.World);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collider)
-{
-    if (collider.gameObject.CompareTag("Player"))
     {
-        if (!healGiven)
+        if (collider.gameObject.CompareTag("Player"))
         {
-            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-            foreach (GameObject player in players)
+            if (!healGiven)
             {
-                player.GetComponent<health>().healHp(healToGive * 0.3f);
+                GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+                foreach (GameObject player in players)
+                {
+                    player.GetComponent<health>().healHp(healToGive * 0.1f);
+                }
+                healGiven = true;
+                Destroy(gameObject);
             }
-            healGiven = true;
-            Destroy(gameObject);
         }
     }
-}
 
     void objectDestroy()
     {
         Destroy(gameObject);
-    }
-
-        private void Swarm()
-    {
-        Vector3 direction = player.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        direction.Normalize();
-        move = direction;
-
-    }
-
-    void moveCharacter(Vector2 direction){
-    rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
     }
 }

@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditorInternal;
 
-public class Enemy : MonoBehaviour
+public class abominationScript : MonoBehaviour
 {
 
     [SerializeField]
@@ -51,11 +50,12 @@ public class Enemy : MonoBehaviour
     }
 
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
+    {   
+        float hp = GetComponent<health>().hp;
+
+        if (hp <= maxHp * .3)
         {
-            this.GetComponent<health>().damage(5, true);
-            Debug.Log("kill");
+            
         }
     }
 
@@ -132,5 +132,13 @@ public class Enemy : MonoBehaviour
         damage = damage + (playerLvl * 2);
     }
 
+    public void bossRage()
+    {
+        object1Transform = object1Transform * 1.5f;
+        object2Transform = object2Transform * 1.5f;
+        speed = speed + 1;
+        damage = damage * 0.5f;
+        GetComponent<health>().healHp(maxHp * .3f);
+    }
 
 }

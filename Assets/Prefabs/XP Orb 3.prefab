@@ -134,6 +134,8 @@ MonoBehaviour:
   xpToGive: 0
   data: {fileID: 11400000, guid: 828c8807011a0c94fa992e4015d23008, type: 2}
   player: {fileID: 0}
+  followSpeed: 10
+  followDistance: 3
 --- !u!50 &9048619704626831633
 Rigidbody2D:
   serializedVersion: 4

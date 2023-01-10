@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    
+
     public float speedM;
     public Rigidbody2D p1;
     // public Rigidbody2D p2;
+
     Vector2 movement1;
     // Vector2 movement2;
 
@@ -38,17 +39,18 @@ public class playerMovement : MonoBehaviour
         // Sprite Flip
         if (movement1.x > 0)
         {
-            p1.transform.localScale = new Vector3(0.75f,0.75f,0.75f);
+            p1.transform.localScale = new Vector3(1, 1, 1);
         }
+
         if (movement1.x < 0)
         {
-            p1.transform.localScale = new Vector3(-0.75f,0.75f,0.75f);
+            p1.transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 
     // void player2Movement()
     // {
-        
+
     //     movement2.x = Input.GetAxisRaw("Player 2 X");
     //     movement2.y = Input.GetAxisRaw("Player 2 Y");  
 
