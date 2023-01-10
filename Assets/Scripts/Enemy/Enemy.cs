@@ -128,8 +128,9 @@ public class Enemy : MonoBehaviour
 
     public void scaleEnemy()
     {
-        maxHp = maxHp + (playerLvl * 2);
-        damage = damage + (playerLvl * 2);
+        maxHp = maxHp + (playerLvl * 5f);
+        damage = damage + (playerLvl * 3f);
+        speed = speed + (playerLvl * 0.5f);
     }
 
 
