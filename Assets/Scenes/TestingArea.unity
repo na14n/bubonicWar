@@ -691,6 +691,79 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &464183176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 464183178}
+  - component: {fileID: 464183177}
+  m_Layer: 0
+  m_Name: spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &464183177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464183176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b24c12d90b0264fb3aeb95b1dd825e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - monsterPrefab: {fileID: 5071512826884542654, guid: 10118dc0bb32c3b4dadc6e16a4a70b77, type: 3}
+    numMonsters: 20
+    spawnInterval: 1
+    waveInterval: 10
+  - monsterPrefab: {fileID: 8553513941937216502, guid: e367fdc6aedb8e04da201081eb57a8ef, type: 3}
+    numMonsters: 20
+    spawnInterval: 1
+    waveInterval: 20
+  - monsterPrefab: {fileID: 6417858036235968804, guid: d63304a80abdfa54db34a10123f8ffd1, type: 3}
+    numMonsters: 20
+    spawnInterval: 1
+    waveInterval: 30
+  - monsterPrefab: {fileID: 1011282718865505951, guid: 365835e545554694ba3b4df087a1f327, type: 3}
+    numMonsters: 20
+    spawnInterval: 1
+    waveInterval: 40
+  - monsterPrefab: {fileID: 365500796528717472, guid: ca1fc9303cb04104c86afde87f1008f9, type: 3}
+    numMonsters: 1
+    spawnInterval: 1
+    waveInterval: 50
+  - monsterPrefab: {fileID: 3881494890513106747, guid: 4b0214955a25dee4e8e13d83faf26116, type: 3}
+    numMonsters: 1
+    spawnInterval: 1
+    waveInterval: 60
+  - monsterPrefab: {fileID: 2440366787629476802, guid: 67807e64a0ef7d7408c7bf9476f0265a, type: 3}
+    numMonsters: 1
+    spawnInterval: 1
+    waveInterval: 70
+--- !u!4 &464183178
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464183176}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.1787596, y: 3.2005272, z: -0.20902006}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &464225793
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,9 +1151,9 @@ MonoBehaviour:
   wepPrefab4: {fileID: 3899272670628070658, guid: 77bb064985096974cae4102eb0610dbb, type: 3}
   wepHandler: {fileID: 2135132413}
   wepTwoChoice: 0
-  wep1: {fileID: 1797997504283864686, guid: d695d891105ce2c458978cf7c2e81af6, type: 3}
+  wep1: {fileID: 1149542122287916587, guid: f6378c0246941574ba7a146f5b720d48, type: 3}
   wep2: {fileID: 133219014674768823, guid: 1541bd90fd70b5f48ac70cf41871a03d, type: 3}
-  wep3: {fileID: 8481914296237620115, guid: 6908cb319a54f0d459fdf6a73085ecf4, type: 3}
+  wep3: {fileID: 1924665392253416958, guid: ce179cd811d808942ae7feadc1fc353f, type: 3}
   wep4: {fileID: 4517808188715060461, guid: 0ed57cd735b3a9a4a9e1b66800b947b9, type: 3}
   wep5: {fileID: 3899272670628070658, guid: 77bb064985096974cae4102eb0610dbb, type: 3}
   wep6: {fileID: 4116892593554493878, guid: 4e0e1c6847d027140bc7f9f5d9eca3ab, type: 3}
