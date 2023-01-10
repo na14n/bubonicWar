@@ -10,7 +10,7 @@ public class healHandler : MonoBehaviour
     public Transform player;
     private Rigidbody2D rb;
     public float followSpeed = 7.0f;
-    public float followDistance = 5.0f;
+    public float followDistance = 3.0f;
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();

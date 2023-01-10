@@ -22,14 +22,16 @@ public class playerStats : MonoBehaviour
     bool wepUnlocked = false;
     public GameObject wepHandler;
     public int wepTwoChoice;
+    public GameObject buttonHandler;
     public GameObject wep1;
     public GameObject wep2;
     public GameObject wep3;
     public GameObject wep4;
     public GameObject wep5;
     public GameObject wep6;
-    public float healInterval = 2f;
-
+    public float healInterval = 1f;
+    public int wepNum1 = 0;
+    public int wepNum2 = 0;
     private float lastHealTime;
     void Start()
     {
@@ -65,10 +67,18 @@ public class playerStats : MonoBehaviour
         if (xp >= maxXP)
         {
             playerLvl = playerLvl + 1;
-            maxXP = maxXP + 150 * 1.5f;
-            lvlUpPanel.SetActive(true);
+            maxXP = maxXP + 150 * 0.5f;
             unlockWep();
+            wepNum1 = Random.Range(1, 5);
+            wepNum2 = Random.Range(1, 5);
+            while (wepNum2 == wepNum1)
+            {
+                wepNum2 = Random.Range(1, 4);
+            }
+            lvlUpPanel.SetActive(true);
+            buttonHandler.GetComponent<buttoHandler>().lvlUpChoices(wepNum1, wepNum2);
             Time.timeScale = 0;
+            xp = 0;
         }
     }
 

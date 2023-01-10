@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class LvlupPanel : MonoBehaviour
 {   
@@ -21,7 +22,7 @@ public class LvlupPanel : MonoBehaviour
         
     }
 
-    public void lvlupPop()
+    public void lvlupPop(int wep1, int wep2)
     {
         panel.SetActive(true);
     }
