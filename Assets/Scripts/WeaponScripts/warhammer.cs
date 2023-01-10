@@ -12,10 +12,13 @@ public class warhammer : MonoBehaviour
     public GameObject[] enemies;
     public float totalatk;
     private bool attackMade;
+    public GameObject Object;
+    public Animator animatorComponent;
+
 
     void Start()
     {   
-
+        animatorComponent = Object.GetComponent<Animator>();  
     }
 
     // Update is called once per frame
@@ -32,6 +35,7 @@ public class warhammer : MonoBehaviour
             {
                 if (collider.gameObject.CompareTag("Enemy"))
                 {
+                    animatorComponent.SetTrigger("hammerAtk");
                     Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(transform.position, attackRange);
                     foreach (Collider2D enemy in enemiesInRange)
                     {
