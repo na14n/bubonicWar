@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class health : MonoBehaviour
-{   
+{
     [SerializeField]
     public float hp = 100;
     public float maxHP = 100;
@@ -27,7 +27,7 @@ public class health : MonoBehaviour
         hp = Mathf.Clamp(hp, 0, maxHP);
         currentMaxHP = maxHPCurrently.GetComponent<playerStats>().maxHP;
     }
-    
+
     public void setHealth(float maxHealth, float health)
     {
         this.maxHP = maxHealth;
@@ -60,13 +60,13 @@ public class health : MonoBehaviour
     }
 
     public void damage(float amount, bool damageReceive)
-    {   
+    {
         Debug.Log("damage is called");
         if (!damageReceive)
         {
-                this.hp -= amount;
-                this.gameObject.GetComponentInChildren<takeDamage>().TakeDamage();
-                damageReceive = true;
+            this.hp -= amount;
+            this.gameObject.GetComponentInChildren<takeDamage>().TakeDamage();
+            damageReceive = true;
 
             if (this.hp <= 0)
             {
@@ -77,17 +77,17 @@ public class health : MonoBehaviour
     }
 
     public void Die()
-    {   
-            GameObject xp = Instantiate(xpPrefab, this.transform.position, Quaternion.identity);
+    {
+        GameObject xp = Instantiate(xpPrefab, this.transform.position, Quaternion.identity);
 
-            int randomNumber = Random.Range(1, 20);
+        int randomNumber = Random.Range(1, 20);
 
-            if (randomNumber >= 19)
-            {
-                GameObject heal = Instantiate(healPrefab, this.transform.position, Quaternion.identity);
-            }
-            Destroy(gameObject);
-            Debug.Log("destroyed cuzz get killed");
+        if (randomNumber >= 19)
+        {
+            GameObject heal = Instantiate(healPrefab, this.transform.position, Quaternion.identity);
+        }
+        Destroy(gameObject);
+        Debug.Log("destroyed cuzz get killed");
 
 
     }

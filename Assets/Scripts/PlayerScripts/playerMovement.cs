@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    
+
     public float speedM;
     public Rigidbody2D p1;
     // public Rigidbody2D p2;
@@ -15,7 +15,7 @@ public class playerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -39,18 +39,18 @@ public class playerMovement : MonoBehaviour
         // Sprite Flip
         if (movement1.x > 0)
         {
-            p1.transform.localScale = new Vector3(1,1,1);
+            p1.transform.localScale = new Vector3(1, 1, 1);
         }
 
         if (movement1.x < 0)
         {
-            p1.transform.localScale = new Vector3(-1,1,1);
+            p1.transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 
     // void player2Movement()
     // {
-        
+
     //     movement2.x = Input.GetAxisRaw("Player 2 X");
     //     movement2.y = Input.GetAxisRaw("Player 2 Y");  
 
