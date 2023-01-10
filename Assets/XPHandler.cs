@@ -10,8 +10,8 @@ public class XPHandler : MonoBehaviour
 
     public Transform player;
     private Rigidbody2D rb;
-    public float followSpeed = 7.0f;
-    public float followDistance = 5.0f;
+    public float followSpeed = 15f;
+    public float followDistance = 5f;
     bool xpGiven = false;
     void Start()
     {
