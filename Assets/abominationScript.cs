@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Pathfinding;
 public class abominationScript : MonoBehaviour
 {
 
@@ -26,53 +26,44 @@ public class abominationScript : MonoBehaviour
 
     public GameObject[] enemies;
     public Transform player;
-    private Rigidbody2D rb;
-    private Vector2 movement;
     float lastAttackTime;
     public playerStats playerStatx;
     public float playerLvl;
     private bool isAttacking = false;
-
+    public int numberofBossRage;
+    public float currentHP;
     // Start is called before the first frame update
 
     void Awake()
     {
         playerStatx = FindObjectOfType<playerStats>();
         playerLvl = playerStatx.playerLvl;
-        scaleEnemy();
     }
     void Start()
     {
-        rb = this.GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
         hp = maxHp;
         setEnemyValues();
+        scaleEnemy();
+        this.GetComponent<AIDestinationSetter>().target = player;
     }
 
     void Update()
     {   
-        float hp = GetComponent<health>().hp;
-
-        if (hp <= maxHp * .3)
+        currentHP = this.GetComponent<health>().hp;
+        if (numberofBossRage == 0)
         {
-            
+            if (currentHP < 200f)
+            {
+                bossRage();
+            }
         }
-    }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        moveCharacter(movement);
-        Swarm();
-    }
+        else {
+            Debug.Log("boss rage");
+        }
 
-    private void Swarm()
-    {
-        Vector3 direction = player.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        direction.Normalize();
-        movement = direction;
-
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
         if (player.transform.position.x > transform.position.x)
         {
             transform.localScale = object1Transform;
@@ -83,10 +74,25 @@ public class abominationScript : MonoBehaviour
         }
     }
 
-    void moveCharacter(Vector2 direction)
+    // Update is called once per frame
+    void FixedUpdate()
     {
-        rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
+
     }
+
+    // private void Swarm()
+    // {
+    //     Vector3 direction = player.position - transform.position;
+    //     float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    //     direction.Normalize();
+    //     movement = direction;
+
+    // }
+
+    // void moveCharacter(Vector2 direction)
+    // {
+    //     rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
+    // }
 
     private void setEnemyValues()
     {
@@ -96,6 +102,7 @@ public class abominationScript : MonoBehaviour
         atkSpeed = data.atkSpeed;
         object1Transform = data.object1Transform;
         object2Transform = data.object2Transform;
+        this.GetComponent<AIPath>().maxSpeed = speed;
     }
     void OnTriggerStay2D(Collider2D collider)
     {
@@ -128,17 +135,20 @@ public class abominationScript : MonoBehaviour
 
     public void scaleEnemy()
     {
-        maxHp = maxHp + (playerLvl * 2);
-        damage = damage + (playerLvl * 2);
+        maxHp = maxHp + (playerLvl * 5f);
+        damage = damage + (playerLvl * 3f);
+        speed = speed + (playerLvl * 0.05f);
     }
 
+
     public void bossRage()
-    {
+    {   
+        numberofBossRage = 1;
         object1Transform = object1Transform * 1.5f;
         object2Transform = object2Transform * 1.5f;
-        speed = speed + 1;
-        damage = damage * 0.5f;
-        GetComponent<health>().healHp(maxHp * .3f);
+        speed = speed + 1.5f;
+        damage = damage * 1.5f;
+        GetComponent<health>().healHp(maxHp * 1.3f);
     }
 
 }

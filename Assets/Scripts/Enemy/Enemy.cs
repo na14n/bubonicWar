@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditorInternal;
+using Pathfinding;
 
 public class Enemy : MonoBehaviour
 {
@@ -27,12 +28,11 @@ public class Enemy : MonoBehaviour
 
     public GameObject[] enemies;
     public Transform player;
-    private Rigidbody2D rb;
-    private Vector2 movement;
     float lastAttackTime;
     public playerStats playerStatx;
     public float playerLvl;
     private bool isAttacking = false;
+    public int dropWep;
 
     // Start is called before the first frame update
 
@@ -40,39 +40,19 @@ public class Enemy : MonoBehaviour
     {
         playerStatx = FindObjectOfType<playerStats>();
         playerLvl = playerStatx.playerLvl;
-        scaleEnemy();
     }
     void Start()
     {
-        rb = this.GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
         hp = maxHp;
         setEnemyValues();
+        scaleEnemy();
+        this.GetComponent<AIDestinationSetter>().target = player;
     }
 
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            this.GetComponent<health>().damage(5, true);
-            Debug.Log("kill");
-        }
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        moveCharacter(movement);
-        Swarm();
-    }
-
-    private void Swarm()
-    {
-        Vector3 direction = player.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        direction.Normalize();
-        movement = direction;
-
+    {   
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
         if (player.transform.position.x > transform.position.x)
         {
             transform.localScale = object1Transform;
@@ -83,10 +63,25 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void moveCharacter(Vector2 direction)
+    // Update is called once per frame
+    void FixedUpdate()
     {
-        rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
+
     }
+
+    // private void Swarm()
+    // {
+    //     Vector3 direction = player.position - transform.position;
+    //     float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    //     direction.Normalize();
+    //     movement = direction;
+
+    // }
+
+    // void moveCharacter(Vector2 direction)
+    // {
+    //     rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
+    // }
 
     private void setEnemyValues()
     {
@@ -96,6 +91,8 @@ public class Enemy : MonoBehaviour
         atkSpeed = data.atkSpeed;
         object1Transform = data.object1Transform;
         object2Transform = data.object2Transform;
+        this.GetComponent<AIPath>().maxSpeed = speed;
+        this.GetComponent<health>().weaponNum = dropWep;
     }
     void OnTriggerStay2D(Collider2D collider)
     {

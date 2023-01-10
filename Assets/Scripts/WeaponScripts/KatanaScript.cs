@@ -16,11 +16,12 @@ public class KatanaScript : MonoBehaviour
     public float vector_2_y;
     public GameObject Object;
     public Animator animatorComponent;
+    public int critNum;
 
 
     void Start()
-    {   
-        animatorComponent = Object.GetComponent<Animator>();  
+    {
+        animatorComponent = Object.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -30,33 +31,47 @@ public class KatanaScript : MonoBehaviour
         totalatk = characterDmg + atkDamage;
     }
 
-void OnDrawGizmosSelected()
-{   
-    Gizmos.color = Color.red;
-    Vector2 attackRange = new Vector2(vector_2_x, vector_2_y);  // set attackRange.x to 2.0 and attackRange.y to 1.0
-    Gizmos.DrawWireCube(transform.position, attackRange);
-}
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Vector2 attackRange = new Vector2(vector_2_x, vector_2_y);  // set attackRange.x to 2.0 and attackRange.y to 1.0
+        Gizmos.DrawWireCube(transform.position, attackRange);
+    }
 
     void OnTriggerStay2D(Collider2D collider)
     {
-            if (Time.time - lastAttackTime > atkSpeed)
+        if (Time.time - lastAttackTime > atkSpeed)
+        {
+            if (collider.gameObject.CompareTag("Enemy"))
             {
-                if (collider.gameObject.CompareTag("Enemy"))
+                animatorComponent.SetTrigger("katanaAtk");
+                Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(transform.position, attackRange);
+                foreach (Collider2D enemy in enemiesInRange)
                 {
-                    animatorComponent.SetTrigger("katanaAtk");
-                    Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(transform.position, attackRange);
-                    foreach (Collider2D enemy in enemiesInRange)
+                    if (enemy.gameObject.CompareTag("Enemy"))
                     {
-                        if (enemy.gameObject.CompareTag("Enemy"))
+                        int x;
+                        x = Random.Range(0, 100);
+                        if (x >= 80)
+                        {
+                            enemy.GetComponent<health>().damage(2 * (atkDamage + characterDmg), false);
+                            enemy.GetComponent<knockback>().Knockback();
+                            critNum = critNum + 1;
+                        }
+                        else
                         {
                             enemy.GetComponent<health>().damage(atkDamage + characterDmg, false);
                             enemy.GetComponent<knockback>().Knockback();
                         }
+
                     }
-                    
-                    lastAttackTime = Time.time;
                 }
+
+                lastAttackTime = Time.time;
             }
+        }
     }
+
+
 
 }

@@ -5,21 +5,35 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class wepChooserHandler : MonoBehaviour
-{   
+{
     public int buttonClick;
     public int wep1;
     public int wep2;
-
+    public int unlockScythe;
+    public int unlockKatana;
     public Button btn1;
     public Button btn2;
     public Button btn3;
     public Button btn4;
     public Button btn5;
     public Button btn6;
+    public Button btn7;
+    public Button btn8;
 
     void Start()
     {
-        
+        unlockScythe = PlayerPrefs.GetInt("Katana");
+        unlockKatana = PlayerPrefs.GetInt("Scythe");
+
+        if (unlockKatana == 0)
+        {
+            btn7.interactable = false;
+        }
+
+        if (unlockScythe == 0)
+        {
+            btn8.interactable = false;
+        }
     }
 
     // Update is called once per frame
@@ -30,10 +44,10 @@ public class wepChooserHandler : MonoBehaviour
 
     void FixedUpdate()
     {
-                if (buttonClick >= 2)
-            {   
-                SceneManager.LoadScene(2);
-            }
+        if (buttonClick >= 2)
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
     public void swordBtn()
@@ -45,7 +59,7 @@ public class wepChooserHandler : MonoBehaviour
             variablePasser.Instance.firstWep = wep1;
         }
 
-            if (buttonClick == 1)
+        if (buttonClick == 1)
         {
             wep2 = 1;
             closeAllBtn();
@@ -59,7 +73,7 @@ public class wepChooserHandler : MonoBehaviour
     public void SpearBtn()
     {
         this.gameObject.SetActive(false);
-        
+
         if (buttonClick == 0)
         {
             wep1 = 2;
@@ -81,7 +95,7 @@ public class wepChooserHandler : MonoBehaviour
     public void shieldBtn()
     {
         this.gameObject.SetActive(false);
-        
+
         if (buttonClick == 0)
         {
             wep1 = 3;
@@ -100,15 +114,15 @@ public class wepChooserHandler : MonoBehaviour
         btn3.interactable = false;
     }
 
-        public void daggerBtn()
+    public void daggerBtn()
     {
         this.gameObject.SetActive(false);
-        
+
         if (buttonClick == 0)
         {
             wep1 = 4;
             variablePasser.Instance.firstWep = wep1;
-            
+
         }
 
         if (buttonClick == 1)
@@ -118,15 +132,15 @@ public class wepChooserHandler : MonoBehaviour
             variablePasser.Instance.secondWep = wep2;
             SceneManager.LoadScene(2);
         }
-        
+
         buttonClick++;
         btn4.interactable = false;
     }
 
-        public void axeBtn()
+    public void axeBtn()
     {
         this.gameObject.SetActive(false);
-        
+
         if (buttonClick == 0)
         {
             wep1 = 5;
@@ -140,15 +154,15 @@ public class wepChooserHandler : MonoBehaviour
             variablePasser.Instance.secondWep = wep2;
             SceneManager.LoadScene(2);
         }
-        
+
         buttonClick++;
         btn5.interactable = false;
     }
 
-        public void warHamBtn()
+    public void warHamBtn()
     {
         this.gameObject.SetActive(false);
-        
+
         if (buttonClick == 0)
         {
             wep1 = 6;
@@ -162,9 +176,52 @@ public class wepChooserHandler : MonoBehaviour
             variablePasser.Instance.secondWep = wep2;
             SceneManager.LoadScene(2);
         }
-        
+
         buttonClick++;
         btn6.interactable = false;
+    }
+
+    public void katana()
+    {
+        this.gameObject.SetActive(false);
+        if (buttonClick == 0)
+        {
+            wep1 = 7;
+            variablePasser.Instance.firstWep = wep1;
+        }
+
+        if (buttonClick == 1)
+        {
+            wep2 = 7;
+            closeAllBtn();
+            variablePasser.Instance.secondWep = wep2;
+            SceneManager.LoadScene(2);
+        }
+
+        buttonClick++;
+        btn7.interactable = false;
+    }
+
+    public void Scythe()
+    {
+        this.gameObject.SetActive(false);
+
+        if (buttonClick == 0)
+        {
+            wep1 = 8;
+            variablePasser.Instance.firstWep = wep1;
+        }
+
+        if (buttonClick == 1)
+        {
+            wep2 = 8;
+            closeAllBtn();
+            variablePasser.Instance.secondWep = wep2;
+            SceneManager.LoadScene(2);
+        }
+
+        buttonClick++;
+        btn8.interactable = false;
     }
 
     public void closeAllBtn()

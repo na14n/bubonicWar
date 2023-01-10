@@ -50,6 +50,8 @@ void OnDrawGizmosSelected()
                         {
                             enemy.GetComponent<health>().damage(atkDamage + characterDmg, false);
                             enemy.GetComponent<knockback>().Knockback();
+                            enemy.GetComponent<health>().healHp((atkDamage + characterDmg) * 0.025f);
+                            
                         }
                     }
                     lastAttackTime = Time.time;
