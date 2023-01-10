@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5418912576166562317
+--- !u!1 &347845231
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5418912576166562316}
-  - component: {fileID: 5418912576166562319}
-  - component: {fileID: 5418912576166562318}
+  - component: {fileID: 347845232}
+  - component: {fileID: 347845234}
+  - component: {fileID: 347845233}
   m_Layer: 0
-  m_Name: Square
+  m_Name: katanaAtk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5418912576166562316
+--- !u!4 &347845232
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5418912576166562317}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.09, y: 0.02, z: -1}
-  m_LocalScale: {x: 2.069936, y: 2.069936, z: 2.069936}
+  m_GameObject: {fileID: 347845231}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.34, y: 0.15, z: 2}
+  m_LocalScale: {x: 4.3790197, y: 4.4390197, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5418912577625328726}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5418912576166562319
+--- !u!212 &347845234
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5418912576166562317}
+  m_GameObject: {fileID: 347845231}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: db3f1c91604cfc3418980d62d21b85f5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae5a756f6c4d9d349aaa313d4576c98d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,17 +85,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5418912576166562318
+--- !u!95 &347845233
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5418912576166562317}
+  m_GameObject: {fileID: 347845231}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e2f2c5a4473e9624e8de9fc0c8d590cc, type: 2}
+  m_Controller: {fileID: 9100000, guid: 650c2158773a8044b9dcb9d684da6413, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -130,13 +130,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5418912577625328725}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.921, y: 0.064, z: -0.64133644}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.95, y: 0.064, z: -0.64133644}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5418912576166562316}
   - {fileID: 5418912578046899561}
+  - {fileID: 347845232}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -154,10 +154,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atkDamage: 5
   characterDmg: 0
-  atkSpeed: 0.5
+  atkSpeed: 2
   attackRange: 3
   enemies: []
   totalatk: 0
+  vector_2_x: 3.25
+  vector_2_y: 3.25
+  Object: {fileID: 347845231}
+  animatorComponent: {fileID: 0}
 --- !u!61 &5418912577625328724
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -171,7 +175,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.010307312, y: 0.00000011920929}
+  m_Offset: {x: 0.0032742023, y: 0.00000023841858}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -182,7 +186,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.0234413, y: 2.010916}
+  m_Size: {x: 3.2498121, y: 3.248722}
   m_EdgeRadius: 0
 --- !u!1 &5418912578046899606
 GameObject:
@@ -196,6 +200,7 @@ GameObject:
   - component: {fileID: 5418912578046899563}
   - component: {fileID: 5418912578046899560}
   - component: {fileID: 5418912578046899562}
+  - component: {fileID: 6244100882835832950}
   m_Layer: 0
   m_Name: katana
   m_TagString: Untagged
@@ -211,12 +216,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5418912578046899606}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.999, y: -0.038, z: -1}
+  m_LocalPosition: {x: -2.06, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5418912577625328726}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5418912578046899563
 SpriteRenderer:
@@ -303,3 +308,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6244100882835832950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5418912578046899606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ae0faa9dd8ff14296bd533c3fccbaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

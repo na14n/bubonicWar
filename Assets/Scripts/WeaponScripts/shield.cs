@@ -15,10 +15,12 @@ public class shield : MonoBehaviour
     private float playerHP;
     private float lastheal;
     private int healpersec = 5;
+    public GameObject Object;
+    public Animator animatorComponent;
 
     void Start()
     {   
-
+        animatorComponent = Object.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -55,6 +57,7 @@ IEnumerator HealOverTime()
             {
                 if (collider.gameObject.CompareTag("Enemy"))
                 {
+                    animatorComponent.SetTrigger("shieldAtk");
                     Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(transform.position, attackRange);
                     foreach (Collider2D enemy in enemiesInRange)
                     {
@@ -72,7 +75,8 @@ IEnumerator HealOverTime()
 void OnDrawGizmosSelected()
 {   
     Gizmos.color = Color.red;
-    Gizmos.DrawWireSphere(transform.position, attackRange);
+    Vector2 attackRange = new Vector2(2f, 2.5f);  // set attackRange.x to 2.0 and attackRange.y to 1.0
+    Gizmos.DrawWireCube(transform.position, attackRange);
 }
 
 }

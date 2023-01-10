@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fffd1afb3891082429a3a131a45ff5f3, type: 3}
   m_Name: bossFLEA
   m_EditorClassIdentifier: 
-  hp: 300
-  damage: 20
-  speed: 3
-  maxHp: 250
-  atkSpeed: 3
-  object1Transform: {x: 1, y: 1, z: 1}
-  object2Transform: {x: -1, y: 1, z: 1}
+  hp: 750
+  damage: 50
+  speed: 2
+  maxHp: 750
+  atkSpeed: 1
+  object1Transform: {x: 1.5, y: 1.5, z: 1.5}
+  object2Transform: {x: -1.5, y: 1.5, z: 1.5}

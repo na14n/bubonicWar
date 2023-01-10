@@ -12,9 +12,14 @@ public class scythe : MonoBehaviour
     public GameObject[] enemies;
     public float totalatk;
     private bool attackMade;
+    public float vector_2_x;
+    public float vector_2_y;
+    public GameObject Object;
+    public Animator animatorComponent;
 
     void Start()
     {   
+        animatorComponent = Object.GetComponent<Animator>();  
     }
 
     // Update is called once per frame
@@ -27,7 +32,7 @@ public class scythe : MonoBehaviour
 void OnDrawGizmosSelected()
 {   
     Gizmos.color = Color.red;
-    Vector2 attackRange = new Vector2(2.0f, 4.0f);  // set attackRange.x to 2.0 and attackRange.y to 1.0
+    Vector2 attackRange = new Vector2(vector_2_x, vector_2_y);  // set attackRange.x to 2.0 and attackRange.y to 1.0
     Gizmos.DrawWireCube(transform.position, attackRange);
 }
 
@@ -37,6 +42,7 @@ void OnDrawGizmosSelected()
             {
                 if (collider.gameObject.CompareTag("Enemy"))
                 {
+                    animatorComponent.SetTrigger("scytheAtk");
                     Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(transform.position, attackRange);
                     foreach (Collider2D enemy in enemiesInRange)
                     {

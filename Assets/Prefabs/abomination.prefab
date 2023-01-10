@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2440366786807433335}
   - component: {fileID: 2440366786807433337}
   - component: {fileID: 2440366786807433334}
+  - component: {fileID: 3968662997600928180}
   m_Layer: 7
   m_Name: abomination_0
   m_TagString: Untagged
@@ -98,6 +99,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageColor: {r: 1, g: 0, b: 0, a: 0.78431374}
+--- !u!95 &3968662997600928180
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2440366786807433332}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f4b5e28f941c0074dab9dbffe9667cea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2440366787629476802
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,8 +150,8 @@ Transform:
   m_GameObject: {fileID: 2440366787629476802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.23, y: -2.46, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2440366786807433335}
   m_Father: {fileID: 0}
@@ -230,8 +251,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 0.79}
+  m_Offset: {x: -0.014489755, y: -0.043469638}
+  m_Size: {x: 0.16102049, y: 0.28306073}
   m_Direction: 0
 --- !u!58 &2440366787629476805
 CircleCollider2D:
@@ -248,4 +269,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.57

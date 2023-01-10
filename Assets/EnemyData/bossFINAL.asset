@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fffd1afb3891082429a3a131a45ff5f3, type: 3}
   m_Name: bossFINAL
   m_EditorClassIdentifier: 
-  hp: 500
-  damage: 50
-  speed: 2
-  maxHp: 500
-  atkSpeed: 3
-  object1Transform: {x: 1, y: 1, z: 1}
-  object2Transform: {x: -1, y: 1, z: 1}
+  hp: 1000
+  damage: 15
+  speed: 1
+  maxHp: 1000
+  atkSpeed: 0.5
+  object1Transform: {x: 2, y: 2, z: 2}
+  object2Transform: {x: -2, y: 2, z: 2}

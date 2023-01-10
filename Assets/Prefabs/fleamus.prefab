@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3881494890513106742}
   - component: {fileID: 3881494890513106743}
   - component: {fileID: 3881494890513106740}
-  - component: {fileID: 3881494890513106741}
   - component: {fileID: 3881494890513106746}
   m_Layer: 7
   m_Name: fleamus
@@ -31,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3881494890513106747}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.17, y: -7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3881494890993653235}
@@ -74,7 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7548fc360aedbdd4a91a609f5c165226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackForce: 10
+  knockbackForce: 1
   knockedBack: 0
 --- !u!114 &3881494890513106743
 MonoBehaviour:
@@ -119,22 +118,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &3881494890513106741
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3881494890513106747}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 0.76}
-  m_Direction: 0
 --- !u!58 &3881494890513106746
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -150,7 +133,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.64
 --- !u!1 &3881494890993653232
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,6 +145,7 @@ GameObject:
   - component: {fileID: 3881494890993653235}
   - component: {fileID: 3881494890993653229}
   - component: {fileID: 3881494890993653234}
+  - component: {fileID: 668930503380530251}
   m_Layer: 7
   m_Name: fleamus_0
   m_TagString: Untagged
@@ -249,3 +233,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageColor: {r: 1, g: 0, b: 0, a: 0.78431374}
+--- !u!95 &668930503380530251
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3881494890993653232}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1e909fe34ff90d844be78ab5b0ecdfba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -12,10 +12,12 @@ public class AxeScript : MonoBehaviour
     public GameObject[] enemies;
     public float totalatk;
     private bool attackMade;
+    public GameObject Object;
+    public Animator animatorComponent;
 
     void Start()
-    {
-
+    {   
+        animatorComponent = Object.GetComponent<Animator>();  
     }
 
     // Update is called once per frame
@@ -28,30 +30,31 @@ public class AxeScript : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collider)
     {
-        if (Time.time - lastAttackTime > atkSpeed)
-        {
-            if (collider.gameObject.CompareTag("Enemy"))
+            if (Time.time - lastAttackTime > atkSpeed)
             {
-                Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(transform.position, attackRange);
-                foreach (Collider2D enemy in enemiesInRange)
+                if (collider.gameObject.CompareTag("Enemy"))
                 {
-                    if (enemy.gameObject.CompareTag("Enemy"))
+                    animatorComponent.SetTrigger("axeAtk");
+                    Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(transform.position, attackRange);
+                    foreach (Collider2D enemy in enemiesInRange)
                     {
-                        enemy.GetComponent<health>().damage(atkDamage + characterDmg, false);
-                        enemy.GetComponent<knockback>().Knockback();
+                        if (enemy.gameObject.CompareTag("Enemy"))
+                        {
+                            enemy.GetComponent<health>().damage(atkDamage + characterDmg, false);
+                            enemy.GetComponent<knockback>().Knockback();
+                        }
                     }
+                    lastAttackTime = Time.time;
                 }
-                lastAttackTime = Time.time;
             }
-        }
     }
 
 
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
-    }
+void OnDrawGizmosSelected()
+{   
+    Gizmos.color = Color.red;
+    Gizmos.DrawWireSphere(transform.position, attackRange);
+}
 
 
 }
