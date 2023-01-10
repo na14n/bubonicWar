@@ -130,7 +130,7 @@ public class Enemy : MonoBehaviour
     {
         maxHp = maxHp + (playerLvl * 5f);
         damage = damage + (playerLvl * 3f);
-        speed = speed + (playerLvl * 0.5f);
+        speed = speed + (playerLvl * 0.05f);
     }
 
 
