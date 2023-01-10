@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1011282718865505948}
   - component: {fileID: 1011282718865505945}
   - component: {fileID: 1011282718865505942}
-  - component: {fileID: 1011282718865505925}
   - component: {fileID: 5083544477886338216}
   m_Layer: 7
   m_Name: fleaBig
@@ -120,23 +119,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
---- !u!70 &1011282718865505925
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1011282718865505951}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.75, y: 0.76}
-  m_Direction: 0
+  m_Radius: 0.54
 --- !u!114 &5083544477886338216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7548fc360aedbdd4a91a609f5c165226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackForce: 10
+  knockbackForce: 0.5
   knockedBack: 0
 --- !u!1 &8207916950387278818
 GameObject:
