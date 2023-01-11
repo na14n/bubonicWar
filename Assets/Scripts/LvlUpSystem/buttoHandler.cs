@@ -13,8 +13,10 @@ public class buttoHandler : MonoBehaviour
     public float speed;
     public int button1;
     public int button2;
-        public TextMeshProUGUI text1;
+    public TextMeshProUGUI text1;
     public TextMeshProUGUI text2;
+    public Button buttonx1;
+    public Button buttonx2;
     void Start()
     {
 
@@ -22,7 +24,9 @@ public class buttoHandler : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        buttonx1.interactable = true;
+        buttonx2.interactable = true;
                 
         if (button1 == 1)
         {

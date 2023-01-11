@@ -225,7 +225,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &40540458
 GameObject:
@@ -720,7 +720,7 @@ RectTransform:
   - {fileID: 1938155268}
   - {fileID: 928627847}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1043,7 +1043,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &645465084
 GameObject:
@@ -1217,7 +1217,7 @@ Transform:
   - {fileID: 272592948}
   - {fileID: 2135132415}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &843177280
 CapsuleCollider2D:
@@ -2414,6 +2414,8 @@ MonoBehaviour:
   button2: 0
   text1: {fileID: 1356547401}
   text2: {fileID: 1117724490}
+  buttonx1: {fileID: 0}
+  buttonx2: {fileID: 0}
 --- !u!1 &1813768968
 GameObject:
   m_ObjectHideFlags: 0
@@ -2980,7 +2982,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5943360512453877001, guid: 1932e6191c1a07e4b9a1905b8261bb27, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5943360512453877001, guid: 1932e6191c1a07e4b9a1905b8261bb27, type: 3}
       propertyPath: m_LocalPosition.x
