@@ -37,15 +37,6 @@ public class playerMovement : MonoBehaviour
         movement1.y = Input.GetAxisRaw("Player 2 Y");
 
         // Sprite Flip
-        if (movement1.x > 0)
-        {
-            p1.transform.localScale = new Vector3(1, 1, 1);
-        }
-
-        if (movement1.x < 0)
-        {
-            p1.transform.localScale = new Vector3(-1, 1, 1);
-        }
     }
 
     // void player2Movement()

@@ -26,9 +26,9 @@ public class shield : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        characterDmg = transform.parent.parent.GetComponent<playerStats>().baseDamage;
+        characterDmg = transform.parent.parent.parent.GetComponent<playerStats>().baseDamage;
         totalatk = characterDmg + atkDamage;
-        playerHP = transform.parent.parent.GetComponent<health>().hp;
+        playerHP = transform.parent.parent.parent.GetComponent<health>().hp;
     }
 
     void FixedUpdate()
@@ -44,7 +44,7 @@ IEnumerator HealOverTime()
 {
     while (true)
     {
-        transform.parent.parent.GetComponent<health>().healHp(playerHP * 0.01f);
+        transform.parent.parent.parent.GetComponent<health>().healHp(playerHP * 0.01f);
         Debug.Log("healing for everyone");
         lastheal = Time.time;  // update lastheal here
         yield return new WaitForSeconds(healpersec);

@@ -18,6 +18,7 @@ public class health : MonoBehaviour
     public GameObject dropWep1;
     public GameObject dropWep2;
     public float weaponNum;
+    public int abominationSpawn;
     void Start()
     {
         maxHPCurrently = FindObjectOfType<playerStats>();
@@ -96,6 +97,11 @@ public class health : MonoBehaviour
             Debug.Log("not a guardian");
         }
 
+        if (abominationSpawn == 1)
+        {
+            this.GetComponent<abominationScript>().abominationSpawn();
+        }
+
         GameObject xp = Instantiate(xpPrefab, this.transform.position, Quaternion.identity);
 
         int randomNumber = Random.Range(1, 20);
@@ -109,6 +115,8 @@ public class health : MonoBehaviour
 
         
     }
+
+
 
 
 }

@@ -27,7 +27,7 @@ public class doubledagger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        characterDmg = transform.parent.parent.GetComponent<playerStats>().baseDamage;
+        characterDmg = transform.parent.parent.parent.GetComponent<playerStats>().baseDamage;
         totalatk = characterDmg + atkDamage;
     }
 

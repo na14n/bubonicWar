@@ -25,8 +25,6 @@ public class buttoHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        buttonx1.interactable = true;
-        buttonx2.interactable = true;
                 
         if (button1 == 1)
         {

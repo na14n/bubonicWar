@@ -25,7 +25,7 @@ public class scythe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        characterDmg = transform.parent.parent.GetComponent<playerStats>().baseDamage;
+        characterDmg = transform.parent.parent.parent.GetComponent<playerStats>().baseDamage;
         totalatk = characterDmg + atkDamage;
     }
 
@@ -50,7 +50,7 @@ public class scythe : MonoBehaviour
                     {
                         enemy.GetComponent<health>().damage(atkDamage + characterDmg, false);
                         enemy.GetComponent<knockback>().Knockback();
-                        transform.parent.parent.GetComponent<health>().healHp((atkDamage + characterDmg) * 0.025f);
+                        transform.parent.parent.parent.GetComponent<health>().healHp((atkDamage + characterDmg) * 0.025f);
                     }
                 }
                 lastAttackTime = Time.time;

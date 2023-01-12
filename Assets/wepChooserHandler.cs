@@ -46,7 +46,7 @@ public class wepChooserHandler : MonoBehaviour
     {
         if (buttonClick >= 2)
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(1);
         }
     }
 
@@ -64,7 +64,7 @@ public class wepChooserHandler : MonoBehaviour
             wep2 = 1;
             closeAllBtn();
             variablePasser.Instance.secondWep = wep2;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(1);
         }
         buttonClick++;
         btn1.interactable = false;
@@ -85,7 +85,7 @@ public class wepChooserHandler : MonoBehaviour
             wep2 = 2;
             closeAllBtn();
             variablePasser.Instance.secondWep = wep2;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(1);
         }
 
         buttonClick++;
@@ -107,7 +107,7 @@ public class wepChooserHandler : MonoBehaviour
             wep2 = 3;
             closeAllBtn();
             variablePasser.Instance.secondWep = wep2;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(1);
         }
 
         buttonClick++;
@@ -130,7 +130,7 @@ public class wepChooserHandler : MonoBehaviour
             wep2 = 4;
             closeAllBtn();
             variablePasser.Instance.secondWep = wep2;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(1);
         }
 
         buttonClick++;
@@ -152,7 +152,7 @@ public class wepChooserHandler : MonoBehaviour
             wep2 = 5;
             closeAllBtn();
             variablePasser.Instance.secondWep = wep2;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(1);
         }
 
         buttonClick++;
@@ -174,7 +174,7 @@ public class wepChooserHandler : MonoBehaviour
             wep2 = 6;
             closeAllBtn();
             variablePasser.Instance.secondWep = wep2;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(1);
         }
 
         buttonClick++;
@@ -195,7 +195,7 @@ public class wepChooserHandler : MonoBehaviour
             wep2 = 7;
             closeAllBtn();
             variablePasser.Instance.secondWep = wep2;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(1);
         }
 
         buttonClick++;
@@ -217,7 +217,7 @@ public class wepChooserHandler : MonoBehaviour
             wep2 = 8;
             closeAllBtn();
             variablePasser.Instance.secondWep = wep2;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(1);
         }
 
         buttonClick++;
@@ -233,6 +233,4 @@ public class wepChooserHandler : MonoBehaviour
         btn5.interactable = false;
         btn6.interactable = false;
     }
-
-
 }
