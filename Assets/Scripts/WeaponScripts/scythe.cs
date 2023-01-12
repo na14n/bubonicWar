@@ -18,8 +18,8 @@ public class scythe : MonoBehaviour
     public Animator animatorComponent;
 
     void Start()
-    {   
-        animatorComponent = Object.GetComponent<Animator>();  
+    {
+        animatorComponent = Object.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -29,34 +29,33 @@ public class scythe : MonoBehaviour
         totalatk = characterDmg + atkDamage;
     }
 
-void OnDrawGizmosSelected()
-{   
-    Gizmos.color = Color.red;
-    Vector2 attackRange = new Vector2(vector_2_x, vector_2_y);  // set attackRange.x to 2.0 and attackRange.y to 1.0
-    Gizmos.DrawWireCube(transform.position, attackRange);
-}
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Vector2 attackRange = new Vector2(vector_2_x, vector_2_y);  // set attackRange.x to 2.0 and attackRange.y to 1.0
+        Gizmos.DrawWireCube(transform.position, attackRange);
+    }
 
     void OnTriggerStay2D(Collider2D collider)
     {
-            if (Time.time - lastAttackTime > atkSpeed)
+        if (Time.time - lastAttackTime > atkSpeed)
+        {
+            if (collider.gameObject.CompareTag("Enemy") || collider.gameObject.CompareTag("Guardian"))
             {
-                if (collider.gameObject.CompareTag("Enemy"))
+                animatorComponent.SetTrigger("scytheAtk");
+                Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(transform.position, attackRange);
+                foreach (Collider2D enemy in enemiesInRange)
                 {
-                    animatorComponent.SetTrigger("scytheAtk");
-                    Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(transform.position, attackRange);
-                    foreach (Collider2D enemy in enemiesInRange)
+                    if (enemy.gameObject.CompareTag("Enemy") || enemy.gameObject.CompareTag("Guardian"))
                     {
-                        if (enemy.gameObject.CompareTag("Enemy"))
-                        {
-                            enemy.GetComponent<health>().damage(atkDamage + characterDmg, false);
-                            enemy.GetComponent<knockback>().Knockback();
-                            enemy.GetComponent<health>().healHp((atkDamage + characterDmg) * 0.025f);
-                            
-                        }
+                        enemy.GetComponent<health>().damage(atkDamage + characterDmg, false);
+                        enemy.GetComponent<knockback>().Knockback();
+                        transform.parent.parent.GetComponent<health>().healHp((atkDamage + characterDmg) * 0.025f);
                     }
-                    lastAttackTime = Time.time;
                 }
+                lastAttackTime = Time.time;
             }
+        }
     }
 
 }

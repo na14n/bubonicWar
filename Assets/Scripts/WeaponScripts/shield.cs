@@ -51,26 +51,26 @@ IEnumerator HealOverTime()
     }
 }
 
-    void OnTriggerStay2D(Collider2D collider)
+void OnTriggerStay2D(Collider2D collider)
+{
+    if (Time.time - lastAttackTime > atkSpeed)
     {
-            if (Time.time - lastAttackTime > atkSpeed)
+        if (collider.gameObject.CompareTag("Enemy") || collider.gameObject.CompareTag("Guardian"))
+        {
+            animatorComponent.SetTrigger("shieldAtk");
+            Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(transform.position, attackRange);
+            foreach (Collider2D enemy in enemiesInRange)
             {
-                if (collider.gameObject.CompareTag("Enemy"))
+                if (enemy.gameObject.CompareTag("Enemy") || enemy.gameObject.CompareTag("Guardian"))
                 {
-                    animatorComponent.SetTrigger("shieldAtk");
-                    Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(transform.position, attackRange);
-                    foreach (Collider2D enemy in enemiesInRange)
-                    {
-                        if (enemy.gameObject.CompareTag("Enemy"))
-                        {
-                            enemy.GetComponent<health>().damage(atkDamage + characterDmg, false);
-                            enemy.GetComponent<knockback>().Knockback();
-                        }
-                    }
-                    lastAttackTime = Time.time;
+                    enemy.GetComponent<health>().damage(atkDamage + characterDmg, false);
+                    enemy.GetComponent<knockback>().Knockback();
                 }
             }
+            lastAttackTime = Time.time;
+        }
     }
+}
 
 void OnDrawGizmosSelected()
 {   

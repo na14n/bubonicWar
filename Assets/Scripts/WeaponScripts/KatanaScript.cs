@@ -42,13 +42,13 @@ public class KatanaScript : MonoBehaviour
     {
         if (Time.time - lastAttackTime > atkSpeed)
         {
-            if (collider.gameObject.CompareTag("Enemy"))
+            if (collider.gameObject.CompareTag("Enemy") || collider.gameObject.CompareTag("Guardian"))
             {
                 animatorComponent.SetTrigger("katanaAtk");
                 Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(transform.position, attackRange);
                 foreach (Collider2D enemy in enemiesInRange)
                 {
-                    if (enemy.gameObject.CompareTag("Enemy"))
+                    if (enemy.gameObject.CompareTag("Enemy") || enemy.gameObject.CompareTag("Guardian"))
                     {
                         int x;
                         x = Random.Range(0, 100);
