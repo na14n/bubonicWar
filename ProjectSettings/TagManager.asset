@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - XP
+  - Guardian
   layers:
   - Default
   - TransparentFX

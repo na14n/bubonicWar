@@ -35,10 +35,10 @@ if(Input.GetKeyDown(KeyCode.E))
             return;
         }
 weapons[weaponIndex].SetActive(false);
-weapons[weaponIndex].GetComponent<Collider2D>().enabled = false;
+// weapons[weaponIndex].GetComponent<Collider2D>().enabled = false;
 
 weapons[newIndex].SetActive(true);
-weapons[newIndex].GetComponent<Collider2D>().enabled = true;
+// weapons[newIndex].GetComponent<Collider2D>().enabled = true;
 weaponIndex = newIndex;
 currentWep = weapons[weaponIndex];
     }
@@ -58,10 +58,10 @@ if(Input.GetKeyDown(KeyCode.Q))
             return;
         }
 weapons[weaponIndex].SetActive(false);
-weapons[weaponIndex].GetComponent<Collider2D>().enabled = false;
+// weapons[weaponIndex].GetComponent<Collider2D>().enabled = false;
 
 weapons[newIndex].SetActive(true);
-weapons[newIndex].GetComponent<Collider2D>().enabled = true;
+// weapons[newIndex].GetComponent<Collider2D>().enabled = true;
 weaponIndex = newIndex;
 currentWep = weapons[weaponIndex];
     }
@@ -100,11 +100,11 @@ public void AddNewWeapon(GameObject newWeaponPrefab)
 
     // Set the new weapon to be the active weapon
     newWeapon.SetActive(true);
-    newWeapon.GetComponent<Collider2D>().enabled = true;
+    // newWeapon.GetComponent<Collider2D>().enabled = true;
 
     // Deactivate the current weapon and disable its collider
     currentWep.SetActive(false);
-    currentWep.GetComponent<Collider2D>().enabled = false;
+    // currentWep.GetComponent<Collider2D>().enabled = false;
 
     // Update the weaponIndex and currentWep variables
     weaponIndex = totalWeapons - 1;

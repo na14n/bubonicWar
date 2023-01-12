@@ -151,4 +151,9 @@ public class abominationScript : MonoBehaviour
         GetComponent<health>().healHp(maxHp * 1.3f);
     }
 
+    public void abominationSpawn()
+    {
+        PlayerPrefs.SetInt("Abomination", 1);
+    }
+
 }
