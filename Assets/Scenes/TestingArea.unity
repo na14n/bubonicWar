@@ -1824,7 +1824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atkDamage: 10
   characterDmg: 0
-  atkSpeed: 1
+  atkSpeed: 0.5
   attackRange: 3
   enemies: []
   totalatk: 0
@@ -2186,7 +2186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atkDamage: 10
   characterDmg: 0
-  atkSpeed: 1
+  atkSpeed: 0.5
   attackRange: 3
   enemies: []
   totalatk: 0
@@ -2891,7 +2891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atkDamage: 10
   characterDmg: 0
-  atkSpeed: 1
+  atkSpeed: 0.5
   attackRange: 3
   enemies: []
   totalatk: 0
@@ -4864,7 +4864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atkDamage: 10
   characterDmg: 0
-  atkSpeed: 1
+  atkSpeed: 0.5
   attackRange: 3
   enemies: []
   totalatk: 0
@@ -5503,6 +5503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedM: 5
   p1: {fileID: 843177281}
+  movement1: {x: 0, y: 0}
 --- !u!114 &843177283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5704,7 +5705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atkDamage: 10
   characterDmg: 0
-  atkSpeed: 1
+  atkSpeed: 0.5
   attackRange: 3
   enemies: []
   totalatk: 0
@@ -7035,7 +7036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atkDamage: 10
   characterDmg: 0
-  atkSpeed: 1
+  atkSpeed: 0.5
   attackRange: 3
   enemies: []
   totalatk: 0
@@ -7954,6 +7955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atkSpeed: 1
+  movementVector: {x: 0, y: 0, z: 0}
   left: {fileID: 1090119753}
   right: {fileID: 3913517550954054704}
   up: {fileID: 694459254}
@@ -10639,7 +10641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atkDamage: 10
   characterDmg: 0
-  atkSpeed: 1
+  atkSpeed: 0.5
   attackRange: 3
   enemies: []
   totalatk: 0
@@ -14606,7 +14608,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atkDamage: 10
   characterDmg: 0
-  atkSpeed: 1
+  atkSpeed: 0.5
   attackRange: 3
   enemies: []
   totalatk: 0
