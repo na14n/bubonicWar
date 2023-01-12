@@ -7,7 +7,7 @@ public class scythe : MonoBehaviour
     public float atkDamage = 10;
     public float characterDmg;
     public float atkSpeed = 0.5f;
-    float lastAttackTime;
+    public static float lastAttackTime;
     [HideInInspector]public float attackRange = 3f;
     public GameObject[] enemies;
     public float totalatk;
@@ -20,6 +20,7 @@ public class scythe : MonoBehaviour
     public float z_rotation;
     public GameObject Object;
     public Animator animatorComponent;
+
 
     void Start()
     {
@@ -47,7 +48,7 @@ public class scythe : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collider)
     {
-        if (Time.time - lastAttackTime > atkSpeed)
+        if (Time.time - scythe.lastAttackTime > atkSpeed)
         {
             if (collider.gameObject.CompareTag("Enemy") || collider.gameObject.CompareTag("Guardian"))
             {
@@ -62,7 +63,7 @@ public class scythe : MonoBehaviour
                         transform.parent.parent.parent.GetComponent<health>().healHp((atkDamage + characterDmg) * 0.025f);
                     }
                 }
-                lastAttackTime = Time.time;
+                scythe.lastAttackTime = Time.time;
             }
         }
     }

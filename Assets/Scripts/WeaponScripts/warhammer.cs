@@ -7,7 +7,7 @@ public class warhammer : MonoBehaviour
     public float atkDamage = 7;
     public float characterDmg;
     public float atkSpeed = 1f;
-    float lastAttackTime;
+    public static float lastAttackTime;
     public float attackRange = 2f;
     public GameObject[] enemies;
     public float totalatk;
@@ -31,7 +31,7 @@ public class warhammer : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collider)
     {
-        if (Time.time - lastAttackTime > atkSpeed)
+        if (Time.time - warhammer.lastAttackTime > atkSpeed)
         {
             if (collider.gameObject.CompareTag("Enemy") || collider.gameObject.CompareTag("Guardian"))
             {
@@ -45,7 +45,7 @@ public class warhammer : MonoBehaviour
                         enemy.GetComponent<knockback>().Knockback();
                     }
                 }
-                lastAttackTime = Time.time;
+                warhammer.lastAttackTime = Time.time;
             }
         }
     }

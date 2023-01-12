@@ -7,7 +7,7 @@ public class KatanaScript : MonoBehaviour
     public float atkDamage = 10;
     public float characterDmg;
     public float atkSpeed = 0.5f;
-    float lastAttackTime;
+    public static float lastAttackTime;
     public float attackRange = 3f;
     public GameObject[] enemies;
     public float totalatk;
@@ -40,7 +40,7 @@ public class KatanaScript : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collider)
     {
-        if (Time.time - lastAttackTime > atkSpeed)
+        if (Time.time - KatanaScript.lastAttackTime > atkSpeed)
         {
             if (collider.gameObject.CompareTag("Enemy") || collider.gameObject.CompareTag("Guardian"))
             {
@@ -67,7 +67,7 @@ public class KatanaScript : MonoBehaviour
                     }
                 }
 
-                lastAttackTime = Time.time;
+                KatanaScript.lastAttackTime = Time.time;
             }
         }
     }

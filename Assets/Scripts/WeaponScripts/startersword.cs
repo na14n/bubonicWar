@@ -7,7 +7,7 @@ public class startersword : MonoBehaviour
     public float atkDamage = 2;
     public float characterDmg;
     public float atkSpeed = 0.3f;
-    float lastAttackTime;
+    public static float lastAttackTime;
     public float attackRange = 2f;
     public GameObject[] enemies;
     public float totalatk;
@@ -38,7 +38,7 @@ public class startersword : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collider)
     {
-        if (Time.time - lastAttackTime > atkSpeed)
+        if (Time.time - startersword.lastAttackTime > atkSpeed)
         {
             if (collider.gameObject.CompareTag("Enemy") || collider.gameObject.CompareTag("Guardian"))
             {
@@ -52,7 +52,7 @@ public class startersword : MonoBehaviour
                         enemy.GetComponent<knockback>().Knockback();
                     }
                 }
-                lastAttackTime = Time.time;
+                startersword.lastAttackTime = Time.time;
             }
         }
     }

@@ -7,7 +7,7 @@ public class doubledagger : MonoBehaviour
     public float atkDamage = 2;
     public float characterDmg;
     public float atkSpeed = 0.3f;
-    float lastAttackTime;
+    public static float lastAttackTime;
     public float attackRange = 2f;
     public GameObject[] enemies;
     public float totalatk;
@@ -40,7 +40,7 @@ public class doubledagger : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collider)
     {
-        if (Time.time - lastAttackTime > atkSpeed)
+        if (Time.time - doubledagger.lastAttackTime > atkSpeed)
         {
             if (collider.gameObject.CompareTag("Enemy") || collider.gameObject.CompareTag("Guardian"))
             {
@@ -54,7 +54,7 @@ public class doubledagger : MonoBehaviour
                         enemy.GetComponent<knockback>().Knockback();
                     }
                 }
-                lastAttackTime = Time.time;
+                doubledagger.lastAttackTime = Time.time;
             }
         }
     }

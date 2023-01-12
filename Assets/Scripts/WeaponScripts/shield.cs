@@ -7,7 +7,7 @@ public class shield : MonoBehaviour
     public float atkDamage = 3;
     public float characterDmg;
     public float atkSpeed = 1f;
-    float lastAttackTime;
+    public static float lastAttackTime;
     public float attackRange = 4f;
     public GameObject[] enemies;
     public float totalatk;
@@ -53,7 +53,7 @@ IEnumerator HealOverTime()
 
 void OnTriggerStay2D(Collider2D collider)
 {
-    if (Time.time - lastAttackTime > atkSpeed)
+    if (Time.time - shield.lastAttackTime > atkSpeed)
     {
         if (collider.gameObject.CompareTag("Enemy") || collider.gameObject.CompareTag("Guardian"))
         {
@@ -67,7 +67,7 @@ void OnTriggerStay2D(Collider2D collider)
                     enemy.GetComponent<knockback>().Knockback();
                 }
             }
-            lastAttackTime = Time.time;
+            shield.lastAttackTime = Time.time;
         }
     }
 }
