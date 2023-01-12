@@ -1806,8 +1806,7 @@ Transform:
   m_LocalPosition: {x: 0.03, y: -2.65, z: -3.282673}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1069987565}
+  m_Children: []
   m_Father: {fileID: 1241667437}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1825,12 +1824,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atkDamage: 10
   characterDmg: 0
-  atkSpeed: 0.5
+  atkSpeed: 1
   attackRange: 3
   enemies: []
   totalatk: 0
-  vector_2_x: 3
-  vector_2_y: 4.5
+  vector_2_x: 4.5
+  vector_2_y: 3
+  x_offset: 0
+  y_offset: 0.68
+  z_offset: 0
+  z_rotation: 0
   Object: {fileID: 1069987564}
   animatorComponent: {fileID: 0}
 --- !u!61 &166082521
@@ -1846,7 +1849,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.017727256, y: -0.0057575703}
+  m_Offset: {x: -0.017727375, y: 0.68438935}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1857,7 +1860,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.013066, y: 4.497833}
+  m_Size: {x: 4.5, y: 2.9805593}
   m_EdgeRadius: 0
 --- !u!1 &168653560
 GameObject:
@@ -2161,15 +2164,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204394389}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.75, y: -2.59, z: -3.282673}
+  m_LocalRotation: {x: 0, y: 0, z: -0.5, w: 0.8660254}
+  m_LocalPosition: {x: 1.45, y: -1.71, z: -3.282673}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1629057277}
+  m_Children: []
   m_Father: {fileID: 1241667437}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -60}
 --- !u!114 &204394391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2184,12 +2186,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atkDamage: 10
   characterDmg: 0
-  atkSpeed: 0.5
+  atkSpeed: 1
   attackRange: 3
   enemies: []
   totalatk: 0
   vector_2_x: 3
   vector_2_y: 4.5
+  x_offset: 0
+  y_offset: 0
+  z_offset: 0
+  z_rotation: -60
   Object: {fileID: 1629057276}
   animatorComponent: {fileID: 0}
 --- !u!61 &204394392
@@ -2863,15 +2869,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 311726146}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.56, y: 2.71, z: -3.282673}
+  m_LocalRotation: {x: 0, y: 0, z: -0.5, w: 0.8660254}
+  m_LocalPosition: {x: -1.46, y: 1.71, z: -3.282673}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1012227131}
+  m_Children: []
   m_Father: {fileID: 1241667437}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -60}
 --- !u!114 &311726148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2886,12 +2891,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atkDamage: 10
   characterDmg: 0
-  atkSpeed: 0.5
+  atkSpeed: 1
   attackRange: 3
   enemies: []
   totalatk: 0
   vector_2_x: 3
   vector_2_y: 4.5
+  x_offset: 0
+  y_offset: 0
+  z_offset: 0
+  z_rotation: -60
   Object: {fileID: 1012227130}
   animatorComponent: {fileID: 0}
 --- !u!61 &311726149
@@ -4837,8 +4846,7 @@ Transform:
   m_LocalPosition: {x: 0.03, y: 2.79, z: -3.282673}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 914248446}
+  m_Children: []
   m_Father: {fileID: 1241667437}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4856,12 +4864,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atkDamage: 10
   characterDmg: 0
-  atkSpeed: 0.5
+  atkSpeed: 1
   attackRange: 3
   enemies: []
   totalatk: 0
-  vector_2_x: 3
-  vector_2_y: 4.5
+  vector_2_x: 4.46
+  vector_2_y: 3
+  x_offset: 0
+  y_offset: -0.75
+  z_offset: 0
+  z_rotation: 0
   Object: {fileID: 914248445}
   animatorComponent: {fileID: 0}
 --- !u!61 &694459257
@@ -4877,7 +4889,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.017727256, y: -0.0057575703}
+  m_Offset: {x: -0.017727256, y: -0.74}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4888,7 +4900,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.013066, y: 4.497833}
+  m_Size: {x: 4.5, y: 3}
   m_EdgeRadius: 0
 --- !u!1 &742679569
 GameObject:
@@ -5670,15 +5682,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 911555086}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.72, y: 2.74, z: -3.282673}
+  m_LocalRotation: {x: -0, y: -0, z: 0.5, w: 0.8660254}
+  m_LocalPosition: {x: 1.46, y: 1.71, z: -3.282673}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1283262068}
+  m_Children: []
   m_Father: {fileID: 1241667437}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 60}
 --- !u!114 &911555088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5693,12 +5704,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atkDamage: 10
   characterDmg: 0
-  atkSpeed: 0.5
+  atkSpeed: 1
   attackRange: 3
   enemies: []
   totalatk: 0
   vector_2_x: 3
   vector_2_y: 4.5
+  x_offset: 0
+  y_offset: 0
+  z_offset: 0
+  z_rotation: 60
   Object: {fileID: 1283262067}
   animatorComponent: {fileID: 0}
 --- !u!61 &911555089
@@ -5714,7 +5729,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.017727256, y: -0.0057575703}
+  m_Offset: {x: -0.0022511482, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5725,7 +5740,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.013066, y: 4.497833}
+  m_Size: {x: 3.0110679, y: 4.5}
   m_EdgeRadius: 0
 --- !u!1 &914248445
 GameObject:
@@ -5739,7 +5754,7 @@ GameObject:
   - component: {fileID: 914248448}
   - component: {fileID: 914248447}
   m_Layer: 0
-  m_Name: scytheAtk
+  m_Name: scytheAtk_u
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5752,14 +5767,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914248445}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0428, y: -0.0072, z: 3}
-  m_LocalScale: {x: 2.8520005, y: 4.5187263, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.01, y: 2.0515, z: -0.28267288}
+  m_LocalScale: {x: 2.9489686, y: 4.5187263, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 694459255}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1218169577}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!95 &914248447
 Animator:
   serializedVersion: 4
@@ -6475,7 +6490,7 @@ GameObject:
   - component: {fileID: 1012227133}
   - component: {fileID: 1012227132}
   m_Layer: 0
-  m_Name: scytheAtk
+  m_Name: scytheAtk_ul
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6488,13 +6503,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012227130}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0428, y: -0.0072, z: 3}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.5172, y: 2.7028, z: -0.28267288}
   m_LocalScale: {x: 2.8520005, y: 4.5187263, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 311726147}
-  m_RootOrder: 0
+  m_Father: {fileID: 1218169577}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1012227132
 Animator:
@@ -6775,7 +6790,7 @@ GameObject:
   - component: {fileID: 1069987567}
   - component: {fileID: 1069987566}
   m_Layer: 0
-  m_Name: scytheAtk
+  m_Name: scytheAtk_d
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6788,14 +6803,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1069987564}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0428, y: -0.0072, z: 3}
-  m_LocalScale: {x: 2.8520005, y: 4.5187263, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: -1.9588, z: -0.28267288}
+  m_LocalScale: {x: 2.9295747, y: 4.5187263, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 166082519}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1218169577}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!95 &1069987566
 Animator:
   serializedVersion: 4
@@ -7002,8 +7017,7 @@ Transform:
   m_LocalPosition: {x: -1.63, y: -0.18, z: -3.282673}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1305179566}
+  m_Children: []
   m_Father: {fileID: 1241667437}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7021,12 +7035,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atkDamage: 10
   characterDmg: 0
-  atkSpeed: 0.5
+  atkSpeed: 1
   attackRange: 3
   enemies: []
   totalatk: 0
   vector_2_x: 3
   vector_2_y: 4.5
+  x_offset: 0
+  y_offset: 0
+  z_offset: 0
+  z_rotation: 0
   Object: {fileID: 1305179565}
   animatorComponent: {fileID: 0}
 --- !u!61 &1090119756
@@ -7821,6 +7839,45 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.378397, y: 3.7331839}
   m_EdgeRadius: 0
+--- !u!1 &1218169576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1218169577}
+  m_Layer: 0
+  m_Name: animation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1218169577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218169576}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7714151784670898562}
+  - {fileID: 1305179566}
+  - {fileID: 1069987565}
+  - {fileID: 914248446}
+  - {fileID: 1012227131}
+  - {fileID: 1283262068}
+  - {fileID: 1490700821}
+  - {fileID: 1629057277}
+  m_Father: {fileID: 1241667437}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1241667436
 GameObject:
   m_ObjectHideFlags: 0
@@ -7831,6 +7888,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1241667437}
   - component: {fileID: 1241667438}
+  - component: {fileID: 1241667439}
   m_Layer: 0
   m_Name: scytheMain
   m_TagString: Untagged
@@ -7859,6 +7917,7 @@ Transform:
   - {fileID: 911555087}
   - {fileID: 1724449991}
   - {fileID: 204394390}
+  - {fileID: 1218169577}
   m_Father: {fileID: 2135132415}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7869,11 +7928,32 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241667436}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffff65545a3242f49a2d2a56d7183f96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  left: {fileID: 1090119753}
+  right: {fileID: 3913517550954054704}
+  up: {fileID: 694459254}
+  down: {fileID: 166082518}
+  leftdown: {fileID: 1724449990}
+  rightdown: {fileID: 204394389}
+  upright: {fileID: 911555086}
+  upleft: {fileID: 311726146}
+--- !u!114 &1241667439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241667436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c660bc46c8c4874fa7caabf4e4e5402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atkSpeed: 1
   left: {fileID: 1090119753}
   right: {fileID: 3913517550954054704}
   up: {fileID: 694459254}
@@ -7999,7 +8079,7 @@ GameObject:
   - component: {fileID: 1283262070}
   - component: {fileID: 1283262069}
   m_Layer: 0
-  m_Name: scytheAtk
+  m_Name: scytheAtk_ur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8012,13 +8092,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283262067}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0428, y: -0.0072, z: 3}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.7628, y: 2.7328, z: -0.28267288}
   m_LocalScale: {x: 2.8520005, y: 4.5187263, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 911555087}
-  m_RootOrder: 0
+  m_Father: {fileID: 1218169577}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1283262069
 Animator:
@@ -8209,7 +8289,7 @@ GameObject:
   - component: {fileID: 1305179568}
   - component: {fileID: 1305179567}
   m_Layer: 0
-  m_Name: scytheAtk
+  m_Name: scytheAtk_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8222,13 +8302,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305179565}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0428, y: -0.0072, z: 3}
-  m_LocalScale: {x: 2.8520005, y: 4.5187263, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.6551, y: -0.1872, z: -0.28267288}
+  m_LocalScale: {x: 2.9877558, y: 4.5187263, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1090119754}
-  m_RootOrder: 0
+  m_Father: {fileID: 1218169577}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1305179567
 Animator:
@@ -8293,7 +8373,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ae5a756f6c4d9d349aaa313d4576c98d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -9149,7 +9229,7 @@ GameObject:
   - component: {fileID: 1490700823}
   - component: {fileID: 1490700822}
   m_Layer: 0
-  m_Name: scytheAtk
+  m_Name: scytheAtk_dl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9162,13 +9242,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490700820}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0428, y: -0.0072, z: 3}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.3672, y: -2.5672, z: -0.28267288}
   m_LocalScale: {x: 2.8520005, y: 4.5187263, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1724449991}
-  m_RootOrder: 0
+  m_Father: {fileID: 1218169577}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1490700822
 Animator:
@@ -9992,7 +10072,7 @@ GameObject:
   - component: {fileID: 1629057279}
   - component: {fileID: 1629057278}
   m_Layer: 0
-  m_Name: scytheAtk
+  m_Name: scytheAtk_dr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10005,13 +10085,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629057276}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0428, y: -0.0072, z: 3}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.7928, y: -2.5972, z: -0.28267288}
   m_LocalScale: {x: 2.8520005, y: 4.5187263, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 204394390}
-  m_RootOrder: 0
+  m_Father: {fileID: 1218169577}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1629057278
 Animator:
@@ -10537,15 +10617,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724449990}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.41, y: -2.56, z: -3.282673}
+  m_LocalRotation: {x: 0, y: 0, z: 0.5, w: 0.8660254}
+  m_LocalPosition: {x: -1.45, y: -1.71, z: -3.282673}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1490700821}
+  m_Children: []
   m_Father: {fileID: 1241667437}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 60}
 --- !u!114 &1724449992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10560,12 +10639,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atkDamage: 10
   characterDmg: 0
-  atkSpeed: 0.5
+  atkSpeed: 1
   attackRange: 3
   enemies: []
   totalatk: 0
   vector_2_x: 3
   vector_2_y: 4.5
+  x_offset: 0
+  y_offset: 0
+  z_offset: 0
+  z_rotation: 60
   Object: {fileID: 1490700820}
   animatorComponent: {fileID: 0}
 --- !u!61 &1724449993
@@ -14523,12 +14606,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atkDamage: 10
   characterDmg: 0
-  atkSpeed: 0.5
+  atkSpeed: 1
   attackRange: 3
   enemies: []
   totalatk: 0
   vector_2_x: 3
   vector_2_y: 4.5
+  x_offset: 0
+  y_offset: 0
+  z_offset: 0
+  z_rotation: 0
   Object: {fileID: 7714151784670898563}
   animatorComponent: {fileID: 0}
 --- !u!4 &3913517550954054707
@@ -14542,8 +14629,7 @@ Transform:
   m_LocalPosition: {x: 1.6, y: -0.17, z: -3.282673}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7714151784670898562}
+  m_Children: []
   m_Father: {fileID: 1241667437}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15502,12 +15588,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7714151784670898563}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0428, y: -0.0072, z: 3}
-  m_LocalScale: {x: 2.8520005, y: 4.5187263, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.5749, y: -0.1772, z: -0.28267288}
+  m_LocalScale: {x: 2.9877558, y: 4.5187263, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3913517550954054707}
+  m_Father: {fileID: 1218169577}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7714151784670898563
@@ -15522,7 +15608,7 @@ GameObject:
   - component: {fileID: 7714151784670898560}
   - component: {fileID: 7714151784670898561}
   m_Layer: 0
-  m_Name: scytheAtk
+  m_Name: scytheAtk_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

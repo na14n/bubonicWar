@@ -83,7 +83,7 @@ public class weaponMovement : MonoBehaviour
 
 
 
-        else if (Input.GetKey(KeyCode.W))
+        else if (Input.GetKey(KeyCode.W) && !(Input.GetKey(KeyCode.A)) && !(Input.GetKey(KeyCode.D)))
         {
             up.SetActive(true);
 
@@ -96,7 +96,7 @@ public class weaponMovement : MonoBehaviour
             upleft.SetActive(false);
         }
 
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A) && !(Input.GetKey(KeyCode.W)) && !(Input.GetKey(KeyCode.S)))
         {
             left.SetActive(true);
 
@@ -109,7 +109,7 @@ public class weaponMovement : MonoBehaviour
             upleft.SetActive(false);
         }
 
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) && !(Input.GetKey(KeyCode.W)) && !(Input.GetKey(KeyCode.S)))
         {
             right.SetActive(true);
 
@@ -122,7 +122,7 @@ public class weaponMovement : MonoBehaviour
             upleft.SetActive(false);
         }
 
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S) && !(Input.GetKey(KeyCode.A)) && !(Input.GetKey(KeyCode.D)))
         {
             down.SetActive(true);
 

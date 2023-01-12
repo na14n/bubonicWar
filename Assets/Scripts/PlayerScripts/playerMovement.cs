@@ -9,7 +9,10 @@ public class playerMovement : MonoBehaviour
     public Rigidbody2D p1;
     // public Rigidbody2D p2;
 
-    Vector2 movement1;
+    public Vector2 movement1;
+
+    float lastHorizontalVector;
+    float lastVerticalVector;
     // Vector2 movement2;
 
     // Start is called before the first frame update
@@ -35,6 +38,15 @@ public class playerMovement : MonoBehaviour
     {
         movement1.x = Input.GetAxisRaw("Player 2 X");
         movement1.y = Input.GetAxisRaw("Player 2 Y");
+
+        if(movement1.x != 0)
+        {
+            lastHorizontalVector = movement1.x;
+        }
+        if(movement1.y != 0)
+        {
+            lastVerticalVector = movement1.y;
+        }
 
         // Sprite Flip
     }
