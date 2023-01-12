@@ -14,6 +14,10 @@ public class KatanaScript : MonoBehaviour
     private bool attackMade;
     public float vector_2_x;
     public float vector_2_y;
+    public float x_offset;
+    public float y_offset;
+    public float z_offset;
+    public float z_rotation;
     public GameObject Object;
     public Animator animatorComponent;
     public int critNum;
@@ -34,8 +38,12 @@ public class KatanaScript : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Vector2 attackRange = new Vector2(vector_2_x, vector_2_y);  // set attackRange.x to 2.0 and attackRange.y to 1.0
-        Gizmos.DrawWireCube(transform.position, attackRange);
+        Vector3 rotation = new Vector3(0, 0, z_rotation);
+        Vector3 position = new Vector3(x_offset, y_offset, z_offset);
+        Vector3 scale = new Vector3(vector_2_x, vector_2_y, 1);
+        Matrix4x4 matrix = Matrix4x4.TRS(transform.position + position, Quaternion.Euler(rotation), scale);
+        Gizmos.matrix = matrix;
+        Gizmos.DrawWireCube(Vector3.zero, Vector3.one);
     }
 
     void OnTriggerStay2D(Collider2D collider)
