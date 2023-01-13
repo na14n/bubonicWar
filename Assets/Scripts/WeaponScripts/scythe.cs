@@ -22,6 +22,10 @@ public class scythe : MonoBehaviour
     public Animator animatorComponent;
 
 
+    private void Awake() {
+        characterDmg = transform.parent.parent.parent.GetComponent<playerStats>().baseDamage;
+    }
+
     void Start()
     {
         animatorComponent = Object.GetComponent<Animator>();
@@ -59,6 +63,7 @@ public class scythe : MonoBehaviour
                     if (enemy.gameObject.CompareTag("Enemy") || enemy.gameObject.CompareTag("Guardian"))
                     {
                         enemy.GetComponent<health>().damage(atkDamage + characterDmg, false);
+                        Debug.Log(totalatk);
                         enemy.GetComponent<knockback>().Knockback();
                         transform.parent.parent.parent.GetComponent<health>().healHp((atkDamage + characterDmg) * 0.025f);
                     }
