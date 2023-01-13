@@ -68,6 +68,7 @@ MonoBehaviour:
   weaponNum: 0
   abominationSpawn: 0
   damageIndicator: {fileID: 2738551601470835148, guid: ccff22b86fbce014db8638ea997ac021, type: 3}
+  healIndicator: {fileID: 0}
 --- !u!114 &5071512826884542653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7548fc360aedbdd4a91a609f5c165226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackForce: 10
+  knockbackForce: 1.25
   knockedBack: 0
 --- !u!114 &3219151850097984610
 MonoBehaviour:

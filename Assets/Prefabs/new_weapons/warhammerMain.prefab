@@ -150,9 +150,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39cb908ceb27d045b221bec791ea86d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 7
+  atkDamage: 10
   characterDmg: 0
-  atkSpeed: 4
+  atkSpeed: 2.25
   attackRange: 1.75
   enemies: []
   totalatk: 0
@@ -219,9 +219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39cb908ceb27d045b221bec791ea86d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 7
+  atkDamage: 10
   characterDmg: 0
-  atkSpeed: 4
+  atkSpeed: 2.25
   attackRange: 1.75
   enemies: []
   totalatk: 0
@@ -288,9 +288,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39cb908ceb27d045b221bec791ea86d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 7
+  atkDamage: 10
   characterDmg: 0
-  atkSpeed: 4
+  atkSpeed: 2.25
   attackRange: 1.75
   enemies: []
   totalatk: 0
@@ -524,9 +524,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39cb908ceb27d045b221bec791ea86d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 7
+  atkDamage: 10
   characterDmg: 0
-  atkSpeed: 4
+  atkSpeed: 2.25
   attackRange: 1.75
   enemies: []
   totalatk: 0
@@ -698,9 +698,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39cb908ceb27d045b221bec791ea86d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 7
+  atkDamage: 10
   characterDmg: 0
-  atkSpeed: 4
+  atkSpeed: 2.25
   attackRange: 1.75
   enemies: []
   totalatk: 0
@@ -872,9 +872,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39cb908ceb27d045b221bec791ea86d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 7
+  atkDamage: 10
   characterDmg: 0
-  atkSpeed: 4
+  atkSpeed: 2.25
   attackRange: 1.75
   enemies: []
   totalatk: 0
@@ -1085,9 +1085,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39cb908ceb27d045b221bec791ea86d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 7
+  atkDamage: 10
   characterDmg: 0
-  atkSpeed: 4
+  atkSpeed: 2.25
   attackRange: 1.75
   enemies: []
   totalatk: 0
@@ -1469,9 +1469,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39cb908ceb27d045b221bec791ea86d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 7
+  atkDamage: 10
   characterDmg: 0
-  atkSpeed: 4
+  atkSpeed: 2.25
   attackRange: 1.75
   enemies: []
   totalatk: 0

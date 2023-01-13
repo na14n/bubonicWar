@@ -184,6 +184,9 @@ MonoBehaviour:
   dropWep1: {fileID: 0}
   dropWep2: {fileID: 0}
   weaponNum: 0
+  abominationSpawn: 0
+  damageIndicator: {fileID: 0}
+  healIndicator: {fileID: 0}
 --- !u!114 &8553513941937216506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +211,7 @@ MonoBehaviour:
   player: {fileID: 0}
   playerStatx: {fileID: 0}
   playerLvl: 0
+  dropWep: 0
 --- !u!50 &8553513941937216507
 Rigidbody2D:
   serializedVersion: 4
@@ -241,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7548fc360aedbdd4a91a609f5c165226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackForce: 0.5
+  knockbackForce: 1
   knockedBack: 0
 --- !u!58 &-9016484217758219115
 CircleCollider2D:

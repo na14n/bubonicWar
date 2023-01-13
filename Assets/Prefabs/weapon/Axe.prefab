@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 658237048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.000000007450581, z: 2}
-  m_LocalScale: {x: 4.1, y: 4.1, z: 4.1}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3899272670628070663}
   m_RootOrder: 1
@@ -152,10 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 738809a7d2ec6cd479f71ca27b421af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 3
+  atkDamage: 7
   characterDmg: 0
-  atkSpeed: 3
-  attackRange: 2
+  atkSpeed: 2.5
+  attackRange: 3
   enemies: []
   totalatk: 0
   Object: {fileID: 658237048}
@@ -175,7 +175,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.031825066, y: 0.011137724}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 3
 --- !u!1 &3899272671220283743
 GameObject:
   m_ObjectHideFlags: 0

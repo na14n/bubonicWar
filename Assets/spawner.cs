@@ -12,12 +12,13 @@ public class spawner : MonoBehaviour
 
     void Start()
     {
+        GameObject player = GameObject.FindWithTag("Player");
         Invoke("spawnNow", 5f);
     }
 
     public void spawnNow()
     {
-        GameObject player = GameObject.FindWithTag("Player");
+        // GameObject player = GameObject.FindWithTag("Player");
         // Get the Spawner component on this GameObject
         spawner spawner = GetComponent<spawner>();
         // Start the spawner coroutine
