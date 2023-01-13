@@ -22,6 +22,7 @@ public class health : MonoBehaviour
     public int abominationSpawn;
     public GameObject damageIndicator;
     public GameObject healIndicator;
+    public int dropRate;
     void Start()
     {
         maxHPCurrently = FindObjectOfType<playerStats>();
@@ -58,19 +59,19 @@ public class health : MonoBehaviour
         if (wouldBeOverMaxHealth)
         {
             this.hp = maxHP;
-            
+
             GameObject healText = Instantiate(healIndicator, this.transform.position, Quaternion.identity);
             healIndicator.transform.GetChild(0).GetComponent<TextMeshPro>().text = amount.ToString();
-            healIndicator.transform.GetChild(0).GetComponent<TextMeshPro>().color = new Color(255,0,0);
+            healIndicator.transform.GetChild(0).GetComponent<TextMeshPro>().color = new Color(255, 0, 0);
         }
 
         else
         {
             this.hp += amount;
-            
+
             GameObject healText = Instantiate(healIndicator, this.transform.position, Quaternion.identity);
             healIndicator.transform.GetChild(0).GetComponent<TextMeshPro>().text = amount.ToString();
-            healIndicator.transform.GetChild(0).GetComponent<TextMeshPro>().color = new Color(255,0,0);
+            healIndicator.transform.GetChild(0).GetComponent<TextMeshPro>().color = new Color(255, 0, 0);
         }
     }
 
@@ -85,7 +86,7 @@ public class health : MonoBehaviour
 
             GameObject damageText = Instantiate(damageIndicator, this.transform.position, Quaternion.identity);
             damageText.transform.GetChild(0).GetComponent<TextMeshPro>().text = amount.ToString();
-            damageText.transform.GetChild(0).GetComponent<TextMeshPro>().color = new Color(255,0,0);
+            damageText.transform.GetChild(0).GetComponent<TextMeshPro>().color = new Color(255, 0, 0);
             if (this.hp <= 0)
             {
                 Die();
@@ -115,8 +116,13 @@ public class health : MonoBehaviour
         {
             this.GetComponent<abominationScript>().abominationSpawn();
         }
-
-        GameObject xp = Instantiate(xpPrefab, this.transform.position, Quaternion.identity);
+        int randomDroprate = Random.Range(1, 100);
+        
+        // ito yung new update sa xp dropchance bali aayusin mo lang value ng droprate sa inspector kada prefab
+        if (randomDroprate >= dropRate)
+        {
+            GameObject xp = Instantiate(xpPrefab, this.transform.position, Quaternion.identity);
+        }
 
         int randomNumber = Random.Range(1, 20);
 
