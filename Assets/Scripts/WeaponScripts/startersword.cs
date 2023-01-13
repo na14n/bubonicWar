@@ -56,6 +56,7 @@ public class startersword : MonoBehaviour
                 {
                     if (enemy.gameObject.CompareTag("Enemy") || enemy.gameObject.CompareTag("Guardian"))
                     {
+                        Debug.Log(atkDamage+characterDmg);
                         enemy.GetComponent<health>().damage(atkDamage + characterDmg, false);
                         enemy.GetComponent<knockback>().Knockback();
                     }

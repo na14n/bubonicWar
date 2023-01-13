@@ -51,7 +51,7 @@ public class health : MonoBehaviour
     {
         if (amount <= 0)
         {
-            throw new System.ArgumentException("cannot have negative damage");
+            throw new System.ArgumentException("");
         }
 
         bool wouldBeOverMaxHealth = hp + amount > maxHP;
@@ -109,7 +109,7 @@ public class health : MonoBehaviour
 
         else
         {
-            Debug.Log("not a guardian");
+            // Debug.Log("not a guardian");
         }
 
         if (abominationSpawn == 1)
@@ -131,7 +131,7 @@ public class health : MonoBehaviour
             GameObject heal = Instantiate(healPrefab, this.transform.position, Quaternion.identity);
         }
         Destroy(gameObject);
-        Debug.Log("destroyed cuzz get killed");
+        // Debug.Log("destroyed cuzz get killed");
 
 
     }
