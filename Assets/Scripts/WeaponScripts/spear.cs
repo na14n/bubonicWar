@@ -21,6 +21,7 @@ public class spear : MonoBehaviour
     public float z_rotation;
     public GameObject Object;
     public Animator animatorComponent;
+    public Vector3 position;
 
     void Start()
     {
