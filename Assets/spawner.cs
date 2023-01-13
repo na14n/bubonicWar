@@ -10,10 +10,16 @@ public class spawner : MonoBehaviour
     public GameObject player;
     public GameObject boundary;
 
+    
+    private void Awake()
+    {
+        GameObject player = GameObject.FindWithTag("Player");
+        Invoke("spawnNow", 5f);    
+    }
+
     void Start()
     {
         GameObject player = GameObject.FindWithTag("Player");
-        Invoke("spawnNow", 5f);
     }
 
     public void spawnNow()

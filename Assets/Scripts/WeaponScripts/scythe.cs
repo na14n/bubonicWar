@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class scythe : MonoBehaviour
 {
@@ -36,7 +37,6 @@ public class scythe : MonoBehaviour
     {
         characterDmg = transform.parent.parent.parent.GetComponent<playerStats>().baseDamage;
         totalatk = characterDmg + atkDamage;
-
     }
 
     void OnDrawGizmosSelected()
@@ -50,6 +50,11 @@ public class scythe : MonoBehaviour
         Gizmos.DrawWireCube(Vector3.zero, Vector3.one);
     }
 
+    public static float ToSingle(double value)
+{
+     return (float)value;
+}
+
     void OnTriggerStay2D(Collider2D collider)
     {
         if (Time.time - scythe.lastAttackTime > atkSpeed)
@@ -62,7 +67,7 @@ public class scythe : MonoBehaviour
                 {
                     if (enemy.gameObject.CompareTag("Enemy") || enemy.gameObject.CompareTag("Guardian"))
                     {
-                        enemy.GetComponent<health>().damage(atkDamage + characterDmg, false);
+                        enemy.GetComponent<health>().damage((atkDamage + characterDmg), false);
                         Debug.Log(totalatk);
                         enemy.GetComponent<knockback>().Knockback();
                         transform.parent.parent.parent.GetComponent<health>().healHp((atkDamage + characterDmg) * 0.025f);

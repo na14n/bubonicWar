@@ -47,8 +47,8 @@ public class Enemy : MonoBehaviour
     {
         player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
         hp = maxHp;
-        setEnemyValues();
         scaleEnemy();
+        setEnemyValues();
         this.GetComponent<AIDestinationSetter>().target = player;
     }
 
@@ -87,7 +87,7 @@ public class Enemy : MonoBehaviour
 
     private void setEnemyValues()
     {
-        GetComponent<health>().setHealth(data.maxHp + (playerLvl * 3), data.maxHp + (playerLvl * 3));
+        GetComponent<health>().setHealth(data.maxHp + (playerDMG * 2f), data.maxHp + (playerDMG * 2f));
         damage = data.damage + (playerLvl * 2);
         speed = data.speed;
         atkSpeed = data.atkSpeed;
@@ -127,7 +127,6 @@ public class Enemy : MonoBehaviour
 
     public void scaleEnemy()
     {
-        maxHp = maxHp + (playerDMG * 3f);
         damage = damage + (playerLvl * 5f);
     }
 

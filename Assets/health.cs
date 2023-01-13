@@ -51,7 +51,7 @@ public class health : MonoBehaviour
     {
         if (amount <= 0)
         {
-            throw new System.ArgumentException("");
+            throw new System.ArgumentException("You are Healing 0hp");
         }
 
         bool wouldBeOverMaxHealth = hp + amount > maxHP;
@@ -119,7 +119,7 @@ public class health : MonoBehaviour
         int randomDroprate = Random.Range(1, 100);
         
         // ito yung new update sa xp dropchance bali aayusin mo lang value ng droprate sa inspector kada prefab
-        if (randomDroprate >= dropRate)
+        if (randomDroprate <= dropRate)
         {
             GameObject xp = Instantiate(xpPrefab, this.transform.position, Quaternion.identity);
         }

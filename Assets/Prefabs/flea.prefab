@@ -185,8 +185,9 @@ MonoBehaviour:
   dropWep2: {fileID: 0}
   weaponNum: 0
   abominationSpawn: 0
-  damageIndicator: {fileID: 0}
+  damageIndicator: {fileID: 2738551601470835148, guid: ccff22b86fbce014db8638ea997ac021, type: 3}
   healIndicator: {fileID: 0}
+  dropRate: 50
 --- !u!114 &8553513941937216506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +212,7 @@ MonoBehaviour:
   player: {fileID: 0}
   playerStatx: {fileID: 0}
   playerLvl: 0
+  playerDMG: 0
   dropWep: 0
 --- !u!50 &8553513941937216507
 Rigidbody2D:

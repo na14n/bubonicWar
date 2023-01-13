@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: bossFINAL
   m_EditorClassIdentifier: 
   hp: 1000
-  damage: 15
+  damage: 45
   speed: 1
   maxHp: 1000
   atkSpeed: 0.5
-  object1Transform: {x: 2, y: 2, z: 2}
-  object2Transform: {x: -2, y: 2, z: 2}
+  object1Transform: {x: 2, y: 2, z: 1}
+  object2Transform: {x: -2, y: 2, z: 1}
