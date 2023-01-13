@@ -119,14 +119,14 @@ public class buttoHandler : MonoBehaviour
 
         else if (button1 == 3)
         {   
-            playerStats.GetComponent<playerStats>().upgradeSpeed(0.25f, true);
+            playerStats.GetComponent<playerStats>().upgradeSpeed(0.15f, true);
             panel.SetActive(false);
             Time.timeScale = 1;
         }
 
         else if (button1 == 4)
         {   
-            playerStats.GetComponent<playerStats>().upgradeHeal(0.25f, true);
+            playerStats.GetComponent<playerStats>().upgradeHeal(0.1f, true);
             panel.SetActive(false);
             Time.timeScale = 1;
         }
@@ -150,14 +150,14 @@ public class buttoHandler : MonoBehaviour
 
         else if (button2 == 3)
         {   
-            playerStats.GetComponent<playerStats>().upgradeSpeed(0.25f, true);
+            playerStats.GetComponent<playerStats>().upgradeSpeed(0.15f, true);
             panel.SetActive(false);
             Time.timeScale = 1;
         }
 
         else if (button2 == 4)
         {   
-            playerStats.GetComponent<playerStats>().upgradeHeal(0.25f, true);
+            playerStats.GetComponent<playerStats>().upgradeHeal(0.1f, true);
             panel.SetActive(false);
             Time.timeScale = 1;
         }
