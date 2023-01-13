@@ -21,6 +21,7 @@ public class health : MonoBehaviour
     public float weaponNum;
     public int abominationSpawn;
     public GameObject damageIndicator;
+    public GameObject healIndicator;
     void Start()
     {
         maxHPCurrently = FindObjectOfType<playerStats>();
@@ -47,7 +48,7 @@ public class health : MonoBehaviour
 
     public void healHp(float amount)
     {
-        if (amount < 0)
+        if (amount <= 0)
         {
             throw new System.ArgumentException("cannot have negative damage");
         }
@@ -57,11 +58,19 @@ public class health : MonoBehaviour
         if (wouldBeOverMaxHealth)
         {
             this.hp = maxHP;
+            
+            GameObject healText = Instantiate(healIndicator, this.transform.position, Quaternion.identity);
+            healIndicator.transform.GetChild(0).GetComponent<TextMeshPro>().text = amount.ToString();
+            healIndicator.transform.GetChild(0).GetComponent<TextMeshPro>().color = new Color(255,0,0);
         }
 
         else
         {
             this.hp += amount;
+            
+            GameObject healText = Instantiate(healIndicator, this.transform.position, Quaternion.identity);
+            healIndicator.transform.GetChild(0).GetComponent<TextMeshPro>().text = amount.ToString();
+            healIndicator.transform.GetChild(0).GetComponent<TextMeshPro>().color = new Color(255,0,0);
         }
     }
 

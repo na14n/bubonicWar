@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-public class floatingDamage : MonoBehaviour
+
+public class healIndicator : MonoBehaviour
 {
      public float speed = 1f;
     public float lifetime = 1f;
@@ -16,6 +17,6 @@ public class floatingDamage : MonoBehaviour
     void Update()
     {
         transform.position += Vector3.up * speed * Time.deltaTime;
-        this.GetComponent<TextMeshPro>().color = new Color(255,0,0);
+        this.GetComponent<TextMeshPro>().color = new Color(0,255,0);
     }
 }

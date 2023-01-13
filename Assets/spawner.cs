@@ -12,6 +12,11 @@ public class spawner : MonoBehaviour
 
     void Start()
     {
+        Invoke("spawnNow", 5f);
+    }
+
+    public void spawnNow()
+    {
         GameObject player = GameObject.FindWithTag("Player");
         // Get the Spawner component on this GameObject
         spawner spawner = GetComponent<spawner>();
