@@ -14,10 +14,6 @@ public class playerStats : MonoBehaviour
     public GameObject lvlUpPanel;
     public Enemy enemyStats;
     public float passiveHeal = 0;
-
-    public GameObject wepPrefab1;
-    public GameObject wepPrefab2;
-    public GameObject wepPrefab3;
     public GameObject wepPrefab4;
     bool wepUnlocked = false;
     public GameObject wepHandler;
@@ -29,6 +25,8 @@ public class playerStats : MonoBehaviour
     public GameObject wep4;
     public GameObject wep5;
     public GameObject wep6;
+    public GameObject wep7;
+    public GameObject wep8;
     public float healInterval = 1f;
     public int wepNum1 = 0;
     public int wepNum2 = 0;
@@ -67,7 +65,7 @@ public class playerStats : MonoBehaviour
         if (xp >= maxXP)
         {
             playerLvl = playerLvl + 1;
-            maxXP = (maxXP * 0.3f) + maxXP ;
+            maxXP = (maxXP * 0.3f) + maxXP;
             unlockWep();
             wepNum1 = Random.Range(1, 5);
             wepNum2 = Random.Range(1, 5);
@@ -163,6 +161,16 @@ public class playerStats : MonoBehaviour
                 else if (wepTwoChoice == 6)
                 {
                     weaponScript.AddNewWeapon(wep6);
+                }
+
+                else if (wepTwoChoice == 7)
+                {
+                    weaponScript.AddNewWeapon(wep7);
+                }
+
+                else if (wepTwoChoice == 8)
+                {
+                    weaponScript.AddNewWeapon(wep8);
                 }
 
             }
