@@ -79,10 +79,10 @@ public class health : MonoBehaviour
     {
         if (!damageReceive)
         {
-            this.hp -= amount;
+            this.hp = this.hp - amount;
             this.gameObject.GetComponentInChildren<takeDamage>().TakeDamage();
             damageReceive = true;
-
+            Debug.Log("" + amount);
 
             GameObject damageText = Instantiate(damageIndicator, this.transform.position, Quaternion.identity);
             damageText.transform.GetChild(0).GetComponent<TextMeshPro>().text = amount.ToString();
@@ -132,11 +132,5 @@ public class health : MonoBehaviour
         }
         Destroy(gameObject);
         // Debug.Log("destroyed cuzz get killed");
-
-
     }
-
-
-
-
 }

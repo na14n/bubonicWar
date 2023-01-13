@@ -40,7 +40,7 @@ public class playerStats : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
         lvlUp();
         if (Time.time > lastHealTime + healInterval)
         {

@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour
     float lastAttackTime;
     public playerStats playerStatx;
     public float playerLvl;
+    public float playerDMG;
     private bool isAttacking = false;
     public int dropWep;
 
@@ -40,6 +41,7 @@ public class Enemy : MonoBehaviour
     {
         playerStatx = FindObjectOfType<playerStats>();
         playerLvl = playerStatx.playerLvl;
+        playerDMG = playerStatx.baseDamage;
     }
     void Start()
     {
@@ -125,7 +127,7 @@ public class Enemy : MonoBehaviour
 
     public void scaleEnemy()
     {
-        maxHp = maxHp + (playerLvl * 20f);
+        maxHp = maxHp + (playerDMG * 3f);
         damage = damage + (playerLvl * 5f);
     }
 
