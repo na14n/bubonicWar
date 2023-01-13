@@ -226,6 +226,7 @@ MonoBehaviour:
   dropWep2: {fileID: 0}
   weaponNum: 0
   abominationSpawn: 1
+  damageIndicator: {fileID: 2738551601470835148, guid: ccff22b86fbce014db8638ea997ac021, type: 3}
 --- !u!50 &2440366787629476807
 Rigidbody2D:
   serializedVersion: 4

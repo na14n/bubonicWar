@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class health : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class health : MonoBehaviour
     public GameObject dropWep2;
     public float weaponNum;
     public int abominationSpawn;
+    public GameObject damageIndicator;
     void Start()
     {
         maxHPCurrently = FindObjectOfType<playerStats>();
@@ -65,13 +67,16 @@ public class health : MonoBehaviour
 
     public void damage(float amount, bool damageReceive)
     {
-        Debug.Log("damage is called");
         if (!damageReceive)
         {
             this.hp -= amount;
             this.gameObject.GetComponentInChildren<takeDamage>().TakeDamage();
             damageReceive = true;
 
+
+            GameObject damageText = Instantiate(damageIndicator, this.transform.position, Quaternion.identity);
+            damageText.transform.GetChild(0).GetComponent<TextMeshPro>().text = amount.ToString();
+            damageText.transform.GetChild(0).GetComponent<TextMeshPro>().color = new Color(255,0,0);
             if (this.hp <= 0)
             {
                 Die();
@@ -81,7 +86,7 @@ public class health : MonoBehaviour
     }
 
     public void Die()
-    {   
+    {
         if (weaponNum == 1)
         {
             GameObject droppedWep = Instantiate(dropWep1, this.transform.position, Quaternion.identity);
@@ -113,7 +118,7 @@ public class health : MonoBehaviour
         Destroy(gameObject);
         Debug.Log("destroyed cuzz get killed");
 
-        
+
     }
 
 
