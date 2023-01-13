@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atkDamage: 7
   characterDmg: 0
-  atkSpeed: 2.5
+  atkSpeed: 1.75
   attackRange: 3
   enemies: []
   totalatk: 0

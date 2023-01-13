@@ -8,10 +8,17 @@ public class variablePasser : MonoBehaviour
     public int firstWep;
     public int secondWep;
     public static variablePasser Instance { get; private set; }
+    public GameObject panel;
 
     void Awake() {
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
+    }
+
+    public void Reset(){
+        panel.SetActive(false);
+        firstWep = 0;
+        secondWep = 0;
     }
 
 }

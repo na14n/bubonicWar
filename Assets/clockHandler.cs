@@ -10,12 +10,25 @@ public class clockHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startTime = Time.time;
+        Invoke("startTimer", 5f);
     }
 
     // Update is called once per frame
     void Update()
     {   
+        StartCoroutine(timerLogic());
+    }
+
+    void startTimer()
+    {
+        startTime = Time.time;
+    }
+    
+    IEnumerator timerLogic()
+    {
+
+        yield return new WaitForSeconds(5f);
+
         float t = Time.time - startTime;
         string minutes = ((int) t / 60).ToString();
         string seconds = (t % 60).ToString("f2");

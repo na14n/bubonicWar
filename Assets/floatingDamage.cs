@@ -16,6 +16,5 @@ public class floatingDamage : MonoBehaviour
     void Update()
     {
         transform.position += Vector3.up * speed * Time.deltaTime;
-        this.GetComponent<TextMeshPro>().color = new Color(255,0,0);
     }
 }

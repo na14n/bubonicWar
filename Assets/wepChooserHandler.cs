@@ -19,6 +19,7 @@ public class wepChooserHandler : MonoBehaviour
     public Button btn6;
     public Button btn7;
     public Button btn8;
+    public GameObject panel;
 
     void Start()
     {
@@ -36,17 +37,12 @@ public class wepChooserHandler : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void FixedUpdate()
     {
         if (buttonClick >= 2)
         {
-            SceneManager.LoadScene(1);
+            // SceneManager.LoadScene(1);
+            // panel.SetActive(true);
         }
     }
 
@@ -64,7 +60,8 @@ public class wepChooserHandler : MonoBehaviour
             wep2 = 1;
             closeAllBtn();
             variablePasser.Instance.secondWep = wep2;
-            SceneManager.LoadScene(1);
+            panel.SetActive(true);
+            // SceneManager.LoadScene(1);
         }
         buttonClick++;
         btn1.interactable = false;
@@ -85,7 +82,8 @@ public class wepChooserHandler : MonoBehaviour
             wep2 = 2;
             closeAllBtn();
             variablePasser.Instance.secondWep = wep2;
-            SceneManager.LoadScene(1);
+            panel.SetActive(true);
+            // SceneManager.LoadScene(1);
         }
 
         buttonClick++;
@@ -107,7 +105,8 @@ public class wepChooserHandler : MonoBehaviour
             wep2 = 3;
             closeAllBtn();
             variablePasser.Instance.secondWep = wep2;
-            SceneManager.LoadScene(1);
+            panel.SetActive(true);
+            // SceneManager.LoadScene(1);
         }
 
         buttonClick++;
@@ -130,7 +129,8 @@ public class wepChooserHandler : MonoBehaviour
             wep2 = 4;
             closeAllBtn();
             variablePasser.Instance.secondWep = wep2;
-            SceneManager.LoadScene(1);
+            panel.SetActive(true);
+            // SceneManager.LoadScene(1);
         }
 
         buttonClick++;
@@ -152,7 +152,8 @@ public class wepChooserHandler : MonoBehaviour
             wep2 = 5;
             closeAllBtn();
             variablePasser.Instance.secondWep = wep2;
-            SceneManager.LoadScene(1);
+            panel.SetActive(true);
+            // SceneManager.LoadScene(1);
         }
 
         buttonClick++;
@@ -174,7 +175,8 @@ public class wepChooserHandler : MonoBehaviour
             wep2 = 6;
             closeAllBtn();
             variablePasser.Instance.secondWep = wep2;
-            SceneManager.LoadScene(1);
+            panel.SetActive(true);
+            // SceneManager.LoadScene(1);
         }
 
         buttonClick++;
@@ -195,7 +197,8 @@ public class wepChooserHandler : MonoBehaviour
             wep2 = 7;
             closeAllBtn();
             variablePasser.Instance.secondWep = wep2;
-            SceneManager.LoadScene(1);
+            panel.SetActive(true);
+            // SceneManager.LoadScene(1);
         }
 
         buttonClick++;
@@ -217,7 +220,8 @@ public class wepChooserHandler : MonoBehaviour
             wep2 = 8;
             closeAllBtn();
             variablePasser.Instance.secondWep = wep2;
-            SceneManager.LoadScene(1);
+            panel.SetActive(true);
+            // SceneManager.LoadScene(1);
         }
 
         buttonClick++;
@@ -232,5 +236,36 @@ public class wepChooserHandler : MonoBehaviour
         btn4.interactable = false;
         btn5.interactable = false;
         btn6.interactable = false;
+        btn7.interactable = false;
+        btn8.interactable = false;
+    }
+
+    public void openAllBtn()
+    {
+        buttonClick = 0;
+        btn1.interactable = true;
+        btn2.interactable = true;
+        btn3.interactable = true;
+        btn4.interactable = true;
+        btn5.interactable = true;
+        btn6.interactable = true;
+
+        if (unlockKatana == 0)
+        {
+            btn7.interactable = false;
+        }
+        else
+        {
+            btn7.interactable = true;
+        }
+
+        if (unlockScythe == 0)
+        {
+            btn8.interactable = false;
+        }
+        else
+        {
+            btn8.interactable = true;
+        }
     }
 }
