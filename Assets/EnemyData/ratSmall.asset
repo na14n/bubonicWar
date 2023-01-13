@@ -16,6 +16,6 @@ MonoBehaviour:
   damage: 7
   speed: 2
   maxHp: 30
-  atkSpeed: 0.5
-  object1Transform: {x: 1, y: 1, z: 1}
-  object2Transform: {x: -1, y: 1, z: 1}
+  atkSpeed: 1
+  object1Transform: {x: 0.75, y: 0.75, z: 1}
+  object2Transform: {x: -0.75, y: 0.75, z: 1}

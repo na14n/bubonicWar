@@ -65,6 +65,10 @@ MonoBehaviour:
   dropWep1: {fileID: 0}
   dropWep2: {fileID: 0}
   weaponNum: 0
+  abominationSpawn: 0
+  damageIndicator: {fileID: 2738551601470835148, guid: ccff22b86fbce014db8638ea997ac021, type: 3}
+  healIndicator: {fileID: 0}
+  dropRate: 60
 --- !u!114 &1011282718865505948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,6 +93,8 @@ MonoBehaviour:
   player: {fileID: 0}
   playerStatx: {fileID: 0}
   playerLvl: 0
+  playerDMG: 0
+  dropWep: 0
 --- !u!50 &1011282718865505945
 Rigidbody2D:
   serializedVersion: 4
@@ -138,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7548fc360aedbdd4a91a609f5c165226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackForce: 0.5
+  knockbackForce: 1
   knockedBack: 0
 --- !u!114 &4665715677770386084
 MonoBehaviour:

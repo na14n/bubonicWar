@@ -51,7 +51,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: e961d42f50209574987554aa3b286cf4, type: 2}
   player: {fileID: 0}
   followSpeed: 10
-  followDistance: 3
+  followDistance: 1
 --- !u!50 &3863966731242644168
 Rigidbody2D:
   serializedVersion: 4

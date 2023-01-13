@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: bossFLEA
   m_EditorClassIdentifier: 
   hp: 750
-  damage: 50
+  damage: 35
   speed: 2
   maxHp: 750
   atkSpeed: 1
-  object1Transform: {x: 1.5, y: 1.5, z: 1.5}
-  object2Transform: {x: -1.5, y: 1.5, z: 1.5}
+  object1Transform: {x: 1.5, y: 1.5, z: 1}
+  object2Transform: {x: -1.5, y: 1.5, z: 1}

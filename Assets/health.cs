@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class health : MonoBehaviour
 {
@@ -18,6 +19,10 @@ public class health : MonoBehaviour
     public GameObject dropWep1;
     public GameObject dropWep2;
     public float weaponNum;
+    public int abominationSpawn;
+    public GameObject damageIndicator;
+    public GameObject healIndicator;
+    public int dropRate;
     void Start()
     {
         maxHPCurrently = FindObjectOfType<playerStats>();
@@ -44,9 +49,9 @@ public class health : MonoBehaviour
 
     public void healHp(float amount)
     {
-        if (amount < 0)
+        if (amount <= 0)
         {
-            throw new System.ArgumentException("cannot have negative damage");
+            throw new System.ArgumentException("You are Healing 0hp");
         }
 
         bool wouldBeOverMaxHealth = hp + amount > maxHP;
@@ -54,23 +59,34 @@ public class health : MonoBehaviour
         if (wouldBeOverMaxHealth)
         {
             this.hp = maxHP;
+
+            GameObject healText = Instantiate(healIndicator, this.transform.position, Quaternion.identity);
+            healIndicator.transform.GetChild(0).GetComponent<TextMeshPro>().text = amount.ToString();
+            healIndicator.transform.GetChild(0).GetComponent<TextMeshPro>().color = new Color(255, 0, 0);
         }
 
         else
         {
             this.hp += amount;
+
+            GameObject healText = Instantiate(healIndicator, this.transform.position, Quaternion.identity);
+            healIndicator.transform.GetChild(0).GetComponent<TextMeshPro>().text = amount.ToString();
+            healIndicator.transform.GetChild(0).GetComponent<TextMeshPro>().color = new Color(255, 0, 0);
         }
     }
 
     public void damage(float amount, bool damageReceive)
     {
-        Debug.Log("damage is called");
         if (!damageReceive)
         {
-            this.hp -= amount;
+            this.hp = this.hp - amount;
             this.gameObject.GetComponentInChildren<takeDamage>().TakeDamage();
             damageReceive = true;
+            Debug.Log("" + amount);
 
+            GameObject damageText = Instantiate(damageIndicator, this.transform.position, Quaternion.identity);
+            damageText.transform.GetChild(0).GetComponent<TextMeshPro>().text = amount.ToString();
+            damageText.transform.GetChild(0).GetComponent<TextMeshPro>().color = new Color(255, 0, 0);
             if (this.hp <= 0)
             {
                 Die();
@@ -80,7 +96,7 @@ public class health : MonoBehaviour
     }
 
     public void Die()
-    {   
+    {
         if (weaponNum == 1)
         {
             GameObject droppedWep = Instantiate(dropWep1, this.transform.position, Quaternion.identity);
@@ -93,10 +109,20 @@ public class health : MonoBehaviour
 
         else
         {
-            Debug.Log("not a guardian");
+            // Debug.Log("not a guardian");
         }
 
-        GameObject xp = Instantiate(xpPrefab, this.transform.position, Quaternion.identity);
+        if (abominationSpawn == 1)
+        {
+            this.GetComponent<abominationScript>().abominationSpawn();
+        }
+        int randomDroprate = Random.Range(1, 100);
+        
+        // ito yung new update sa xp dropchance bali aayusin mo lang value ng droprate sa inspector kada prefab
+        if (randomDroprate <= dropRate)
+        {
+            GameObject xp = Instantiate(xpPrefab, this.transform.position, Quaternion.identity);
+        }
 
         int randomNumber = Random.Range(1, 20);
 
@@ -105,10 +131,6 @@ public class health : MonoBehaviour
             GameObject heal = Instantiate(healPrefab, this.transform.position, Quaternion.identity);
         }
         Destroy(gameObject);
-        Debug.Log("destroyed cuzz get killed");
-
-        
+        // Debug.Log("destroyed cuzz get killed");
     }
-
-
 }

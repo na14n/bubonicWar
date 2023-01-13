@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour
     float lastAttackTime;
     public playerStats playerStatx;
     public float playerLvl;
+    public float playerDMG;
     private bool isAttacking = false;
     public int dropWep;
 
@@ -40,13 +41,14 @@ public class Enemy : MonoBehaviour
     {
         playerStatx = FindObjectOfType<playerStats>();
         playerLvl = playerStatx.playerLvl;
+        playerDMG = playerStatx.baseDamage;
     }
     void Start()
     {
         player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
         hp = maxHp;
-        setEnemyValues();
         scaleEnemy();
+        setEnemyValues();
         this.GetComponent<AIDestinationSetter>().target = player;
     }
 
@@ -85,7 +87,7 @@ public class Enemy : MonoBehaviour
 
     private void setEnemyValues()
     {
-        GetComponent<health>().setHealth(data.maxHp + (playerLvl * 3), data.maxHp + (playerLvl * 3));
+        GetComponent<health>().setHealth(data.maxHp + (playerDMG * 2f), data.maxHp + (playerDMG * 2f));
         damage = data.damage + (playerLvl * 2);
         speed = data.speed;
         atkSpeed = data.atkSpeed;
@@ -125,9 +127,7 @@ public class Enemy : MonoBehaviour
 
     public void scaleEnemy()
     {
-        maxHp = maxHp + (playerLvl * 5f);
-        damage = damage + (playerLvl * 3f);
-        speed = speed + (playerLvl * 0.05f);
+        damage = damage + (playerLvl * 5f);
     }
 
 

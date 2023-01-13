@@ -8,8 +8,6 @@ public class guardianScript : MonoBehaviour
     [SerializeField]
     public float damage = 5;
     [SerializeField]
-    private float speed = 3f;
-    [SerializeField]
     public float hp;
     [SerializeField]
     public float maxHp;
