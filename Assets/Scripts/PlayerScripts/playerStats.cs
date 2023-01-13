@@ -67,7 +67,7 @@ public class playerStats : MonoBehaviour
         if (xp >= maxXP)
         {
             playerLvl = playerLvl + 1;
-            maxXP = maxXP + 150 * 0.5f;
+            maxXP = (maxXP * 0.3f) + maxXP ;
             unlockWep();
             wepNum1 = Random.Range(1, 5);
             wepNum2 = Random.Range(1, 5);
