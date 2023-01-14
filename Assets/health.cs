@@ -115,12 +115,16 @@ public class health : MonoBehaviour
     {
         if (weaponNum == 1)
         {
+            Debug.Log("lala");
             GameObject droppedWep = Instantiate(dropWep1, this.transform.position, Quaternion.identity);
+            droppedWep.transform.parent = null;
         }
 
         else if (weaponNum == 2)
         {
-            GameObject droppedWep = Instantiate(dropWep2, this.transform.position, Quaternion.identity);
+            Debug.Log("lala");
+            GameObject droppedWep = Instantiate(dropWep1, this.transform.position, Quaternion.identity);
+            droppedWep.transform.parent = null;
         }
 
         else
@@ -130,7 +134,7 @@ public class health : MonoBehaviour
 
         if (abominationSpawn == 1)
         {
-            this.GetComponent<abominationScript>().abominationSpawn();
+            abominationSet();
         }
         int randomDroprate = Random.Range(1, 100);
 
@@ -148,5 +152,12 @@ public class health : MonoBehaviour
         }
         Destroy(gameObject);
         // Debug.Log("destroyed cuzz get killed");
+
+
+    }
+
+    public void abominationSet()
+    {
+        PlayerPrefs.SetInt("Abomination", 1);
     }
 }

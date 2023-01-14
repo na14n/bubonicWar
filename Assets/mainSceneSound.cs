@@ -11,7 +11,7 @@ public class mainSceneSound : MonoBehaviour
     public GameObject audioSRC;
 
     void Start()
-    {   
+    {
         PlayerPrefs.SetInt("Abomination", 0);
         Invoke("playBG", 2f);
     }
@@ -26,13 +26,13 @@ public class mainSceneSound : MonoBehaviour
         }
     }
 
-        public void playBG()
+    public void playBG()
     {
-            bgSource.PlayOneShot(bgSound);
+        bgSource.PlayOneShot(bgSound);
     }
 
-        public void lvlUp()
+    public void lvlUp()
     {
-            nonLoop.PlayOneShot(lvlUpSound);
+        nonLoop.PlayOneShot(lvlUpSound);
     }
 }

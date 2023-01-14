@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
-public class abominationScript : MonoBehaviour
+public class samuraiGuardian : MonoBehaviour
 {
 
     [SerializeField]
@@ -29,41 +29,30 @@ public class abominationScript : MonoBehaviour
     float lastAttackTime;
     public playerStats playerStatx;
     public float playerLvl;
+    public float playerDMG;
     private bool isAttacking = false;
-    public int numberofBossRage;
-    public float currentHP;
+    public int dropWep;
+    public float followDistance = 10f;
+
     // Start is called before the first frame update
 
     void Awake()
     {
         playerStatx = FindObjectOfType<playerStats>();
         playerLvl = playerStatx.playerLvl;
+        playerDMG = playerStatx.baseDamage;
     }
     void Start()
     {
         player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
         hp = maxHp;
-        setEnemyValues();
         scaleEnemy();
-        abominationSpawn();
+        setEnemyValues();
         this.GetComponent<AIDestinationSetter>().target = player;
     }
 
     void Update()
     {   
-        currentHP = this.GetComponent<health>().hp;
-        if (numberofBossRage == 0)
-        {
-            if (currentHP < 200f)
-            {
-                bossRage();
-            }
-        }
-
-        else {
-            Debug.Log("boss rage");
-        }
-
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
         if (player.transform.position.x > transform.position.x)
         {
@@ -72,6 +61,17 @@ public class abominationScript : MonoBehaviour
         else if (player.transform.position.x < transform.position.x)
         {
             transform.localScale = object2Transform;
+        }
+
+                float distance = Vector3.Distance(transform.position, player.position);
+        if (distance < followDistance)
+        {
+            this.GetComponent<AIPath>().enabled = true;
+        }
+
+        else 
+        {
+            this.GetComponent<AIPath>().enabled = false;
         }
     }
 
@@ -97,13 +97,14 @@ public class abominationScript : MonoBehaviour
 
     private void setEnemyValues()
     {
-        GetComponent<health>().setHealth(data.maxHp + (playerLvl * 3), data.maxHp + (playerLvl * 3));
+        GetComponent<health>().setHealth(data.maxHp + (playerDMG * playerLvl), data.maxHp + (playerDMG * playerLvl));
         damage = data.damage + (playerLvl * 2);
         speed = data.speed;
         atkSpeed = data.atkSpeed;
         object1Transform = data.object1Transform;
         object2Transform = data.object2Transform;
         this.GetComponent<AIPath>().maxSpeed = speed;
+        this.GetComponent<health>().weaponNum = dropWep;
     }
     void OnTriggerStay2D(Collider2D collider)
     {
@@ -137,25 +138,8 @@ public class abominationScript : MonoBehaviour
 
     public void scaleEnemy()
     {
-        maxHp = maxHp + (playerLvl * 5f);
-        damage = damage + (playerLvl * 3f);
-        speed = speed + (playerLvl * 0.05f);
+        damage = damage + (playerLvl * 5f);
     }
 
-
-    public void bossRage()
-    {   
-        numberofBossRage = 1;
-        object1Transform = object1Transform * 1.5f;
-        object2Transform = object2Transform * 1.5f;
-        speed = speed + 1.5f;
-        damage = damage * 1.5f;
-        GetComponent<health>().healHp(maxHp * 1.3f);
-    }
-
-    public void abominationSpawn()
-    {
-        PlayerPrefs.SetInt("Abomination", 1);
-    }
 
 }
