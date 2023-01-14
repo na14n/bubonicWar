@@ -42,6 +42,7 @@ public class XPHandler : MonoBehaviour
                 foreach (GameObject player in players)
                 {
                     player.GetComponent<playerStats>().increaseXP(xpToGive, false);
+                    player.GetComponent<health>().healSound();
                 }
                 xpGiven = true;
                 Destroy(gameObject);

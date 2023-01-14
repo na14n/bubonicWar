@@ -6,15 +6,23 @@ public class bossMusic : MonoBehaviour
 {   
     public AudioSource bossPlayer;
     public AudioClip bossBG;
-    // Start is called before the first frame update
-    void Start()
+    public float fadeTime = 500f;
+
+    private void Start()
     {
-        bossPlayer.PlayOneShot(bossBG);
+        StartCoroutine(FadeIn());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator FadeIn()
     {
-        
+        float startVolume = 0f;
+        bossPlayer.PlayOneShot(bossBG);
+        bossPlayer.volume = startVolume;
+
+        while (bossPlayer.volume < 0.3)
+        {
+            bossPlayer.volume += Time.deltaTime / fadeTime;
+            yield return null;
+        }
     }
 }

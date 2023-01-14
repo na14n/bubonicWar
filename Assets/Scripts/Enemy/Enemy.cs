@@ -120,6 +120,7 @@ public class Enemy : MonoBehaviour
         {
             collider.GetComponent<health>().damage(damage, false);
             collider.GetComponent<knockback>().Knockback();
+            collider.GetComponent<health>().damageSound();
             Debug.Log("ATTACKED BAM");
             yield return new WaitForSeconds(atkSpeed);
         }

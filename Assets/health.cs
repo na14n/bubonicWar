@@ -23,6 +23,8 @@ public class health : MonoBehaviour
     public GameObject damageIndicator;
     public GameObject healIndicator;
     public int dropRate;
+    public int forPlayer;
+    public GameObject soundSource;
     void Start()
     {
         maxHPCurrently = FindObjectOfType<playerStats>();
@@ -59,7 +61,6 @@ public class health : MonoBehaviour
         if (wouldBeOverMaxHealth)
         {
             this.hp = maxHP;
-
             GameObject healText = Instantiate(healIndicator, this.transform.position, Quaternion.identity);
             healIndicator.transform.GetChild(0).GetComponent<TextMeshPro>().text = amount.ToString();
             healIndicator.transform.GetChild(0).GetComponent<TextMeshPro>().color = new Color(255, 0, 0);
@@ -73,6 +74,21 @@ public class health : MonoBehaviour
             healIndicator.transform.GetChild(0).GetComponent<TextMeshPro>().text = amount.ToString();
             healIndicator.transform.GetChild(0).GetComponent<TextMeshPro>().color = new Color(255, 0, 0);
         }
+    }
+
+    public void healSound()
+    {
+        soundSource.GetComponent<damageAndHealSound>().healSound();
+    }
+
+    public void xpSound()
+    {
+        soundSource.GetComponent<damageAndHealSound>().xpSound();
+    }
+
+    public void damageSound()
+    {
+        soundSource.GetComponent<damageAndHealSound>().damageSound();
     }
 
     public void damage(float amount, bool damageReceive)
@@ -117,7 +133,7 @@ public class health : MonoBehaviour
             this.GetComponent<abominationScript>().abominationSpawn();
         }
         int randomDroprate = Random.Range(1, 100);
-        
+
         // ito yung new update sa xp dropchance bali aayusin mo lang value ng droprate sa inspector kada prefab
         if (randomDroprate <= dropRate)
         {

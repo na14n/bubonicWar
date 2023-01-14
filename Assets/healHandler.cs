@@ -41,6 +41,7 @@ public class healHandler : MonoBehaviour
                 foreach (GameObject player in players)
                 {
                     player.GetComponent<health>().healHp(healToGive * 0.1f);
+                    player.GetComponent<health>().xpSound();
                 }
                 healGiven = true;
                 Destroy(gameObject);
