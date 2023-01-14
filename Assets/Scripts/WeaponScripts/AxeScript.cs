@@ -14,6 +14,7 @@ public class AxeScript : MonoBehaviour
     private bool attackMade;
     public GameObject Object;
     public Animator animatorComponent;
+    public GameObject soundPlayer;
 
     void Start()
     {
@@ -44,6 +45,7 @@ public class AxeScript : MonoBehaviour
                         enemy.GetComponent<knockback>().Knockback();
                     }
                 }
+                soundPlayer.GetComponent<audioSourceAttack>().playAttack();
                 lastAttackTime = Time.time;
             }
         }

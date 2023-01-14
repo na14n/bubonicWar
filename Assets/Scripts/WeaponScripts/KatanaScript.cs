@@ -21,6 +21,7 @@ public class KatanaScript : MonoBehaviour
     public GameObject Object;
     public Animator animatorComponent;
     public int critNum;
+    public GameObject soundPlayer;
 
 
     void Start()
@@ -60,21 +61,21 @@ public class KatanaScript : MonoBehaviour
                     {
                         int x;
                         x = Random.Range(0, 100);
-                        if (x >= 80)
-                        {
+                        if (x < 30)
+                        {   
                             enemy.GetComponent<health>().damage(2 * (atkDamage + characterDmg), false);
                             enemy.GetComponent<knockback>().Knockback();
                             critNum = critNum + 1;
                         }
                         else
-                        {
+                        {   
                             enemy.GetComponent<health>().damage(atkDamage + characterDmg, false);
                             enemy.GetComponent<knockback>().Knockback();
                         }
 
                     }
                 }
-
+                soundPlayer.GetComponent<audioSourceAttack>().playAttack();
                 KatanaScript.lastAttackTime = Time.time;
             }
         }

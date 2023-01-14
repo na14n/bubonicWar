@@ -9,7 +9,7 @@ public class scythe : MonoBehaviour
     public float characterDmg;
     public float atkSpeed = 0.5f;
     public static float lastAttackTime;
-    [HideInInspector]public float attackRange = 3f;
+    [HideInInspector] public float attackRange = 3f;
     public GameObject[] enemies;
     public float totalatk;
     private bool attackMade;
@@ -21,9 +21,11 @@ public class scythe : MonoBehaviour
     public float z_rotation;
     public GameObject Object;
     public Animator animatorComponent;
+    public GameObject soundPlayer;
 
 
-    private void Awake() {
+    private void Awake()
+    {
         characterDmg = transform.parent.parent.parent.GetComponent<playerStats>().baseDamage;
     }
 
@@ -51,9 +53,9 @@ public class scythe : MonoBehaviour
     }
 
     public static float ToSingle(double value)
-{
-     return (float)value;
-}
+    {
+        return (float)value;
+    }
 
     void OnTriggerStay2D(Collider2D collider)
     {
@@ -67,6 +69,7 @@ public class scythe : MonoBehaviour
                 {
                     if (enemy.gameObject.CompareTag("Enemy") || enemy.gameObject.CompareTag("Guardian"))
                     {
+
                         enemy.GetComponent<health>().damage((atkDamage + characterDmg), false);
                         Debug.Log(totalatk);
                         enemy.GetComponent<knockback>().Knockback();
@@ -74,6 +77,7 @@ public class scythe : MonoBehaviour
                     }
                 }
                 scythe.lastAttackTime = Time.time;
+                soundPlayer.GetComponent<audioSourceAttack>().playAttack();
             }
         }
     }

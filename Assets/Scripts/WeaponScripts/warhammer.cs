@@ -14,6 +14,7 @@ public class warhammer : MonoBehaviour
     private bool attackMade;
     public GameObject Object;
     public Animator animatorComponent;
+    public GameObject soundPlayer;
 
 
     void Start()
@@ -46,6 +47,7 @@ public class warhammer : MonoBehaviour
                     }
                 }
                 warhammer.lastAttackTime = Time.time;
+                soundPlayer.GetComponent<audioSourceAttack>().playAttack();
             }
         }
     }

@@ -20,6 +20,7 @@ public class startersword : MonoBehaviour
     public float z_rotation;
     public GameObject Object;
     public Animator animatorComponent;
+    public GameObject soundPlayer;
 
     void Start()
     {
@@ -61,6 +62,7 @@ public class startersword : MonoBehaviour
                         enemy.GetComponent<knockback>().Knockback();
                     }
                 }
+                soundPlayer.GetComponent<audioSourceAttack>().playAttack();
                 startersword.lastAttackTime = Time.time;
             }
         }

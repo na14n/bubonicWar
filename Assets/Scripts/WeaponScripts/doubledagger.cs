@@ -21,6 +21,7 @@ public class doubledagger : MonoBehaviour
     public float z_rotation;
     public GameObject Object;
     public Animator animatorComponent;
+    public GameObject soundPlayer;
 
 
     void Start()
@@ -58,10 +59,24 @@ public class doubledagger : MonoBehaviour
                 {
                     if (enemy.gameObject.CompareTag("Enemy") || enemy.gameObject.CompareTag("Guardian"))
                     {
-                        enemy.GetComponent<health>().damage(atkDamage + characterDmg, false);
-                        enemy.GetComponent<knockback>().Knockback();
+                        int x;
+                        x = Random.Range(0, 100);
+
+                        if (x < 30)
+                        {
+                            enemy.GetComponent<health>().damage(2 * (atkDamage + characterDmg), false);
+                            enemy.GetComponent<knockback>().Knockback();
+                        }
+                        else
+                        {
+                            enemy.GetComponent<health>().damage(atkDamage + characterDmg, false);
+                            enemy.GetComponent<knockback>().Knockback();
+                        }
+
                     }
+
                 }
+                soundPlayer.GetComponent<audioSourceAttack>().playAttack();
                 doubledagger.lastAttackTime = Time.time;
             }
         }

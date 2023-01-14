@@ -22,6 +22,7 @@ public class spear : MonoBehaviour
     public GameObject Object;
     public Animator animatorComponent;
     public Vector3 position;
+    public GameObject soundPlayer;
 
     void Start()
     {
@@ -62,6 +63,7 @@ public class spear : MonoBehaviour
                         enemy.GetComponent<knockback>().Knockback();
                     }
                 }
+                soundPlayer.GetComponent<audioSourceAttack>().playAttack();
                 spear.lastAttackTime = Time.time;
             }
         }

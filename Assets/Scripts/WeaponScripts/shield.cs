@@ -13,7 +13,7 @@ public class shield : MonoBehaviour
     public float totalatk;
     private bool attackMade;
     private float playerHP;
-    private float lastheal;
+    public static float lastheal;
     private int healpersec = 5;
     public float vector_2_x;
     public float vector_2_y;
@@ -23,6 +23,7 @@ public class shield : MonoBehaviour
     public float z_rotation;
     public GameObject Object;
     public Animator animatorComponent;
+    public GameObject soundPlayer;
 
     void Start()
     {   
@@ -39,10 +40,10 @@ public class shield : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Time.time - lastheal > healpersec)
+        if (Time.time - shield.lastheal > healpersec)
         {
             StartCoroutine(HealOverTime());
-            lastheal = Time.time;
+            shield.lastheal = Time.time;
         }
     }
 
@@ -52,7 +53,7 @@ IEnumerator HealOverTime()
     {
         transform.parent.parent.parent.GetComponent<health>().healHp(playerHP * 0.01f);
         Debug.Log("healing for everyone");
-        lastheal = Time.time;  // update lastheal here
+        shield.lastheal = Time.time;  // update lastheal here
         yield return new WaitForSeconds(healpersec);
     }
 }
@@ -73,6 +74,7 @@ void OnTriggerStay2D(Collider2D collider)
                     enemy.GetComponent<knockback>().Knockback();
                 }
             }
+            soundPlayer.GetComponent<audioSourceAttack>().playAttack();
             shield.lastAttackTime = Time.time;
         }
     }
