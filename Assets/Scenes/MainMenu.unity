@@ -1040,7 +1040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 1764794911}
   nonLoop: {fileID: 521868193}
-  bg1: {fileID: 8300000, guid: 309ddec3afa705243b9200564a37f621, type: 3}
+  bg1: {fileID: 8300000, guid: a1838519b2313bd4d910b04a072a9f43, type: 3}
   buttonClick: {fileID: 8300000, guid: c98d0825aa1346d4cb91ce76a21b3ee3, type: 3}
 --- !u!4 &1479616239
 Transform:

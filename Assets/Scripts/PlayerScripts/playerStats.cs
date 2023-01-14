@@ -27,6 +27,7 @@ public class playerStats : MonoBehaviour
     public GameObject wep6;
     public GameObject wep7;
     public GameObject wep8;
+    public GameObject soundSource;
     public float healInterval = 1f;
     public int wepNum1 = 0;
     public int wepNum2 = 0;
@@ -40,7 +41,7 @@ public class playerStats : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
+    {
         lvlUp();
         if (Time.time > lastHealTime + healInterval)
         {
@@ -64,6 +65,7 @@ public class playerStats : MonoBehaviour
     {
         if (xp >= maxXP)
         {
+            soundSource.GetComponent<mainSceneSound>().lvlUp();
             playerLvl = playerLvl + 1;
             maxXP = (maxXP * 0.3f) + maxXP;
             unlockWep();
@@ -73,6 +75,7 @@ public class playerStats : MonoBehaviour
             {
                 wepNum2 = Random.Range(1, 4);
             }
+
             lvlUpPanel.SetActive(true);
             buttonHandler.GetComponent<buttoHandler>().lvlUpChoices(wepNum1, wepNum2);
             Time.timeScale = 0;

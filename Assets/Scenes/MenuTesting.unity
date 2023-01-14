@@ -3709,9 +3709,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcf067761ce6c344f9a8bf8c2af6e476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1: {fileID: 0}
+  player1: {fileID: 855243888}
   nonLoop: {fileID: 1621258650}
-  bg1: {fileID: 0}
+  bg1: {fileID: 8300000, guid: 2411d829f7331ac4ca2fc82697213a05, type: 3}
   buttonClick: {fileID: 8300000, guid: c98d0825aa1346d4cb91ce76a21b3ee3, type: 3}
 --- !u!1 &1726641295
 GameObject:
