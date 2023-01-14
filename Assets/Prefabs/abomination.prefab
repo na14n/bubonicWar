@@ -63,6 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossPlayer: {fileID: 7277463664480444054}
   bossBG: {fileID: 8300000, guid: 1e56af0f6ba407a48a34ffe5c100d09f, type: 3}
+  fadeTime: 500
 --- !u!1 &2060062591465871035
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,8 +420,10 @@ MonoBehaviour:
   weaponNum: 0
   abominationSpawn: 1
   damageIndicator: {fileID: 2738551601470835148, guid: ccff22b86fbce014db8638ea997ac021, type: 3}
-  healIndicator: {fileID: 0}
+  healIndicator: {fileID: 1252279145965870225, guid: 5d163c2e2b8fa304fa578731e143298c, type: 3}
   dropRate: 100
+  forPlayer: 0
+  soundSource: {fileID: 0}
 --- !u!50 &2440366787629476807
 Rigidbody2D:
   serializedVersion: 4

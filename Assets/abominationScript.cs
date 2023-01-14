@@ -45,7 +45,6 @@ public class abominationScript : MonoBehaviour
         hp = maxHp;
         setEnemyValues();
         scaleEnemy();
-        abominationSpawn();
         this.GetComponent<AIDestinationSetter>().target = player;
     }
 
@@ -97,7 +96,8 @@ public class abominationScript : MonoBehaviour
 
     private void setEnemyValues()
     {
-        GetComponent<health>().setHealth(data.maxHp + (playerLvl * 3), data.maxHp + (playerLvl * 3));
+        this.GetComponent<health>().setHealth(data.maxHp + (playerLvl * 3), data.maxHp + (playerLvl * 3));
+        this.GetComponent<health>().abominationSpawn = 1;
         damage = data.damage + (playerLvl * 2);
         speed = data.speed;
         atkSpeed = data.atkSpeed;
@@ -152,10 +152,4 @@ public class abominationScript : MonoBehaviour
         damage = damage * 1.5f;
         GetComponent<health>().healHp(maxHp * 1.3f);
     }
-
-    public void abominationSpawn()
-    {
-        PlayerPrefs.SetInt("Abomination", 1);
-    }
-
 }

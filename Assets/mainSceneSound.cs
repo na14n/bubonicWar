@@ -12,7 +12,6 @@ public class mainSceneSound : MonoBehaviour
 
     void Start()
     {
-        PlayerPrefs.SetInt("Abomination", 0);
         Invoke("playBG", 2f);
     }
 

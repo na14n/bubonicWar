@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 public class health : MonoBehaviour
 {
     [SerializeField]
@@ -25,6 +25,8 @@ public class health : MonoBehaviour
     public int dropRate;
     public int forPlayer;
     public GameObject soundSource;
+    
+    
     void Start()
     {
         maxHPCurrently = FindObjectOfType<playerStats>();
@@ -115,27 +117,19 @@ public class health : MonoBehaviour
     {
         if (weaponNum == 1)
         {
-            Debug.Log("lala");
             GameObject droppedWep = Instantiate(dropWep1, this.transform.position, Quaternion.identity);
-            droppedWep.transform.parent = null;
         }
 
         else if (weaponNum == 2)
         {
-            Debug.Log("lala");
-            GameObject droppedWep = Instantiate(dropWep1, this.transform.position, Quaternion.identity);
-            droppedWep.transform.parent = null;
-        }
-
-        else
-        {
-            // Debug.Log("not a guardian");
+            GameObject droppedWep = Instantiate(dropWep2, this.transform.position, Quaternion.identity);
         }
 
         if (abominationSpawn == 1)
-        {
-            abominationSet();
+        {   
+            SceneManager.LoadScene(5);
         }
+
         int randomDroprate = Random.Range(1, 100);
 
         // ito yung new update sa xp dropchance bali aayusin mo lang value ng droprate sa inspector kada prefab
@@ -152,12 +146,6 @@ public class health : MonoBehaviour
         }
         Destroy(gameObject);
         // Debug.Log("destroyed cuzz get killed");
-
-
     }
-
-    public void abominationSet()
-    {
-        PlayerPrefs.SetInt("Abomination", 1);
-    }
+    
 }
