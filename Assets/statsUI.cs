@@ -42,10 +42,10 @@ public class statsUI : MonoBehaviour
         playerMaxXP = playerStats.GetComponent<playerStats>().maxXP;
         playerLVL = playerStats.GetComponent<playerStats>().playerLvl;
 
-        hp.GetComponent<TextMeshProUGUI>().text = "Health: " + playerHP + " / " + playerMaxHP;
-        Experience.GetComponent<TextMeshProUGUI>().text = "Level: " + playerLVL + " XP: " + playerXP + " / " + playerMaxXP;
-        speed.GetComponent<TextMeshProUGUI>().text = "Speed: " + playerSpeed;
-        atk.GetComponent<TextMeshProUGUI>().text = "Base Damage: " + playerATK;
-        regen.GetComponent<TextMeshProUGUI>().text = "Regen per Seconds: " + playerHeal;
+        hp.GetComponent<TextMeshProUGUI>().text = " " + playerHP + " / " + playerMaxHP;
+        Experience.GetComponent<TextMeshProUGUI>().text = " " + playerLVL;
+        speed.GetComponent<TextMeshProUGUI>().text = " " + playerSpeed;
+        atk.GetComponent<TextMeshProUGUI>().text = " " + playerATK;
+        regen.GetComponent<TextMeshProUGUI>().text = " " + playerHeal;
     }
 }
