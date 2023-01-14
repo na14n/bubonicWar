@@ -45,6 +45,7 @@ public class abominationScript : MonoBehaviour
         hp = maxHp;
         setEnemyValues();
         scaleEnemy();
+        abominationSpawn();
         this.GetComponent<AIDestinationSetter>().target = player;
     }
 
