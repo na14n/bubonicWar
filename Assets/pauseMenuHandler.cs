@@ -48,10 +48,12 @@ public class pauseMenuHandler : MonoBehaviour
         openBtn.SetActive(true);
         closeBtn.SetActive(false);
         isActive = false;
+        Time.timeScale = 1;
     }
 
     public void openPanel()
     {
+        Time.timeScale = 0;
         panel.SetActive(true);
         openBtn.SetActive(false);
         closeBtn.SetActive(true);
