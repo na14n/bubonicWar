@@ -21,6 +21,8 @@ public class wepChooserHandler : MonoBehaviour
     public Button btn8;
     public GameObject panel;
 
+    public GameObject soundHandler;
+
     void Start()
     {
         unlockScythe = PlayerPrefs.GetInt("Katana");
@@ -47,7 +49,8 @@ public class wepChooserHandler : MonoBehaviour
     }
 
     public void swordBtn()
-    {
+    {   
+        soundHandler.GetComponent<audioSourceMainMenu2>().playButton();
         this.gameObject.SetActive(false);
         if (buttonClick == 0)
         {
@@ -68,9 +71,9 @@ public class wepChooserHandler : MonoBehaviour
     }
 
     public void SpearBtn()
-    {
+    {   
+        soundHandler.GetComponent<audioSourceMainMenu2>().playButton();
         this.gameObject.SetActive(false);
-
         if (buttonClick == 0)
         {
             wep1 = 2;
@@ -92,6 +95,7 @@ public class wepChooserHandler : MonoBehaviour
 
     public void shieldBtn()
     {
+        soundHandler.GetComponent<audioSourceMainMenu2>().playButton();
         this.gameObject.SetActive(false);
 
         if (buttonClick == 0)
@@ -114,7 +118,8 @@ public class wepChooserHandler : MonoBehaviour
     }
 
     public void daggerBtn()
-    {
+    {   
+        soundHandler.GetComponent<audioSourceMainMenu2>().playButton();
         this.gameObject.SetActive(false);
 
         if (buttonClick == 0)
@@ -138,7 +143,8 @@ public class wepChooserHandler : MonoBehaviour
     }
 
     public void axeBtn()
-    {
+    {   
+        soundHandler.GetComponent<audioSourceMainMenu2>().playButton();
         this.gameObject.SetActive(false);
 
         if (buttonClick == 0)
@@ -161,7 +167,8 @@ public class wepChooserHandler : MonoBehaviour
     }
 
     public void warHamBtn()
-    {
+    {   
+        soundHandler.GetComponent<audioSourceMainMenu2>().playButton();
         this.gameObject.SetActive(false);
 
         if (buttonClick == 0)
@@ -184,7 +191,8 @@ public class wepChooserHandler : MonoBehaviour
     }
 
     public void katana()
-    {
+    {   
+        soundHandler.GetComponent<audioSourceMainMenu2>().playButton();
         this.gameObject.SetActive(false);
         if (buttonClick == 0)
         {
@@ -206,7 +214,8 @@ public class wepChooserHandler : MonoBehaviour
     }
 
     public void Scythe()
-    {
+    {   
+        soundHandler.GetComponent<audioSourceMainMenu2>().playButton();
         this.gameObject.SetActive(false);
 
         if (buttonClick == 0)
@@ -229,7 +238,8 @@ public class wepChooserHandler : MonoBehaviour
     }
 
     public void closeAllBtn()
-    {
+    {   
+        
         btn1.interactable = false;
         btn2.interactable = false;
         btn3.interactable = false;

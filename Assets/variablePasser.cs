@@ -9,6 +9,8 @@ public class variablePasser : MonoBehaviour
     public int secondWep;
     public static variablePasser Instance { get; private set; }
     public GameObject panel;
+    public GameObject soundHandler;
+
 
     void Awake() {
             Instance = this;
@@ -16,6 +18,7 @@ public class variablePasser : MonoBehaviour
     }
 
     public void Reset(){
+        soundHandler.GetComponent<audioSourceMainMenu2>().playButton();
         panel.SetActive(false);
         firstWep = 0;
         secondWep = 0;
