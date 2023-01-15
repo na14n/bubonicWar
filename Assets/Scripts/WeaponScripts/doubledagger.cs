@@ -65,12 +65,12 @@ public class doubledagger : MonoBehaviour
                         if (x < 30)
                         {
                             enemy.GetComponent<health>().damage(2 * (atkDamage + characterDmg), false);
-                            enemy.GetComponent<knockback>().Knockback();
+                            collider.GetComponent<knockback>().Knockback(this.transform.position);
                         }
                         else
                         {
                             enemy.GetComponent<health>().damage(atkDamage + characterDmg, false);
-                            enemy.GetComponent<knockback>().Knockback();
+                           collider.GetComponent<knockback>().Knockback(this.transform.position);
                         }
 
                     }

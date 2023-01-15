@@ -72,7 +72,7 @@ public class scythe : MonoBehaviour
 
                         enemy.GetComponent<health>().damage((atkDamage + characterDmg), false);
                         Debug.Log(totalatk);
-                        enemy.GetComponent<knockback>().Knockback();
+                        collider.GetComponent<knockback>().Knockback(this.transform.position);
                         transform.parent.parent.parent.GetComponent<health>().healHp((atkDamage + characterDmg) * 0.025f);
                     }
                 }

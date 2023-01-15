@@ -71,7 +71,7 @@ void OnTriggerStay2D(Collider2D collider)
                 if (enemy.gameObject.CompareTag("Enemy") || enemy.gameObject.CompareTag("Guardian"))
                 {
                     enemy.GetComponent<health>().damage(atkDamage + characterDmg, false);
-                    enemy.GetComponent<knockback>().Knockback();
+                    collider.GetComponent<knockback>().Knockback(this.transform.position);
                 }
             }
             soundPlayer.GetComponent<audioSourceAttack>().playAttack();

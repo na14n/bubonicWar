@@ -57,7 +57,7 @@ public class weaponTesting : MonoBehaviour
                 
                 yield return new WaitForSeconds(0.5f);
                 enemy.GetComponent<health>().damage(atkDamage + characterDmg, false);
-                enemy.GetComponent<knockback>().Knockback();
+                enemy.GetComponent<knockback>().Knockback(this.transform.position);
             }
         }
     }
