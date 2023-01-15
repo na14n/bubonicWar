@@ -63,14 +63,14 @@ public class levelLoader : MonoBehaviour
 
     public IEnumerator LoadDefeat()
     {
-        soundHandler.GetComponent<audioSourceMainMenu>().playButton();
+
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(4);
     }
 
     public IEnumerator LoadVictory()
     {
-        soundHandler.GetComponent<audioSourceMainMenu>().playButton();
+
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(5);
     }
@@ -78,14 +78,14 @@ public class levelLoader : MonoBehaviour
 
     public IEnumerator LoadMainMenu()
     {
-        soundHandler.GetComponent<audioSourceMainMenu>().playButton();
+
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(0);
     }
 
     public IEnumerator LoadLevel(int levelIndex)
     {   
-        soundHandler.GetComponent<audioSourceMainMenu>().playButton();
+
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(levelIndex);
     }

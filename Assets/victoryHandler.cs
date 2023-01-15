@@ -22,6 +22,7 @@ public class victoryHandler : MonoBehaviour
         
         if (player.Length == 0)
         {
+            
             Invoke("playerKilled", 1f);
             // _levelLoader.LoadGameOver();
         }
