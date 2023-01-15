@@ -80,7 +80,7 @@ public class levelLoader : MonoBehaviour
     {
 
         yield return new WaitForSeconds(transitionTime);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public IEnumerator LoadLevel(int levelIndex)
