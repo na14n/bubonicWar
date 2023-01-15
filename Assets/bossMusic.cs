@@ -10,19 +10,13 @@ public class bossMusic : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(FadeIn());
+        Invoke("playBG", 2f);
     }
 
-    private IEnumerator FadeIn()
+    public void playBG()
     {
-        float startVolume = 0f;
-        bossPlayer.PlayOneShot(bossBG);
-        bossPlayer.volume = startVolume;
-
-        while (bossPlayer.volume < 0.1)
-        {
-            bossPlayer.volume += Time.deltaTime / fadeTime;
-            yield return null;
-        }
+        bossPlayer.enabled = true;
+        bossPlayer.Play();
     }
+
 }

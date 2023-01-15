@@ -11,7 +11,7 @@ public class audioSourceMainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
-        Invoke("playBG", 1f);
+        Invoke("playBG", 1.5f);
     }
 
     // Update is called once per frame
@@ -21,8 +21,9 @@ public class audioSourceMainMenu : MonoBehaviour
     }
 
     public void playBG()
-    {
-        player1.PlayOneShot(bg1);
+    {   
+        player1.enabled = true;
+        player1.Play();
     }
 
     public void playButton()

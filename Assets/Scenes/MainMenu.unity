@@ -249,7 +249,6 @@ GameObject:
   m_Component:
   - component: {fileID: 521868195}
   - component: {fileID: 521868193}
-  - component: {fileID: 521868194}
   m_Layer: 0
   m_Name: sourceNonLoop
   m_TagString: Untagged
@@ -353,22 +352,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &521868194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 521868192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcf067761ce6c344f9a8bf8c2af6e476, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player1: {fileID: 0}
-  nonLoop: {fileID: 0}
-  bg1: {fileID: 0}
-  buttonClick: {fileID: 0}
 --- !u!4 &521868195
 Transform:
   m_ObjectHideFlags: 0
@@ -1066,7 +1049,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1764794913}
   - component: {fileID: 1764794911}
-  - component: {fileID: 1764794912}
   m_Layer: 0
   m_Name: sourceBG
   m_TagString: Untagged
@@ -1081,10 +1063,10 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764794910}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2389df442ea95e14d9440a47df4227ef, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
@@ -1170,22 +1152,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1764794912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1764794910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcf067761ce6c344f9a8bf8c2af6e476, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player1: {fileID: 0}
-  nonLoop: {fileID: 0}
-  bg1: {fileID: 0}
-  buttonClick: {fileID: 0}
 --- !u!4 &1764794913
 Transform:
   m_ObjectHideFlags: 0

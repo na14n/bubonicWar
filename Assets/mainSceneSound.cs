@@ -27,7 +27,8 @@ public class mainSceneSound : MonoBehaviour
 
     public void playBG()
     {
-        bgSource.PlayOneShot(bgSound);
+        bgSource.enabled = true;
+        bgSource.Play();
     }
 
     public void lvlUp()

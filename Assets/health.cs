@@ -34,6 +34,7 @@ public class health : MonoBehaviour
     void Start()
     {
         maxHPCurrently = FindObjectOfType<playerStats>();
+        _hplevelLoader = FindObjectOfType<levelLoader>();
     }
 
 
@@ -138,8 +139,7 @@ public class health : MonoBehaviour
 
         if (abominationSpawn == 1)
         {   
-            // Load to Victory Screen
-            
+            // Load to Victory Screen            
             PlayerWin();
         }
 

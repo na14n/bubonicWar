@@ -428,6 +428,7 @@ MonoBehaviour:
   forPlayer: 0
   soundSource: {fileID: 0}
   deadbod: {fileID: 0}
+  dedoSound: {fileID: 0}
   _hplevelLoader: {fileID: 0}
 --- !u!50 &2440366787629476807
 Rigidbody2D:
@@ -608,7 +609,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1a74a06c0ed81df4bb87c695d10dfedb, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
