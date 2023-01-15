@@ -33,6 +33,7 @@ public class samuraiGuardian : MonoBehaviour
     private bool isAttacking = false;
     public int dropWep;
     public float followDistance = 10f;
+    public GameObject otherGuardian;
 
     // Start is called before the first frame update
 

@@ -18,6 +18,8 @@ public class health : MonoBehaviour
     public float currentMaxHP;
     public GameObject dropWep1;
     public GameObject dropWep2;
+    public GameObject guard1;
+    public GameObject guard2;
     public float weaponNum;
     public int abominationSpawn;
     public GameObject damageIndicator;
@@ -94,6 +96,11 @@ public class health : MonoBehaviour
         soundSource.GetComponent<damageAndHealSound>().damageSound();
     }
 
+    public void itemSound()
+    {
+        soundSource.GetComponent<damageAndHealSound>().itemSound();
+    }
+
     public void damage(float amount, bool damageReceive)
     {
         if (!damageReceive)
@@ -119,11 +126,13 @@ public class health : MonoBehaviour
         if (weaponNum == 1)
         {
             GameObject droppedWep = Instantiate(dropWep1, this.transform.position, Quaternion.identity);
+            Destroy(guard2);
         }
 
         else if (weaponNum == 2)
         {
             GameObject droppedWep = Instantiate(dropWep2, this.transform.position, Quaternion.identity);
+            Destroy(guard1);
         }
 
         if (abominationSpawn == 1)

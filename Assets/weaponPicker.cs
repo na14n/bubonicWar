@@ -34,6 +34,8 @@ public class weaponPicker : MonoBehaviour
             }
             
             Destroy(gameObject);
+
+            collider.gameObject.GetComponent<health>().itemSound();
         }
     }
 }

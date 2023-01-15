@@ -9,6 +9,8 @@ public class damageAndHealSound : MonoBehaviour
     public AudioClip damage;
     public AudioClip damage1;
     public AudioClip xp;
+    public AudioClip item;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,11 @@ public class damageAndHealSound : MonoBehaviour
     public void xpSound()
     {
         audSRC.PlayOneShot(heal);
+    }
+
+    public void itemSound()
+    {
+        audSRC.PlayOneShot(item);
     }
 
 
