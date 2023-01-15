@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 public class floatingDamage : MonoBehaviour
 {
@@ -16,5 +17,7 @@ public class floatingDamage : MonoBehaviour
     void Update()
     {
         transform.position += Vector3.up * speed * Time.deltaTime;
+        TMPro.TextMeshPro text = GetComponent<TextMeshPro>();
+        text.color = new Color (0.8f,0f,0.2f,1f);
     }
 }

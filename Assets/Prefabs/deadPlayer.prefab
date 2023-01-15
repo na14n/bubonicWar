@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 115376069445631643}
   - component: {fileID: 8615824321210895031}
   - component: {fileID: 2164669841616044412}
-  - component: {fileID: 8012393571899984802}
+  - component: {fileID: 596710080102375660}
   m_Layer: 0
   m_Name: deadPlayer
   m_TagString: Untagged
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c23beacfcb1bb49b965bc4b25b1d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &8012393571899984802
+--- !u!95 &596710080102375660
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
