@@ -51,7 +51,7 @@ IEnumerator HealOverTime()
 {
     while (true)
     {
-        transform.parent.parent.parent.GetComponent<health>().healHp(playerHP * 0.01f);
+        transform.parent.parent.parent.GetComponent<health>().healHp(playerHP * 0.25f);
         Debug.Log("healing for everyone");
         shield.lastheal = Time.time;  // update lastheal here
         yield return new WaitForSeconds(healpersec);

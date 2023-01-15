@@ -44,7 +44,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -497,7 +497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9d64f01561b0d8419c9b2f98bcf4f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 3
+  atkDamage: 5
   characterDmg: 0
   atkSpeed: 1
   attackRange: 2
@@ -583,7 +583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9d64f01561b0d8419c9b2f98bcf4f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 3
+  atkDamage: 5
   characterDmg: 0
   atkSpeed: 1
   attackRange: 2
@@ -813,7 +813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9d64f01561b0d8419c9b2f98bcf4f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 3
+  atkDamage: 5
   characterDmg: 0
   atkSpeed: 1
   attackRange: 2
@@ -899,7 +899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9d64f01561b0d8419c9b2f98bcf4f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 3
+  atkDamage: 5
   characterDmg: 0
   atkSpeed: 1
   attackRange: 2
@@ -1090,7 +1090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9d64f01561b0d8419c9b2f98bcf4f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 3
+  atkDamage: 5
   characterDmg: 0
   atkSpeed: 1
   attackRange: 2
@@ -1344,7 +1344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9d64f01561b0d8419c9b2f98bcf4f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 3
+  atkDamage: 5
   characterDmg: 0
   atkSpeed: 1
   attackRange: 2
@@ -1535,7 +1535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9d64f01561b0d8419c9b2f98bcf4f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 3
+  atkDamage: 5
   characterDmg: 0
   atkSpeed: 1
   attackRange: 2
@@ -1621,7 +1621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9d64f01561b0d8419c9b2f98bcf4f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 3
+  atkDamage: 5
   characterDmg: 0
   atkSpeed: 1
   attackRange: 2

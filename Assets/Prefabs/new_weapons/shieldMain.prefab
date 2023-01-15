@@ -44,7 +44,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -222,9 +222,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4dbcbe58fe8ec4f9c398527b75213e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 7
+  atkDamage: 8
   characterDmg: 0
-  atkSpeed: 2.25
+  atkSpeed: 2
   attackRange: 1
   enemies: []
   totalatk: 0
@@ -571,9 +571,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4dbcbe58fe8ec4f9c398527b75213e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 7
+  atkDamage: 8
   characterDmg: 0
-  atkSpeed: 2.25
+  atkSpeed: 2
   attackRange: 1
   enemies: []
   totalatk: 0
@@ -880,9 +880,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4dbcbe58fe8ec4f9c398527b75213e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 7
+  atkDamage: 8
   characterDmg: 0
-  atkSpeed: 2.25
+  atkSpeed: 2
   attackRange: 1
   enemies: []
   totalatk: 0
@@ -1396,9 +1396,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4dbcbe58fe8ec4f9c398527b75213e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 7
+  atkDamage: 8
   characterDmg: 0
-  atkSpeed: 2.25
+  atkSpeed: 2
   attackRange: 1
   enemies: []
   totalatk: 0
@@ -1495,9 +1495,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4dbcbe58fe8ec4f9c398527b75213e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 7
+  atkDamage: 8
   characterDmg: 0
-  atkSpeed: 2.25
+  atkSpeed: 2
   attackRange: 1
   enemies: []
   totalatk: 0
@@ -1699,9 +1699,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4dbcbe58fe8ec4f9c398527b75213e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 7
+  atkDamage: 8
   characterDmg: 0
-  atkSpeed: 2.25
+  atkSpeed: 2
   attackRange: 1
   enemies: []
   totalatk: 0
@@ -1798,9 +1798,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4dbcbe58fe8ec4f9c398527b75213e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 2
+  atkDamage: 8
   characterDmg: 0
-  atkSpeed: 3
+  atkSpeed: 2
   attackRange: 1
   enemies: []
   totalatk: 0
@@ -1897,9 +1897,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4dbcbe58fe8ec4f9c398527b75213e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: 7
+  atkDamage: 8
   characterDmg: 0
-  atkSpeed: 2.25
+  atkSpeed: 2
   attackRange: 1
   enemies: []
   totalatk: 0

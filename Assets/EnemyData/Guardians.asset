@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fffd1afb3891082429a3a131a45ff5f3, type: 3}
   m_Name: Guardians
   m_EditorClassIdentifier: 
-  hp: 750
-  damage: 20
+  hp: 1500
+  damage: 25
   speed: 2
-  maxHp: 750
+  maxHp: 1500
   atkSpeed: 1
   object1Transform: {x: 1.5, y: 1.5, z: 1}
   object2Transform: {x: -1.5, y: 1.5, z: 1}

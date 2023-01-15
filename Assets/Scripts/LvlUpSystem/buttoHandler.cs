@@ -157,7 +157,7 @@ public class buttoHandler : MonoBehaviour
 
         else if (button2 == 4)
         {   
-            playerStats.GetComponent<playerStats>().upgradeHeal(0.1f, true);
+            playerStats.GetComponent<playerStats>().upgradeHeal(0.5f, true);
             panel.SetActive(false);
             Time.timeScale = 1;
         }
