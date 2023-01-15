@@ -87,7 +87,7 @@ public class Enemy : MonoBehaviour
 
     private void setEnemyValues()
     {
-        GetComponent<health>().setHealth(data.maxHp + (data.maxHp * playerLvl), data.maxHp + (data.maxHp * playerLvl));
+        GetComponent<health>().setHealth(data.maxHp + ((data.maxHp * 0.25f )* playerLvl), data.maxHp + ((data.maxHp * 0.25f )* playerLvl));
         damage = data.damage + (playerLvl * 2);
         speed = data.speed;
         atkSpeed = data.atkSpeed;

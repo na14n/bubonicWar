@@ -1181,7 +1181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 807744831}
   nonLoop: {fileID: 340550848}
-  bg1: {fileID: 0}
+  bg1: {fileID: 8300000, guid: 9f09962ce2f46c540a0a62da5fdb34b2, type: 3}
   buttonClick: {fileID: 8300000, guid: c98d0825aa1346d4cb91ce76a21b3ee3, type: 3}
 --- !u!4 &1468726651
 Transform:
