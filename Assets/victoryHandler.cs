@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class victoryHandler : MonoBehaviour
 {
+
+    public levelLoader _levelLoader;
+
     void Start()
     {
 
@@ -19,12 +22,13 @@ public class victoryHandler : MonoBehaviour
         
         if (player.Length == 0)
         {
-            Invoke("playerKilled", 2f);
+            Invoke("playerKilled", 1f);
+            // _levelLoader.LoadGameOver();
         }
     }
 
     public void playerKilled()
     {
-        SceneManager.LoadScene(4);
+        _levelLoader.LoadGameOver();
     }
 }

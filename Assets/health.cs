@@ -29,6 +29,7 @@ public class health : MonoBehaviour
     public GameObject soundSource;
     public GameObject deadbod;
     
+    public levelLoader _hplevelLoader;
     
     void Start()
     {
@@ -137,7 +138,9 @@ public class health : MonoBehaviour
 
         if (abominationSpawn == 1)
         {   
-            SceneManager.LoadScene(5);
+            // Load to Victory Screen
+            
+            PlayerWin();
         }
 
         if (forPlayer == 1)
@@ -161,6 +164,11 @@ public class health : MonoBehaviour
         }
         Destroy(gameObject);
         // Debug.Log("destroyed cuzz get killed");
+    }
+
+    public void PlayerWin()
+    {
+        _hplevelLoader.LoadGameOverWin();
     }
     
 }

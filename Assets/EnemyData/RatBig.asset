@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fffd1afb3891082429a3a131a45ff5f3, type: 3}
   m_Name: RatBig
   m_EditorClassIdentifier: 
-  hp: 200
+  hp: 65
   damage: 15
   speed: 1
   maxHp: 200

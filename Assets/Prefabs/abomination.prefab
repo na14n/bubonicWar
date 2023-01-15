@@ -393,6 +393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackForce: 0
   knockedBack: 0
+  knockbackDirection: {x: 0, y: 0}
 --- !u!114 &2440366787629476806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,6 +418,8 @@ MonoBehaviour:
   currentMaxHP: 0
   dropWep1: {fileID: 0}
   dropWep2: {fileID: 0}
+  guard1: {fileID: 0}
+  guard2: {fileID: 0}
   weaponNum: 0
   abominationSpawn: 1
   damageIndicator: {fileID: 2738551601470835148, guid: ccff22b86fbce014db8638ea997ac021, type: 3}
@@ -424,6 +427,8 @@ MonoBehaviour:
   dropRate: 100
   forPlayer: 0
   soundSource: {fileID: 0}
+  deadbod: {fileID: 0}
+  _hplevelLoader: {fileID: 0}
 --- !u!50 &2440366787629476807
 Rigidbody2D:
   serializedVersion: 4

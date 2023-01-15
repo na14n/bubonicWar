@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 115376069445631643}
   - component: {fileID: 8615824321210895031}
   - component: {fileID: 2164669841616044412}
+  - component: {fileID: 8012393571899984802}
   m_Layer: 0
   m_Name: deadPlayer
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 61f4e0bdfdb6b994e9d5bb4a18ce5b35, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 80744ef169cc902428db17ddf1e13c82, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,3 +98,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c23beacfcb1bb49b965bc4b25b1d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &8012393571899984802
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170011705971197529}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f8d81bbb07266d943b2677e004866be2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

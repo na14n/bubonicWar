@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fffd1afb3891082429a3a131a45ff5f3, type: 3}
   m_Name: bossFINAL
   m_EditorClassIdentifier: 
-  hp: 1000
+  hp: 100
   damage: 45
-  speed: 1
+  speed: 2
   maxHp: 1000
   atkSpeed: 0.5
   object1Transform: {x: 2, y: 2, z: 1}

@@ -10,7 +10,9 @@ public class endScreenButton : MonoBehaviour
 
     public void ExitGame()
     {
-        Application.Quit();
+        
+        _levelLoader.LoadExitGame();
+        Time.timeScale = 1;
     }
 
     public void Retry()
@@ -18,6 +20,7 @@ public class endScreenButton : MonoBehaviour
         Debug.Log("retry");
         // SceneManager.LoadScene(0);
         _levelLoader.returnMenu();
+        Time.timeScale = 1;
     }
 
 }

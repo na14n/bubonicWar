@@ -147,10 +147,10 @@ public class abominationScript : MonoBehaviour
     public void bossRage()
     {   
         numberofBossRage = 1;
-        object1Transform = object1Transform * 1.5f;
-        object2Transform = object2Transform * 1.5f;
+        object1Transform = object1Transform * 2f;
+        object2Transform = object2Transform * 2f;
         speed = speed + 1.5f;
         damage = damage * 1.5f;
-        GetComponent<health>().healHp(maxHp * 1.3f);
+        GetComponent<health>().healHp(maxHp * 2f);
     }
 }
