@@ -123,6 +123,82 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &19871158
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 19871161}
+  - component: {fileID: 19871160}
+  - component: {fileID: 19871159}
+  m_Layer: 5
+  m_Name: katana_blacked
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &19871159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19871158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 8e18e46c874a0dc4e997de208987ce74, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &19871160
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19871158}
+  m_CullTransparentMesh: 1
+--- !u!224 &19871161
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19871158}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1291432723}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 65}
+  m_SizeDelta: {x: 65, y: 65}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &35846118
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,7 +1075,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: 8626c5f9fded43c4c8bc210410606550, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: ea045435e7df8b0469bcd5265cbe3df3, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: ea045435e7df8b0469bcd5265cbe3df3, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: ea045435e7df8b0469bcd5265cbe3df3, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 8626c5f9fded43c4c8bc210410606550, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1503,7 +1579,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: 49412f823362a384694d197696800311, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 09fc0ecdfdbdb544eb1efad2822f05c9, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 09fc0ecdfdbdb544eb1efad2822f05c9, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 09fc0ecdfdbdb544eb1efad2822f05c9, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 49412f823362a384694d197696800311, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -2411,6 +2487,82 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Object: {fileID: 1828617791}
   animatorComponent: {fileID: 0}
+--- !u!1 &1013805463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1013805464}
+  - component: {fileID: 1013805466}
+  - component: {fileID: 1013805465}
+  m_Layer: 5
+  m_Name: scythe_blacked
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1013805464
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013805463}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1146346774}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 65}
+  m_SizeDelta: {x: 65, y: 65}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1013805465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013805463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 0c34e984c207c0d4abd556e5b071b3e5, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1013805466
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013805463}
+  m_CullTransparentMesh: 1
 --- !u!1 &1099175523
 GameObject:
   m_ObjectHideFlags: 0
@@ -2538,6 +2690,7 @@ RectTransform:
   m_Children:
   - {fileID: 622915865}
   - {fileID: 314803730}
+  - {fileID: 1013805464}
   m_Father: {fileID: 1941142627}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3141,6 +3294,7 @@ RectTransform:
   m_Children:
   - {fileID: 524421583}
   - {fileID: 474196850}
+  - {fileID: 19871161}
   m_Father: {fileID: 1941142627}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4066,6 +4220,10 @@ MonoBehaviour:
   btn7: {fileID: 524421586}
   btn8: {fileID: 622915862}
   panel: {fileID: 1758616848}
+  katanaSprite: {fileID: 474196849}
+  katanaBlacked: {fileID: 19871158}
+  scytheSprite: {fileID: 314803729}
+  scytheBlacked: {fileID: 1013805463}
   soundHandler: {fileID: 1712053984}
 --- !u!4 &1883938070
 Transform:

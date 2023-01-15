@@ -21,21 +21,40 @@ public class wepChooserHandler : MonoBehaviour
     public Button btn8;
     public GameObject panel;
 
+    public GameObject katanaSprite;
+    public GameObject katanaBlacked;
+    public GameObject scytheSprite;
+    public GameObject scytheBlacked;
+
     public GameObject soundHandler;
 
     void Start()
     {
+
         unlockScythe = PlayerPrefs.GetInt("Katana");
         unlockKatana = PlayerPrefs.GetInt("Scythe");
 
         if (unlockKatana == 0)
         {
             btn7.interactable = false;
+            katanaSprite.SetActive(false);
+            katanaBlacked.SetActive(true);
+
+        }
+        else
+        {
+            katanaBlacked.SetActive(false);
         }
 
         if (unlockScythe == 0)
         {
             btn8.interactable = false;
+            scytheSprite.SetActive(false);
+            scytheBlacked.SetActive(true);
+        }
+        else
+        {
+            scytheBlacked.SetActive(false);
         }
     }
 
@@ -267,6 +286,7 @@ public class wepChooserHandler : MonoBehaviour
         else
         {
             btn7.interactable = true;
+            katanaSprite.SetActive(true);
         }
 
         if (unlockScythe == 0)
@@ -276,6 +296,8 @@ public class wepChooserHandler : MonoBehaviour
         else
         {
             btn8.interactable = true;
+            scytheSprite.SetActive(true);
+            
         }
     }
 }
