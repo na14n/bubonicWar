@@ -11,7 +11,7 @@ public class mainSceneSound : MonoBehaviour
     public GameObject audioSRC;
 
     void Start()
-    {
+    {   
         Invoke("playBG", 2f);
     }
 

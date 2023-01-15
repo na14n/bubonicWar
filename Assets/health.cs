@@ -25,6 +25,7 @@ public class health : MonoBehaviour
     public int dropRate;
     public int forPlayer;
     public GameObject soundSource;
+    public GameObject deadbod;
     
     
     void Start()
@@ -128,6 +129,11 @@ public class health : MonoBehaviour
         if (abominationSpawn == 1)
         {   
             SceneManager.LoadScene(5);
+        }
+
+        if (forPlayer == 1)
+        {   
+            GameObject deadBody = Instantiate(deadbod, this.transform.position, Quaternion.identity);
         }
 
         int randomDroprate = Random.Range(1, 100);

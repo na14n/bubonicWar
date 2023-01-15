@@ -46,6 +46,7 @@ public class abominationScript : MonoBehaviour
         setEnemyValues();
         scaleEnemy();
         this.GetComponent<AIDestinationSetter>().target = player;
+        PlayerPrefs.SetInt("Abomination", 1);
     }
 
     void Update()

@@ -19,12 +19,12 @@ public class victoryHandler : MonoBehaviour
         
         if (player.Length == 0)
         {
-            SceneManager.LoadScene(4);
+            Invoke("playerKilled", 2f);
         }
     }
 
-    public void abominationKilled()
+    public void playerKilled()
     {
-        PlayerPrefs.SetInt("Abomination", 0);
+        SceneManager.LoadScene(4);
     }
 }

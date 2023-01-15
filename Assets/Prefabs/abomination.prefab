@@ -63,7 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossPlayer: {fileID: 7277463664480444054}
   bossBG: {fileID: 8300000, guid: 1e56af0f6ba407a48a34ffe5c100d09f, type: 3}
-  fadeTime: 500
+  fadeTime: 10
 --- !u!1 &2060062591465871035
 GameObject:
   m_ObjectHideFlags: 0

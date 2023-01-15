@@ -6,7 +6,7 @@ public class bossMusic : MonoBehaviour
 {   
     public AudioSource bossPlayer;
     public AudioClip bossBG;
-    public float fadeTime = 500f;
+    public float fadeTime = 10f;
 
     private void Start()
     {
