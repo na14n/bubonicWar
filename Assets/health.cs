@@ -28,7 +28,7 @@ public class health : MonoBehaviour
     public int forPlayer;
     public GameObject soundSource;
     public GameObject deadbod;
-    
+    public GameObject dedoSound;
     public levelLoader _hplevelLoader;
     
     void Start()
@@ -145,6 +145,7 @@ public class health : MonoBehaviour
 
         if (forPlayer == 1)
         {   
+            dedoSound.GetComponent<playDed>().ded();
             GameObject deadBody = Instantiate(deadbod, this.transform.position, Quaternion.identity);
         }
 

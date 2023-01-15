@@ -19,7 +19,7 @@ public class bossMusic : MonoBehaviour
         bossPlayer.PlayOneShot(bossBG);
         bossPlayer.volume = startVolume;
 
-        while (bossPlayer.volume < 0.3)
+        while (bossPlayer.volume < 0.1)
         {
             bossPlayer.volume += Time.deltaTime / fadeTime;
             yield return null;

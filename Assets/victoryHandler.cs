@@ -22,14 +22,13 @@ public class victoryHandler : MonoBehaviour
         
         if (player.Length == 0)
         {
-            
-            Invoke("playerKilled", 1f);
+            Invoke("playerKilled", 2f);
             // _levelLoader.LoadGameOver();
         }
     }
 
     public void playerKilled()
-    {
+    {   
         _levelLoader.LoadGameOver();
     }
 }

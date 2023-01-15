@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossPlayer: {fileID: 7277463664480444054}
-  bossBG: {fileID: 8300000, guid: 1e56af0f6ba407a48a34ffe5c100d09f, type: 3}
+  bossBG: {fileID: 8300000, guid: 1a74a06c0ed81df4bb87c695d10dfedb, type: 3}
   fadeTime: 10
 --- !u!1 &2060062591465871035
 GameObject:
@@ -108,7 +108,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -610,7 +610,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
